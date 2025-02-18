@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <header>
+        <title>header</title>
+    </header>
+
+    <body>
+        <div id="header"></div> <!-- Aquí se cargará la cabecera -->
+
+        <div class="container-login">
+            <h1>Inicio de sesión</h1>
+            <p>
+                <h2>Email</h2>
+                <input type="email" required>
+            </p>
+
+            <p>
+                <h2>Contraseña</h2>
+                <input type="password" required>
+            </p>
+            
+            <p>
+                <input type="checkbox" id="keep-logged">
+                <label for="keep-logged">Mantener la sesión iniciada.</label>
+            </p>
+
+            <p>
+                <button>
+                    iniciar sesion
+                </button>
+            </p>
+            <p>
+                ¿No tienes cuenta? <a href="#">Registrate</a>
+            </p>
+            
+        </div>
+
+        <script>
+            async function loadHTML(id, url) {
+                const response = await fetch(url);
+                const content = await response.text();
+                document.getElementById(id).innerHTML = content;
+            }
+    
+            loadHTML("header", "header.html");
+            loadHTML("footer", "footer.html");
+        </script>
+
+    </body>
+</html>
