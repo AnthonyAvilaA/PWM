@@ -4,5 +4,5 @@ async function loadHTML(id, url) {
     document.getElementById(id).innerHTML = content;
 }
 
-loadHTML("header", "header.html");
-loadHTML("footer", "footer.html");
+loadHTML("header", "components/header.html");
+loadHTML("footer", "components/footer.html");
