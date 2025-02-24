@@ -2,7 +2,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #c0504d; /* Color rojo oscuro */
+    background-color: #c0504d;
     margin: 0;
     padding: 5px 20px;
 }
@@ -72,6 +72,10 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+
+.categories a:hover {
+    text-decoration: underline;
 }
 
 .login-register {
