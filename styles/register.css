@@ -1,0 +1,51 @@
+body{
+background-color: #D9D9D9;
+color: #222;
+}
+.main-container{
+    background-color: #FFFFFF;
+    margin: 20%;
+    padding: 10%;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color: #201D1D;
+    margin: 5%;
+    padding: 0;
+    font-style: normal;
+    text-align: center;
+    display: block;
+
+}
+section p{
+    margin: 2% 0%;
+    padding: 0;
+}
+label {
+    font-size: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    display: block;
+    margin-bottom: 1%;
+    position: relative;
+}
+
+input{
+    width: 100%;
+    padding: 1%;
+    display: block;
+    margin-bottom: 5%;
+}
+button {
+    width: 50%;
+    margin: 2% 25%;
+    padding: 2%;
+    background-color: #e01616;
+    color: #f3f0f0;
+    text-align: center;
+    border-radius: 5%;
+}
+.enlace{
+    text-align: center;
+}
