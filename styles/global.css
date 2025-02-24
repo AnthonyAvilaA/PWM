@@ -10,7 +10,7 @@ body {
     color: #222;
 }
 
-#main-container {
+.main-container {
     margin: 20px auto; /* Adjust the top/bottom spacing and center horizontally */
     padding: 10px;
 }
