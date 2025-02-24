@@ -1,25 +1,33 @@
+<head>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/header.css">
+</head>
+
 <header>
-    <img src="/images/logo.png" alt="logo" height="65" width="100">
-    <label for="language">Idioma</label>
-    <select id="language">
-        <option value="spanish">Español</option>
-        <option value="english">English</option>
-    </select>
-    <nav>
+    <div class="logo-container">
+        <img src="/images/logo.png" alt="logo" height="65" width="100">
+        <label for="language">Idioma</label>
+        <select id="language">
+            <option value="spanish">Español</option>
+            <option value="english">English</option>
+        </select>
+    </div>
+    <nav class="categories">
         <ul>
             <li><a href="#">Videos</a></li>
             <li><a href="#">Ciencia</a></li>
             <li><a href="#">Poítica</a></li>
             <li><a href="#">Entretenimiento</a></li>
             <li><a href="#">Mundo</a></li>
-            <div class="login-register">
-                <li><a href="#">Iniciar Sesión</a></li>
-                <li><a href="#">Registrarse</a></li>
-            </div>
         </ul>
     </nav>
+    <div class="login-register">
+        <a href="#">Iniciar Sesión</a>
+        <a href="#">Registrarse</a>
+    </div>
     <div class="burger-menu">
-        <input type="checkbox">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="burger-icon">&#9776;</label>
         <nav>
             <ul>
                 <li><a href="#">Inicio</a></li>

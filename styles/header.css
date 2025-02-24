@@ -1,0 +1,117 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c0504d; /* Color rojo oscuro */
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre logo e idioma */
+}
+
+header img {
+    height: 50px;
+}
+
+.language-container {
+    background-color: #8a0303;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#language {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.login-register {
+    display: flex;
+    gap: 10px;
+}
+
+.login-register a {
+    background-color: #8a0303;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* When checkbox is checked, show the menu */
+#menu-toggle:checked ~ nav {
+    display: block;
+}
+
+.burger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+    color: white;
+    padding: 10px;
+}
+
+/* Default: Hide the menu */
+.burger-menu nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Style for the menu */
+.burger-menu nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.burger-menu nav ul li {
+    margin: 10px 0;
+}
+
+.burger-menu nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
