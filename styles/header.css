@@ -4,34 +4,50 @@ header {
     justify-content: space-between;
     background-color: #c0504d; /* Color rojo oscuro */
     margin: 0;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 
+/* General logo container styling */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre logo e idioma */
+    gap: 10px; /* Space between logo and language button */
 }
 
 header img {
     height: 50px;
 }
 
-.language-container {
-    background-color: #8a0303;
+/* Hidden checkbox */
+#language-toggle {
+    display: none;
+}
+
+/* Show language menu when checkbox is checked */
+#language-toggle:checked ~ .language-options {
+    display: block;
+}
+
+.language-button {
+    background-color: #900;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-align: center;
 }
 
-#language {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
+/* Language menu is hidden by default */
+.language-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #900;
+    padding: 5px;
+    margin-top: 5px;
 }
 
 nav {
