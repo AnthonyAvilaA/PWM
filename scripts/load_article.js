@@ -1,7 +1,15 @@
-async function loadHTML(id, url) {
+async function loadHTML(className, url) {
     const response = await fetch(url);
     const content = await response.text();
-    document.getElementById(id).innerHTML = content;
+    
+    // Seleccionar todos los elementos con la clase especificada
+    const articles = document.querySelectorAll(`.${className}`);
+    
+    // Insertar el contenido en cada elemento
+    articles.forEach(article => {
+        article.innerHTML = content;
+    });
 }
 
-loadHTML("article", "components/article.html");
+// Llamar a la función para cargar el contenido en todos los elementos con la clase 'article'
+loadHTML("article", "components/article.html")
