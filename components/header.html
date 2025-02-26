@@ -1,17 +1,16 @@
 <header>
-    <div class="logo-container">
-        <img src="/images/logo.png" alt="logo" height="65" width="100">
-        <div class="language-menu">
-            <input type="checkbox" id = "language-toggle">
-            <label for="language-toggle" class="language-button">IDIOMA</label>
-            <div class="language-options">
-                <select id="language">
-                    <option value="spanish">Español</option>
-                    <option value="english">English</option>
-                </select>
-            </div>
+    <img src="/images/logo.png" alt="logo" height="65" width="100">
+    <div class="language-menu">
+        <input type="checkbox" id = "language-toggle">
+        <label for="language-toggle" class="language-button">IDIOMA</label>
+        <div class="language-options">
+            <ul>
+                <li><a href="#">Español</a></li>
+                <li><a href="#">English</a></li>
+            </ul>
         </div>
     </div>
+
     <nav class="categories">
         <ul>
             <li><a href="#">Videos</a></li>
@@ -30,10 +29,20 @@
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="burger-icon">&#9776;</label>
         <nav>
-            <ul>
+            <ul class="normal-size">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Videos</a></li>
                 <li><a href="#">Iniciar Sesión</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+            </ul>
+            
+            <ul class="short-size">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Ciencia</a></li>
+                <li><a href="#">Política</a></li>
+                <li><a href="#">Entretenimiento</a></li>
                 <li><a href="#">Sobre Nosotros</a></li>
             </ul>
         </nav>
