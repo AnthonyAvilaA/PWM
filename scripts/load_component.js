@@ -12,4 +12,6 @@ async function loadHTML(className, url) {
 }
 
 // Llamar a la función para cargar el contenido en todos los elementos con la clase 'article'
-loadHTML("article", "components/article.html")
+loadHTML("article", "/components/article.html")
+loadHTML("side_article", "/components/side_article.html")
+loadHTML("live_headline", "/components/live_headline.html")
