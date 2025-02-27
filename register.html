@@ -7,41 +7,42 @@
         <link rel="stylesheet" href="/styles/global.css">
         <link rel="stylesheet" href="/styles/header.css">
         <link rel="stylesheet" href="/styles/footer.css">
-        <link rel="stylesheet" href="/styles/register.css">
+        <link rel="stylesheet" href="/styles/login-register.css">
     </head>
     <body>
         <div id="header"></div> 
-        <div class="main-container">
-            <article>
-                <section>
-                    <h2><strong>REGISTRO</strong></h2>
-                    <p>
-                        <label for="correo"><strong>Usuario</strong></label>
-                        <input type="email" id="correo" required>
-                    </p>
-                    <p>
-                        <label for="contraseña"><strong>Contraseña</strong></label>
-                        <input type="password" id="contraseña" required>
-                    </p>
-                    <p>
-                        <label for="contraseña_2"><strong>Confirmar contraseña</strong></label>
-                        <input type="password" id="contraseña_2" required>
-                    </p>
-                    <p>
-                        <label for="name"><strong>Correo electronico</strong></label>
-                        <input type="text" id="name" required>
-                    </p>
-                    <div class="enlace">
-                        <button>Registrarse</button>
-                        <p>
-                        ¿Ya tienes cuenta? <a href="login.html">Iniciar sesion</a>
-                        </p>
-                    </div>
-                    
-                </section>
-            </article>
-        </div>
 
+        <main>
+            <h1>Registro</h1>
+            <div class="main-container">
+                <form action="#" method="post">
+                    <div class="form-item">
+                        <p>Email</p>
+                        <input type="email" required>
+                    </div>
+
+                    <div class="form-item">
+                        <p>Contraseña</p>
+                        <input type="password" required>
+                    </div>
+
+                    <div class="form-item">
+                        <p>Confirmar Contraseña</p>
+                        <input type="password" required>
+                    </div>
+
+                    <div class="form-item">
+                        <p>Usuario</p>
+                        <input type="password" required>
+                    </div>
+
+                    <button>Registrarse</button>
+                </form>
+                <p>
+                    ¿Ya tienes cuenta? <a href="login.html">Iniciar sesion</a>
+                </p>
+            </div>
+        </main>
         <div id="footer"></div> 
     </body>
 </html>
