@@ -4,18 +4,11 @@ header {
     justify-content: space-between;
     background-color: #c0504d;
     margin: 0;
-    padding: 5px 20px;
-}
-
-/* General logo container styling */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between logo and language button */
+    padding: 1% 2%;
 }
 
 header img {
-    height: 50px;
+    height: 100%;
 }
 
 /* Hidden checkbox */
@@ -23,7 +16,27 @@ header img {
     display: none;
 }
 
-/* Show language menu when checkbox is checked */
+.language-options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-options ul li a {
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
+}
+
+.language-options ul li a:visited {
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+/* Show language menu wzhen checkbox is checked */
 #language-toggle:checked ~ .language-options {
     display: block;
 }
@@ -114,24 +127,60 @@ nav ul li a {
     position: absolute;
     top: 60px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 1);
     padding: 15px;
     border-radius: 5px;
+    z-index: 1000;
 }
 
 /* Style for the menu */
-.burger-menu nav ul {
+.normal-size {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column; /* Ensure the items are in a column */
 }
 
-.burger-menu nav ul li {
-    margin: 10px 0;
+.normal-size li {
+    margin: 1% 0;
 }
 
-.burger-menu nav ul li a {
+.normal-size li a {
+    color: white;
+    text-decoration: none;
+    font-size
+    : 18px;
+}
+.short-size { 
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column; /* Ensure the items are in a column */
+}
+
+.short-size li {
+    margin: 1% 0;
+}
+
+.short-size li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
+
+@media (max-width: 900px) {
+    .short-size {
+        display: flex;
+    }
+    
+    .normal-size {
+        display: none;
+    }
+
+    .categories ul {
+        display: none;
+    }
+}
+
