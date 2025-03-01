@@ -34,9 +34,6 @@ header img {
     color: #000000;
 }
 
-
-
-/* Show language menu wzhen checkbox is checked */
 #language-toggle:checked ~ .language-options {
     display: block;
 }
@@ -53,7 +50,6 @@ header img {
     text-align: center;
 }
 
-/* Language menu is hidden by default */
 .language-options {
     display: none;
     position: absolute;
@@ -79,6 +75,7 @@ nav ul {
 
 nav ul li {
     display: inline;
+    font-size: 1.2vw;
 }
 
 nav ul li a {

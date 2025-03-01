@@ -16,6 +16,11 @@ h1 {
     padding-bottom: 3%;
 }
 
+a {
+    color: #fff; /* Change the link color to white */
+    text-decoration: none; /* Remove underline (optional) */
+}
+
 .info p {
     margin: 1% 0;
 }
@@ -23,14 +28,6 @@ h1 {
 .profile-options {
     margin-left: auto;
     gap: 1%;
-}
-
-.top button {
-    height: fit-content;
-    color: #ffffff;
-    background-color: #000000;
-    border: 0;
-    border-radius: 5px;
 }
 
 .top button p {

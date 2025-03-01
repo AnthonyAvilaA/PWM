@@ -51,10 +51,11 @@ form * {
     width: 100%;
 }
 
-form button {
+button {
     background-color: #ff0000;
     border-radius: 10px;
     border-width: 0;
     padding: 2% 25%;
     color: #ffffff;
+    text-align: center;
 }

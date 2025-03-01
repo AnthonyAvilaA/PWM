@@ -1,6 +1,5 @@
 .main-container{
-    margin: 5% 15%;
-    padding: 2%;
+    margin: 5%;
     justify-content: center;
     align-items: center;
 }
@@ -8,6 +7,18 @@ section p{
     margin: 2%;
     padding: 0;
 }
+
+.image-upload {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 5%;
+}
+
+.image-upload img {
+    width: 100%;
+    height: auto;
+}
+
 label {
     font-size: 80%;
     font-size: medium;
@@ -31,15 +42,20 @@ textarea{
     margin-bottom: 2%;
     resize: none;
 }
+
+
 button {
-    width: 25%;
+    width: 15vw;
+    height: 3vw;
     margin: 2% 0;
     padding: 1% 2%;
-    background-color: #e01616;
-    color: #f3f0f0;
+    border-radius: 10px;
+    border-width: 0;
+    background-color: #ff0000;
+    color: #ffffff;
     text-align: center;
-    border-radius: 5%;
 }
+
 .separed_buttons{
     display: flex;
     justify-content: space-between;

@@ -11,54 +11,49 @@
     </head>
     <body>
         <div id="header"></div>
-        <div class="main-container">
-            <article class="">
-                <section>
-                    <h2>Añadir noticia</h2>
-                    <p>
-                        <label for="title">Titulo:</label>
-                        <input type="text" id="title" required>
-                    </p>
-                </section>
-                <section>
-                    <p>
-                        <img src="/images/formato_imagen.png" height="250" width="400">
-                    </p>
-                    <button>Subir imagen</button>
-                </section>
-                <section>
-                    <p>
-                        <label for="place">Lugar:</label>
-                        <input type="text" id="place" required>
-                    </p>
-                    <p>
-                        <label for="description">Descripcion:</label>
-                        <textarea id="description" rows="7"></textarea>
-                    </p>
-                </section>
-                <section>
-                    <p>
-                        <label for="line_1">Parrafo 1:</label>
-                        <textarea id="line_1" rows="4"></textarea>
-                    </p>
-                    <p>
-                        <label for="line_2">Parrafo 2:</label>
-                        <textarea id="line_2" rows="4"></textarea>
-                    </p>
-                    <button>Añadir parrafo</button>
-                </section>
-                <section>
-                    <p>
-                        <label for="category">Categoria:</label>
-                        <input type="text" id="category" required>
-                    </p>
-                </section>
-                <p class="separed_buttons">
-                    <button>Guardar borrador</button>
-                    <button>Subir noticia</button>  
-                </p>
+        <main class="main-container">
+            <article class="add_news">
+                <h2>Añadir noticia</h2>
+                <form>
+                    <!-- Title -->
+                    <label for="title">Titulo:</label>
+                    <input type="text" id="title" name="title" required> 
+
+                    <!-- Image Upload -->
+                     <div class="image-upload">
+                        <img src="/images/formato_imagen.png" alt="foto noticia" height="250" width="400">
+                        <button type="button">Subir imagen</button>
+                     </div>
+                    
+                    <!-- Place -->
+                    <label for="place">Lugar:</label>
+                    <input type="text" id="place" name="place" required>
+
+                    <!-- Description -->
+                    <label for="description">Descripcion:</label>
+                    <textarea id="description" name="description" rows="7" required></textarea>
+
+                    <!-- Paragraphs -->
+                    <label for="line_1">Parrafo 1:</label>
+                    <textarea id="line_1" name="line_1" rows="4" required></textarea>
+
+                    <label for="line_2">Parrafo 2:</label>
+                    <textarea id="line_2" name="line_2" rows="4" required></textarea>
+
+                    <button type="button">Añadir parrafo</button>
+
+                    <!-- Category -->
+                    <label for="category">Categoria:</label>
+                    <input type="text" id="category" name="category" required>
+                </form>
+
+                <!-- Action Buttons -->
+                <dvi class="separed_buttons">
+                    <button type="button">Guardar borrador</button>
+                    <button type="submit">Subir noticia</button>  
+                </div>
             </article>
-        </div>
+        </main>
         <div id="footer"></div>
     </body>
 </html>
