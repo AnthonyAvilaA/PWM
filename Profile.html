@@ -13,178 +13,174 @@
 
     <body>
         <div id="header"></div> 
-        
-        <main>
+        <main class="main-container">
+            <h1>Perfil</h1>
+            <section class="top">
+                <img src="/images/user.png" height="50" alt="">
+                <div class="info">
+                    <p>Nombre</p>
+                    <p>miembro desde dd/mm/yyyy</p>
+                </div>
 
-            <div class="main-container">
-                <h1>Perfil</h1>
-                <section class="top">
-                    <img src="/images/user.png" height="50" alt="">
-                    <div class="info">
-                        <p>Nombre</p>
-                        <p>miembro desde dd/mm/yyyy</p>
-                    </div>
-    
-                    <div class="profile-options">
-                        <button class="regular-button">
-                            <a href="add_news.html">Añadir noticia</a>
-                        </button>
-                        
-                        <button class="regular-button">
-                            <p>Editar perfil</p>
-                        </button>
-                    </div>
-                </section>
-    
-                <nav>
-                    <button id="main">
-                        <p>Perfil</p>
+                <div class="profile-options">
+                    <button class="regular-button">
+                        <a href="add_news.html">Añadir noticia</a>
                     </button>
-                    <button id="activity">
-                        <p>Actividad</p>
+                    
+                    <button class="regular-button">
+                        <p>Editar perfil</p>
                     </button>
-                    <button id="saved">
-                        <p>Guardados</p>
-                    </button>
-                    <button id="options">
-                        <p>Opciones</p>
-                    </button>
-                </nav>
-    
-                <article class="activity">
-                    <h2>Últimas publicaciones de Usuario</h2>
-                    <div class="activity-content">
-                        <Section class="top-news">
+                </div>
+            </section>
+
+            <nav>
+                <button id="main">
+                    <p>Perfil</p>
+                </button>
+                <button id="activity">
+                    <p>Actividad</p>
+                </button>
+                <button id="saved">
+                    <p>Guardados</p>
+                </button>
+                <button id="options">
+                    <p>Opciones</p>
+                </button>
+            </nav>
+
+            <article class="activity">
+                <h2>Últimas publicaciones de Usuario</h2>
+                <div class="activity-content">
+                    <Section class="top-news">
+                        <h2>Nombre titular</h2>
+                        <img src="/images/formato_imagen.png" alt="">
+                        <p>Nombre periodista/Lugar</p>
+                        <p class="description">Descripción</p>
+                    </Section>
+                    <section class="other-news">
+                        <div>
                             <h2>Nombre titular</h2>
                             <img src="/images/formato_imagen.png" alt="">
                             <p>Nombre periodista/Lugar</p>
-                            <p class="description">Descripción</p>
-                        </Section>
-                        <section class="other-news">
-                            <div>
-                                <h2>Nombre titular</h2>
-                                <img src="/images/formato_imagen.png" alt="">
-                                <p>Nombre periodista/Lugar</p>
-                            </div>
-                            <div>
-                                <h2>Nombre titular</h2>
-                                <img src="/images/formato_imagen.png" alt="">
-                                <p>Nombre periodista/Lugar</p>
-                            </div>
-                            <div>
-                                <h2>Nombre titular</h2>
-                                <img src="/images/formato_imagen.png" alt="">
-                                <p>Nombre periodista/Lugar</p>
-                            </div>
-                            <div>
-                                <h2>Nombre titular</h2>
-                                <img src="/images/formato_imagen.png" alt="">
-                                <p>Nombre periodista/Lugar</p>
-                            </div>
-                            <div>
-                                <h2>Nombre titular</h2>
-                                <img src="/images/formato_imagen.png" alt="">
-                                <p>Nombre periodista/Lugar</p>
-                            </div>
-                        </section>
-                    </div>
-                </article>
-    
-                <article class="options">
-                    <section class="sider">
-                        <div class="personal-information">
-                            <h2>Información Personal</h2>
-                            <button id="edit-profile">
-                                <p>Editar perfil</p>
-                            </button>
-                            <button id="delete-profile">
-                                <p>Borrar perfil</p>
-                            </button>
                         </div>
-    
-                        <div class="email-configuration">
-                            <h2>Configuración de correo electrónico</h2>
-                            <button id="email-edit">
-                                <p>Editar correo electrónico</p>
-                            </button>
-                            <button id="email-notifications">
-                                <p>Notificaciones por correo electrónico</p>
-                            </button>
+                        <div>
+                            <h2>Nombre titular</h2>
+                            <img src="/images/formato_imagen.png" alt="">
+                            <p>Nombre periodista/Lugar</p>
                         </div>
-                        
-                        <div class="site-preferences">
-                            <h2>Preferencias del sitio</h2>
-                            <button id="interface-navigation">
-                                <p>Interfaz y navegación</p>
-                            </button>
-                            <button id="privacity-preferences">
-                                <p>Preferencias de privacidad</p>
-                            </button>
+                        <div>
+                            <h2>Nombre titular</h2>
+                            <img src="/images/formato_imagen.png" alt="">
+                            <p>Nombre periodista/Lugar</p>
+                        </div>
+                        <div>
+                            <h2>Nombre titular</h2>
+                            <img src="/images/formato_imagen.png" alt="">
+                            <p>Nombre periodista/Lugar</p>
+                        </div>
+                        <div>
+                            <h2>Nombre titular</h2>
+                            <img src="/images/formato_imagen.png" alt="">
+                            <p>Nombre periodista/Lugar</p>
                         </div>
                     </section>
-    
-                    <section class="edit-profile">
-                        <h2>Editar Perfil</h2>
-                        <img src="/images/user.png" height="40" alt="">
-                        <form action="#" method="post">
-                            <p>Display name</p>
-                            <input type="text" name="Name" id="user-name" required>
-                            <p>Location</p>
-                            <input type="text" name="Location" id="user-location" required>
-                            <p>Title</p>
-                            <input type="text" name="Title" id="user-Title" required>
-                            <button type="submit" id="profile-save">
-                                <p>Guardar</p>
-                            </button>
-                        </form>
-                    </section>
+                </div>
+            </article>
 
-                    <section class="interface-navigation">
-                        <h2>Interfaz y navegación</h2>
-                        <form action="#" method="post">
-                            <p>Tema</p>
-                            <div class="themes">
-                                <div>
-                                    <img src="images/formato_imagen.png" alt="">
-                                    <p>
-                                        <label for="white">Blanco</label>
-                                        <input type="checkbox" name="white" id="white">
-                                    </p>
-                                </div>
-                                
-                                <div>
-                                    <img src="images/formato_imagen.png" alt="">
-                                    <p>
-                                        <label for="default">Ajuste del sistema</label>
-                                        <input type="checkbox" name="default" id="default">
-                                    </p>
-                                </div>
-                                
-                                <div>
-                                    <img src="images/formato_imagen.png" alt="">
-                                    <p>
-                                        <label for="dark">Oscuro</label>
-                                        <input type="checkbox" name="dark" id="dark">
-                                    </p>
-                                </div>
-            
-                            </div>
+            <article class="options">
+                <section class="sider">
+                    <div class="personal-information">
+                        <h2>Información Personal</h2>
+                        <button id="edit-profile">
+                            <p>Editar perfil</p>
+                        </button>
+                        <button id="delete-profile">
+                            <p>Borrar perfil</p>
+                        </button>
+                    </div>
+
+                    <div class="email-configuration">
+                        <h2>Configuración de correo electrónico</h2>
+                        <button id="email-edit">
+                            <p>Editar correo electrónico</p>
+                        </button>
+                        <button id="email-notifications">
+                            <p>Notificaciones por correo electrónico</p>
+                        </button>
+                    </div>
+                    
+                    <div class="site-preferences">
+                        <h2>Preferencias del sitio</h2>
+                        <button id="interface-navigation">
+                            <p>Interfaz y navegación</p>
+                        </button>
+                        <button id="privacity-preferences">
+                            <p>Preferencias de privacidad</p>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="edit-profile">
+                    <h2>Editar Perfil</h2>
+                    <img src="/images/user.png" height="40" alt="">
+                    <form action="#" method="post">
+                        <p>Display name</p>
+                        <input type="text" name="Name" id="user-name" required>
+                        <p>Location</p>
+                        <input type="text" name="Location" id="user-location" required>
+                        <p>Title</p>
+                        <input type="text" name="Title" id="user-Title" required>
+                        <button type="submit" id="profile-save">
+                            <p>Guardar</p>
+                        </button>
+                    </form>
+                </section>
+
+                <section class="interface-navigation">
+                    <h2>Interfaz y navegación</h2>
+                    <form action="#" method="post">
+                        <p>Tema</p>
+                        <div class="themes">
                             <div>
-                                <h3>Alto contraste</h3>
-                                <label for="high-contrast">Mejora la legibilidad aumentando el contraste entre el texto, el fondo y los colores de los bordes.</label>
-                                <input type="checkbox" name="high-contrast" id="high-contrast">
+                                <img src="images/formato_imagen.png" alt="">
+                                <p>
+                                    <label for="white">Blanco</label>
+                                    <input type="checkbox" name="white" id="white">
+                                </p>
                             </div>
                             
                             <div>
-                                <h3>Habilitar atajos de teclado</h3>
-                                <label for="shortcuts">Se activa la captura del teclado para moverse por la página</label>
-                                <input type="checkbox" name="shortcuts" id="shortcuts">
+                                <img src="images/formato_imagen.png" alt="">
+                                <p>
+                                    <label for="default">Ajuste del sistema</label>
+                                    <input type="checkbox" name="default" id="default">
+                                </p>
                             </div>
-                        </form>
+                            
+                            <div>
+                                <img src="images/formato_imagen.png" alt="">
+                                <p>
+                                    <label for="dark">Oscuro</label>
+                                    <input type="checkbox" name="dark" id="dark">
+                                </p>
+                            </div>
         
-                    </section>
-                </article>
-            </div>
+                        </div>
+                        <div>
+                            <h3>Alto contraste</h3>
+                            <label for="high-contrast">Mejora la legibilidad aumentando el contraste entre el texto, el fondo y los colores de los bordes.</label>
+                            <input type="checkbox" name="high-contrast" id="high-contrast">
+                        </div>
+                        
+                        <div>
+                            <h3>Habilitar atajos de teclado</h3>
+                            <label for="shortcuts">Se activa la captura del teclado para moverse por la página</label>
+                            <input type="checkbox" name="shortcuts" id="shortcuts">
+                        </div>
+                    </form>
+    
+                </section>
+            </article>
         </main>
         <div id="footer"></div> 
     </body>
