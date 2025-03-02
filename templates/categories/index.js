@@ -7,4 +7,4 @@ async function loadHTMLByClass(className, url) {
     }
 }
 
-loadHTMLByClass("basic-news", "components/basic-news.html");
+loadHTMLByClass("basic-news", "/components/basic-news.html");
