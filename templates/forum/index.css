@@ -18,6 +18,7 @@
     height: 5%;
 }
 .foro{
+    position: relative;
     margin: 0 0 5% 0;
 }
 .amount_comments{
@@ -49,21 +50,19 @@
     color: #ffffff;
 }
 .linea-vertical {
-    display: flex;
     position: absolute;
-    left: 7%;
     width: 4px;
-    height: 84%;
     background-color: #8c0303;
+    top: 10%;
+    bottom: 0;
 }
 .linea-horizontal {
     display: flex;
     position: absolute;
-    left: 7%;
     width: 15%;
     height: 4px;
     background-color: #8c0303;
-    margin: 10px 0;
+    margin: 25px 0 10px 0;
 }
 .author, .publicacion p{
     display: flex;
