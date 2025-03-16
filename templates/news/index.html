@@ -3,6 +3,7 @@
 <head>
     <title>News</title>
     <script src="../../scripts/header-footer.js"></script>
+    <script src="./index.js"></script>  
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/header.css">
@@ -14,17 +15,17 @@
 
     <div class="main-container">
         <article>
-            <section class="related">
-                <div class="principal_news">
-                    <h1>Noticia principal</h1>
-                    <img src="/resources/images/formato_imagen.png" height="300" width="450" alt="">
-                    <div class="author">
-                        <img src="/resources/images/user.png" height="40" alt="">
-                        <div class="author-info">
-                            <h4>Tomás Herrera / Miami (EE.UU.)</h4>
-                            <p>Actualizado - 22/02/25</p>
-                        </div>
+            <div class="principal_news">
+                <h1>Noticia principal</h1>
+                <img src="/resources/images/formato_imagen.png" height="300" width="450" alt="">
+                <div class="author">
+                    <img src="/resources/images/user.png" height="40" alt="">
+                    <div class="author-info">
+                        <h4>Tomás Herrera / Miami (EE.UU.)</h4>
+                        <p>Actualizado - 22/02/25</p>
                     </div>
+                </div>
+                <div class="content">
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                         Quisquam asperiores, nulla ab perferendis dignissimos 
@@ -37,19 +38,21 @@
                         exercitationem, similique itaque!
                     </p>
                 </div>
+            </div>
+            <section class="related">
                 <h2>Puede interesarte:</h2>
-                <div class="related-1">
-                    <h4>Astrónomos descubren un nuevo planeta habitable.</h4>
+                <div class="related">
+                    <h3>Astrónomos descubren un nuevo planeta habitable.</h4>
                     <img src="/resources/images/formato_imagen.png" height="150" width="250" alt="">
                     <p>Laura Méndez / Observatorio ALMA (Chile)</p>
                 </div>
-                <div class="related-2">
-                    <h4>Civilización perdida en la selva amazónica.</h4>
+                <div class="related">
+                    <h3>Civilización perdida en la selva amazónica.</h4>
                     <img src="/resources/images/formato_imagen.png" height="150" width="250" alt="">
                     <p>Sofía Ramírez / Manaos (Brasil)</p>
                 </div>
-                <div class="related-3">
-                    <h4>Crean una batería que se recarga en instantes</h4>
+                <div class="related">
+                    <h3>Crean una batería que se recarga en instantes</h4>
                     <img src="/resources/images/formato_imagen.png" height="150" width="250" alt="">
                     <p>Andréz Velazco / Cambridge (Reino Unido)</p>
                 </div>
@@ -58,9 +61,9 @@
         <aside>
             <h2>Contenido relacionado</h2>
             <div class="content-wrapper">
-                <section class="related">
+                <section>
                     <h2>Puede interesarte:</h2>
-                    <div class="related-1">
+                    <div class="related">
                         <h3>Crean inteligencia artificial capaz de escribir libros completos</h3>
                         <img src="/resources/images/formato_imagen.png" height="175" width="300" alt="">
                         <p>Javier Montes / San Francisco (EE.UU.)</p>
@@ -71,7 +74,7 @@
                             eveniet iusto culpa. Tempore recusandae reiciendis animi.
                         </p>
                     </div>
-                    <div class="related-2">
+                    <div class="related">
                         <h3>Descubren una tumba intacta con tesoros de más de 4,000 años</h3>
                         <img src="/resources/images/formato_imagen.png" height="175" width="300" alt="">
                         <p>Ahmed Hassan / El Cairo (Egipto)</p>
@@ -82,7 +85,7 @@
                             minima incidunt non voluptatum repellat commodi eius!
                         </p>
                     </div>
-                    <div class="related-3">
+                    <div class="related">
                         <h3>Misteriosa señal de radio proveniente del espacio intriga a los astrónomos</h3>
                         <img src="/resources/images/formato_imagen.png" height="175" width="300" alt="">
                         <p>Daniela Cruz / Observatorio de Arecibo (Puerto Rico)</p>
@@ -93,7 +96,7 @@
                             voluptas sunt cumque cupiditate quasi officia!
                         </p>
                     </div>
-                    <div class="related-4">
+                    <div class="related">
                         <h3>Un anciano de 98 años termina la universidad y se gradúa con honores</h3>
                         <img src="/resources/images/formato_imagen.png" height="175" width="300" alt="">
                         <p>Valentina Ríos / Buenos Aires (Argentina)</p>
@@ -110,10 +113,10 @@
         </aside>
     </div>
     <div class="comments">
-        <a href="../forum/index.html">Comentarios</a>
+        <h2><a href="../forum/index.html">Comentarios</a></h2>
         <div class="comment">
             <img src="/resources/images/user.png" height="40" alt="">
-            <h4>Anthony Avila Arias / 23-02-25</h4>
+            <h3>Anthony Avila Arias / 23-02-25</h3>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                 Aliquid eligendi harum optio amet consequatur ab alias 
@@ -122,7 +125,7 @@
         </div>
         <div class="comment">
             <img src="/resources/images/user.png" height="40" alt="">
-            <h4>Giancarlos Prado Abreu / 22-02-25</h4>
+            <h3>Giancarlos Prado Abreu / 22-02-25</h3>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing 
                 elit. Delectus blanditiis quaerat iure eos. 
@@ -133,7 +136,7 @@
         </div>
         <div class="comment">
             <img src="/resources/images/user.png" height="40" alt="">
-            <h4>Ruben Grizon Gonzalez / 21-02-25</h4>
+            <h3>Ruben Grizon Gonzalez / 21-02-25</h3>
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing 
                 elit. Quia enim voluptate provident fugit vel 
