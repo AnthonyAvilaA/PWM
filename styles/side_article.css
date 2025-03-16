@@ -1,5 +1,6 @@
 .side-article {
-    display: grid;
+    display: flexbox;
+    flex-direction: column;
     grid-template-columns: 1fr 2fr; /* Image on the left, text on the right */
     gap: 5px; /* Space between image and text */
     background: #fafafa;
