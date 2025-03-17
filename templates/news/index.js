@@ -5,6 +5,7 @@ fetch('/resources/json/news.json')
         data = data.data; // Access the "data" array in the JSON
         const principal_news_html = document.querySelector('.principal_news');
 
+        // Load main content
         const news_id = new URLSearchParams(window.location.search).get("id");
         news_data = null;
         author_data = null;
@@ -31,6 +32,9 @@ fetch('/resources/json/news.json')
 
         principal_news_html.querySelector('.content').innerHTML = news_content;
 
+        // load comments
+        document.querySelector('#news-forum').href = `/templates/forum/index.html?id=${news_id}`;
+
         comments = news_data.comments;
         fetch('/resources/json/comments.json')
             .then(response => response.json())
@@ -52,6 +56,7 @@ fetch('/resources/json/news.json')
             )
             .catch(error => console.error('Error loading news:', error));
 
+        // Load related news
         len_data = data.length;
         related = document.querySelectorAll('.related');
         for (news of related) {

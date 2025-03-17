@@ -10,6 +10,7 @@
 }
 
 .noticia_foro_1 img {
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -21,16 +22,16 @@
     position: relative;
     margin: 0 0 5% 0;
 }
-.amount_comments{
+.amount-comments{
     display: flex;
     justify-content: space-between;
 }
-#comments{
+#number-of-comments{
     display: flex;
     align-items: center;
     width: 35%;
 }
-#comments p{
+#number-of-comments p{
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     font-size: small;
