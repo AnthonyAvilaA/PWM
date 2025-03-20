@@ -5,6 +5,7 @@
     <title>Argony News --Videos--</title>
     <script src="../../scripts/header-footer.js"></script>
     <script src="../../scripts/videos.js"></script>
+    <script src="./index.js"></script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/header.css">
@@ -18,68 +19,61 @@
     <main>
         <h1>VIDEOS</h1>
         <div class="main-container">
-            <article class="main-news">
-                <input class="row-button" id="main-news-left-button" type="button" value="←">
-                <div class="left-main-news">
-                    <h2>
-                        NOTICIAS ÚLTIMA HORA
+            <article class="main-video">
+                <div class="main-video-info">
+                    <h2 class="video-title">
+                        Nombre titular
                     </h2>
-                    <p>Nombre periodista / Lugar</p>
-                    <p class="description">
-                        Descripción <br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid atque similique iusto amet sunt.
+                    <p class="video-author">
+                        Nombre periodista / Lugar
+                    </p>
+                    <p class="video-description">
+                        Descripción <br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid atque
+                        similique
+                        iusto amet sunt.
                     </p>
                 </div>
-                <div class="right-main-news">
-                    <video controls width="240" height="140">
-                        <source src="../../resources/videos/video-example.mp4" type="video/mp4">
-                        news video
-                    </video>
-                </div>
-                <input class="row-button" id="main-news-right-button" type="button" value="→">
+                <iframe class="video-content" width="240" height="140" hspace="0" vspace="0"
+                    src="/resources/videos/video-example.mp4" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation" frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </article>
 
             <span class="separator"><span></span></span>
 
-            <div class="sub-category">
-                <input class="row-button" id="sub-category1-left-button" type="button" value="←">
+            <div class="sub-category tecnología">
+                <input class="row-button" id="tecnología-left-button" type="button" value="←">
                 <article>
-                    <h2>
-                        CATEGORIA 1
-                    </h2>
+                    <h2>tecnología</h2>
                     <section class="basic-video"></section>
                     <section class="basic-video"></section>
                 </article>
-                <input class="row-button" id="sub-category1-right-button" type="button" value="→">
+                <input class="row-button" id="tecnología-right-button" type="button" value="→">
             </div>
-
+            
             <span class="separator"><span></span></span>
-
-            <div class="sub-category">
-                <input class="row-button" id="sub-category2-left-button" type="button" value="←">
+            
+            <div class="sub-category política">
+                <input class="row-button" id="política-left-button" type="button" value="←">
                 <article>
-                    <h2>
-                        CATEGORIA 2
-                    </h2>
+                    <h2>política</h2>
                     <section class="basic-video"></section>
                     <section class="basic-video"></section>
                 </article>
-                <input class="row-button" id="sub-category2-right-button" type="button" value="→">
+                <input class="row-button" id="política-right-button" type="button" value="→">
             </div>
-
+            
             <span class="separator"><span></span></span>
-
-            <div class="sub-category">
-                <input class="row-button" id="sub-category3-left-button" type="button" value="←">
+            
+            <div class="sub-category otros">
+                <input class="row-button" id="otros-left-button" type="button" value="←">
                 <article>
-                    <h2>
-                        CATEGORIA 3
-                    </h2>
+                    <h2>otros</h2>
                     <section class="basic-video"></section>
                     <section class="basic-video"></section>
                 </article>
-                <input class="row-button" id="sub-category3-right-button" type="button" value="→">
+                <input class="row-button" id="otros-right-button" type="button" value="→">
             </div>
-        </div>
     </main>
     <div id="footer"></div>
 </body>
