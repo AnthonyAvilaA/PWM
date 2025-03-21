@@ -1,0 +1,29 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "documentId": "x9m2ubt1zqh05jw7y4h9lgke",
+            "name": "Deportes"
+        },
+        {
+            "id": 2,
+            "documentId": "r5g7an3ptz1y9e6uvk8wjsmd",
+            "name": "Ciencia"
+        },
+        {
+            "id": 3,
+            "documentId": "h8a3sjq2dwe7ynz5v1t4f8m0",
+            "name": "Política"
+        },
+        {
+            "id": 4,
+            "documentId": "k6w0lznj9ux2fr5v3q8d7hyc",
+            "name": "Entretenimiento"
+        },
+        {
+            "id": 5,
+            "documentId": "p1f8z6rj0l7t5swm9v2u4dky",
+            "name": "Mundo"
+        }
+    ]
+}
