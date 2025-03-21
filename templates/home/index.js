@@ -11,7 +11,7 @@ fetch('/resources/json/news.json')
         for (news_article of top_stories_section.querySelectorAll('.article')) {
             data = news_data[news_data.length - 1];
 
-            article_content = news_article.querySelector('.article-text-content');
+            article_content = news_article.querySelector('.text-content');
             article_content.querySelector('.title').innerHTML = `${data.Title}`;
             article_content.querySelector('.extract').innerHTML = `${data.short_description}`;
             article_content.querySelector('.read-more').href = `/templates/news/index.html?id=${data.documentId}`;
@@ -26,7 +26,7 @@ fetch('/resources/json/news.json')
         for (news_article of suggested_content_section.querySelectorAll('.side_article')) {
             data = news_data[news_data.length - 1];
 
-            article_content = news_article.querySelector('.side-article .side-text-content');
+            article_content = news_article.querySelector('.side-article .text-content');
             article_content.querySelector('.title').innerHTML = `${data.Title}`;
             article_content.querySelector('.extract').innerHTML = `${data.short_description}`;
             article_content.querySelector('.read-more').href = `/templates/news/index.html?id=${data.documentId}`;
