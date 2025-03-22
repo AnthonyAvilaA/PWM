@@ -54,7 +54,6 @@ fetch('/resources/json/videos.json')
                 });
             };
 
-            // Initialize the first set of videos
             loadVideos();
 
             // Add event listeners for navigation buttons

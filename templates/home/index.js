@@ -25,8 +25,10 @@ fetch('/resources/json/news.json')
 
         for (news_article of suggested_content_section.querySelectorAll('.side_article')) {
             data = news_data[news_data.length - 1];
-
+            
             article_content = news_article.querySelector('.side-article .text-content');
+            console.log(article_content);
+            if (article_content == null) continue;
             article_content.querySelector('.title').innerHTML = `${data.Title}`;
             article_content.querySelector('.extract').innerHTML = `${data.short_description}`;
             article_content.querySelector('.read-more').href = `/templates/news/index.html?id=${data.documentId}`;

@@ -23,7 +23,7 @@ fetch('/resources/json/news.json')
         // Load comments
         let comments_loaded = 0;
         let comments = [...news_data.comments]; // Clone the comments array
-
+        
         document.querySelector("#number-of-comments p").innerHTML = `Hay ${comments.length} comentarios`;
 
         fetch('/resources/json/comments.json')
@@ -37,8 +37,10 @@ fetch('/resources/json/news.json')
                         return;
                     }
 
+                    let comment_data = null;
                     const comment_id = comments.pop().documentId;
-                    const comment_data = comments_data.find(c => c.documentId === comment_id);
+                    comment_data = comments_data.find(c => c.documentId === comment_id);
+                    console.log(comment_data)                    
 
                     if (comment_data) {
                         const publicaciones = document.querySelector('.publicaciones');
@@ -54,7 +56,6 @@ fetch('/resources/json/news.json')
                             </div>
                             <p>${comment_data.Content}</p>
                         `;
-
                         publicaciones.appendChild(newComment);
                         comments_loaded++;
                     }

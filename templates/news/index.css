@@ -44,6 +44,12 @@ body{
     padding: 20px;
     border-radius: 5px;
 }
+.related {
+    margin: 2% 0;
+    padding: 2%;
+    border-radius: 5px;
+    background-color: rgb(227, 227, 227);
+}
 
 .related-item {
     margin-bottom: 15px;
