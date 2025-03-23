@@ -54,9 +54,20 @@ button {
     background-color: #ff0000;
     color: #ffffff;
     text-align: center;
+    cursor: pointer;
 }
 
 .separed_buttons{
     display: flex;
     justify-content: space-between;
+}
+
+select {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
 }
