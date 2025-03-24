@@ -58,4 +58,5 @@ button {
     padding: 2% 25%;
     color: #ffffff;
     text-align: center;
+    cursor: pointer;
 }
