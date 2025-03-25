@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const titleInput = document.querySelector("#title");
+    const imageInput = document.querySelector("img");
     const placeInput = document.querySelector("#place");
     const descriptionInput = document.querySelector("#description")
-    const paragraphInputs = document.querySelectorAll(".line");
+    const contentInput = document.querySelectorAll("content");
     const categoryInput = document.querySelector("#category");
     const form = document.querySelector("form");
     const regex = /^[a-zA-Z0-9\sáéíóúÁÉÍÓÚñÑ]+$/;
+    const regex_2 = /^[A-Za-zÀ-ÖØ-öø-ÿ\s.,]+$/;
 
     titleInput.addEventListener("input", function () {
 
@@ -40,30 +42,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    descriptionInput.addEventListener("input", function (){
-        const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s.,]+$/;
-    
-        if (!regex.test(descriptionInput.value)) {
-            descriptionInput.setCustomValidity("No puede contener símbolos.");
-        } else if (descriptionInput.value.length > 1999) {
-            descriptionInput.setCustomValidity("No puede contener más de 2000 caracteres.");
+    contentInput.addEventListener("input", function(){
+        if (!regex_2.test(contentInput.value)) {
+            contentInput.setCustomValidity("No puede contener símbolos.");
+        } else if (contentInput.value.length > 1999) {
+            contentInputInput.setCustomValidity("No puede contener más de 2000 caracteres.");
         } else {
-            descriptionInput.setCustomValidity("");
+            contentInputInput.setCustomValidity("");
         }
     });
 
-    paragraphInputs.forEach(paragraphInput => {
-        paragraphInput.addEventListener("input", function () {
-            const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s.,]+$/;
+    descriptionInput.addEventListener("input", function (){
     
-            if (!regex.test(paragraphInput.value)) {
-                paragraphInput.setCustomValidity("No puede contener símbolos.");
-            } else if (paragraphInput.value.length > 499) {
-                paragraphInput.setCustomValidity("No puede contener más de 500 caracteres.");
-            } else {
-                paragraphInput.setCustomValidity("");
-            }
-        });
+        if (!regex_2.test(descriptionInput.value)) {
+            descriptionInput.setCustomValidity("No puede contener símbolos.");
+        } else if (descriptionInput.value.length > 249) {
+            descriptionInput.setCustomValidity("No puede contener más de 250 caracteres.");
+        } else {
+            descriptionInput.setCustomValidity("");
+        }
     });
 
     categoryInput.addEventListener("input", function() {
