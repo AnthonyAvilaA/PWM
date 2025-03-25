@@ -5,9 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const userName = document.querySelector("input[type='text']");
     const form = document.querySelector("form");
 
+    function loadUsers() {
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        return users;
+    }
+
+    function saveUsers(users) {
+        localStorage.setItem("users", JSON.stringify(users));
+    }
+
     emailInput.addEventListener("input", async function () {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const { correoDuplicado } = await emailVerify(emailInput.value, userName.value); // Corregido aquí
+        const { correoDuplicado } = await DuplicateVerify(emailInput.value, userName.value);
     
         if (!emailRegex.test(emailInput.value)) {
             emailInput.setCustomValidity("Por favor, ingrese un email válido.");
@@ -19,19 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
         emailInput.reportValidity();
     });
 
-    async function emailVerify(email,username) {
-        try {
-            const response = await fetch("/resources/json/users.json");
-            const usuarios = await response.json();
+    async function DuplicateVerify(email, username) {
+        const usuarios = loadUsers();
 
-            const nombreDuplicado = usuarios.some(user => user.username === username);
-            const correoDuplicado = usuarios.some(user => user.email === email);
+        const nombreDuplicado = usuarios.some(user => user.username === username);
+        const correoDuplicado = usuarios.some(user => user.email === email);
 
-            return {nombreDuplicado,correoDuplicado};
-        } catch (error) {
-            console.error("Error al cargar los usuarios:", error);
-            return {nombreDuplicado:false, correoDuplicado:false};
-        }
+        return { nombreDuplicado, correoDuplicado };
     }
 
     passwordInput.addEventListener("input", function () {
@@ -54,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     userName.addEventListener("input", async function () {
         const regex = /^[a-zA-Z_]+$/;
-        const { nombreDuplicado } = await emailVerify(emailInput.value, userName.value);
+        const { nombreDuplicado } = await DuplicateVerify(emailInput.value, userName.value);
         if (userName.value.length < 4) {
             userName.setCustomValidity("El nombre de usuario debe tener al menos 4 caracteres.");
         } else if (userName.value.includes(" ")) {
@@ -68,9 +71,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        form.submit();
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault(); // Evita el envío del formulario predeterminado
+    
+        const users = loadUsers(); // Primero carga los usuarios
+    
+        const newUser = {
+            id: users.length + 1, // Usa users.length después de cargar los usuarios
+            documentId: crypto.randomUUID(),
+            username: userName.value,
+            email: emailInput.value,
+            provider: "local",
+            confirmed: true,
+            blocked: false,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            publishedAt: new Date().toISOString(),
+            password: passwordInput.value // ⚠️ No almacenar contraseñas en texto plano
+        };
+    
+        users.push(newUser);
+        saveUsers(users); // Guarda los usuarios en localStorage
+    
+        alert("Usuario registrado con éxito");
+    
+        // Redirecciona a otra página
         window.location.href = "/templates/home/";
-   });
+    });
 });

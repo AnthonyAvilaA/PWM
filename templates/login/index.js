@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.querySelector("input[type='password']");
     const form = document.querySelector("form");
 
+    function loadUsers() {
+        return JSON.parse(localStorage.getItem("users")) || [];
+    }
+    
     // Validación en tiempo real del email
     emailInput.addEventListener("input", function () {
         if (!validarEmail(emailInput.value)) {
@@ -29,12 +33,22 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // Evita el envío automático del formulario
 
-        // Simulación de autenticación
-        if (emailInput.value === "rubengc2120@gmail.com" && passwordInput.value === "123456") {
-            window.location.href = "/templates/home/"; // Redirige a la página principal
-        } else {
-            alert("Correo o contraseña incorrectos.");
+        const users = loadUsers();
+        const user = users.find(u => u.email === emailInput.value);
+
+        if (!user) {
+            alert("Correo o contraseña incorrectos");
+            return;
         }
+
+        // ⚠️ Asegúrate de comparar la contraseña correctamente
+        if (user.password !== passwordInput.value) {
+            alert("Correo o contraseña incorrectos");
+            return;
+        }
+
+        alert("Inicio de sesión exitoso");
+        window.location.href = "/templates/home/";
     });
 
     function validarEmail(email) {
