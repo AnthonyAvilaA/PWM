@@ -10,3 +10,43 @@
     flex-direction: column;
     gap: 20px;
 }
+
+#show-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#show-more.hidden {
+    display: none;
+}
+
+/*Mobile*/
+@media (max-aspect-ratio: 9/16) {
+    .featured-news-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .live-headline {
+        display: none !important;;    
+    }
+
+    .side-article {
+        display: none !important;
+    }
+
+    .top-stories {
+        flex-grow: 1;
+    }
+}
+
+/*Desktop*/
+@media (min-aspect-ratio: 16/9) {
+}

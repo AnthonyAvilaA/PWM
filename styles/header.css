@@ -167,7 +167,33 @@ nav ul li a {
     font-size: 18px;
 }
 
-@media (max-width: 900px) {
+/*Movil*/
+@media (max-aspect-ratio: 9/16) {
+    header {
+        position: relative;
+    }
+
+    header a img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .language-button {
+        font-size: 1.2em; /* Aumenta el tamaño del texto */
+        padding: 10px 20px; /* Aumenta el relleno */
+    }
+
+    .burger-icon {
+        font-size: 3em; /* Hace el icono del menú más grande */
+    }
+
+    .login-register a {
+        font-size: 1.2em; /* Aumenta el tamaño del texto */
+        padding: 10px 15px; /* Aumenta el espacio dentro del botón */
+    }
+    
     .short-size {
         display: flex;
     }
@@ -180,4 +206,3 @@ nav ul li a {
         display: none;
     }
 }
-
