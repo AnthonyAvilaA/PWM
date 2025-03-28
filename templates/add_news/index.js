@@ -1,17 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
     const titleInput = document.querySelector("#title");
-    const imageInput = document.querySelector("img");
+    const urlInput = document.querySelector("#url");
     const placeInput = document.querySelector("#place");
     const descriptionInput = document.querySelector("#description")
-    const contentInput = document.querySelectorAll("content");
+    const contentInput = document.querySelector("#content");
     const categoryInput = document.querySelector("#category");
     const form = document.querySelector("form");
     const regex = /^[a-zA-Z0-9\sáéíóúÁÉÍÓÚñÑ]+$/;
-    const regex_2 = /^[A-Za-zÀ-ÖØ-öø-ÿ\s.,]+$/;
+    const regex_2 = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s.,:!?'"()\n]+$/;
 
-    titleInput.addEventListener("input", function () {
+    function loadNews() {
+        const news = JSON.parse(localStorage.getItem("news")) || [];
+        return news;
+    }
 
-        if (!regex.test(titleInput.value)) {
+    function saveNews(news) {
+        localStorage.setItem("news", JSON.stringify(news));
+    }
+
+    async function TitleVerify(title) {
+        const noticias = loadNews();
+        return noticias.some(news => news.Title.toLowerCase() === title.toLowerCase());
+    }
+
+    titleInput.addEventListener("input", async function () {
+        const DuplicateTitle = await TitleVerify(titleInput);
+        if(DuplicateTitle){
+            titleInput.setCustomValidity("El titulo ya ha sido usado");
+        } else if (!regex.test(titleInput.value)) {
             titleInput.setCustomValidity("No puede contener símbolos.");
         } else if (titleInput.value.length == 50) {
             titleInput.setCustomValidity("No puede contener mas de 50 caracteres")
@@ -46,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!regex_2.test(contentInput.value)) {
             contentInput.setCustomValidity("No puede contener símbolos.");
         } else if (contentInput.value.length > 1999) {
-            contentInputInput.setCustomValidity("No puede contener más de 2000 caracteres.");
+            contentInput.setCustomValidity("No puede contener más de 2000 caracteres.");
         } else {
-            contentInputInput.setCustomValidity("");
+            contentInput.setCustomValidity("");
         }
     });
 
@@ -73,7 +89,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        form.submit();
-        window.location.href = "/templates/home/";
+        
+        const news = loadNews();
+
+        const newNews = {
+            id: news.length + 1,
+            documentId: crypto.randomUUID(),
+            Title: titleInput.value,
+            Content: [{ type: "text", text: contentInput.value }],
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            publishedAt: new Date().toISOString(),
+            short_description: descriptionInput.value,
+            category1: categoryInput.value,
+            category2: null,
+            category3: null,
+            image_url: urlInput.value,
+        }
+
+        news.push(newNews);
+        saveNews(news);
+    
+        alert("Su noticia ha sido agregada");
+    
+        // Redirecciona a otra página
+        window.location.href = "/templates/profile/";
     });
 });
