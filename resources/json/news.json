@@ -305,14 +305,6 @@
           "publishedAt": "2025-03-11T20:14:11.551Z"
         },
         {
-          "id": 16,
-          "documentId": "ji9c9jlauqs2171qek89ed7t",
-          "Content": "La accesibilidad debería ser una prioridad en el diseño web. Es importante que todos puedan navegar sin barreras.",
-          "createdAt": "2025-03-11T20:14:33.420Z",
-          "updatedAt": "2025-03-11T20:14:33.420Z",
-          "publishedAt": "2025-03-11T20:14:33.454Z"
-        },
-        {
           "id": 18,
           "documentId": "dqyn3cuhsqcxn9pf3p8fn7qa",
           "Content": "Estoy un poco escéptico sobre la IA en el diseño web. ¿Realmente puede reemplazar la creatividad humana?",
@@ -419,14 +411,6 @@
           "createdAt": "2025-03-11T20:15:06.204Z",
           "updatedAt": "2025-03-11T20:15:06.204Z",
           "publishedAt": "2025-03-11T20:15:06.223Z"
-        },
-        {
-          "id": 22,
-          "documentId": "ljti1tmy1ilb5vrnl73serfj",
-          "Content": "Ahora las empresas tendrán que ser más responsables, pero ¿realmente van a cumplir con estas leyes?",
-          "createdAt": "2025-03-11T20:15:19.120Z",
-          "updatedAt": "2025-03-11T20:15:19.120Z",
-          "publishedAt": "2025-03-11T20:15:19.139Z"
         },
         {
           "id": 24,
@@ -2007,14 +1991,6 @@
           "publishedAt": "2025-03-24T15:37:30.777Z"
         },
         {
-          "id": 90,
-          "documentId": "ch6x020qfzhai8vbrj5hxkn8",
-          "Content": "El chaval es un auténtico superclase. Con la altura q tiene se mueve con un estilo y técnica brutales.",
-          "createdAt": "2025-03-24T15:38:06.918Z",
-          "updatedAt": "2025-03-24T15:38:06.918Z",
-          "publishedAt": "2025-03-24T15:38:06.944Z"
-        },
-        {
           "id": 92,
           "documentId": "wrdjt3fjyoyij5qi89wgq90h",
           "Content": "Tendremos que aprendernos el nombre porque es buenísimo: es inteligente, tiene visión de juego, colocación, hace unos desplazamientos del copón...",
@@ -3034,14 +3010,2518 @@
         "publishedAt": "2025-03-11T19:51:22.652Z"
       },
       "comments": []
+    },
+    {
+      "id": 60,
+      "documentId": "ax5qjfzs4u61jt5c3977tv5p",
+      "Title": "El racismo no tiene cabida en el fútbol ni en nuestra sociedad",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El fútbol es algo más que un juego de once contra once. Es espectáculo, emoción, sentimiento, pasión y adrenalina en todos los sentidos. Son 42 equipos, cientos de futbolistas que defienden sus escudos y miles de aficiones por todo el mundo que apoyan, respetan y animan a unos colores cada jornada en LALIGA EA SPORTS y LALIGA HYPERMOTION. Y todo, para disfrutar y vibrar de este deporte en estado puro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "En el campeonato doméstico español juegan los mejores futbolistas de diferentes orígenes, culturas y razas de todo el mundo. Sin embargo, lamentablemente, por culpa de una minoría, el racismo se ha colado dejando una mancha en el deporte que tanta gente ama, mima, siente y quiere."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "LALIGA no va a parar hasta erradicarlo del todo. Por ello, hay que destacar los esfuerzos que está llevando a cabo para combatir el racismo, tanto dentro como fuera de los estadios, con el objetivo de eliminar del fútbol esta lacra de la sociedad. El mensaje es claro: tolerancia cero ante cualquier muestra de racismo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-24T16:20:44.374Z",
+      "updatedAt": "2025-03-24T16:20:44.374Z",
+      "publishedAt": "2025-03-24T16:20:44.399Z",
+      "short_description": "El fútbol es más que un deporte. Es cultura, es pasión, es un lenguaje universal. Y como tal, debe ser un espacio libre de racismo.",
+      "category1": "deportes",
+      "category2": "entretenimiento",
+      "category3": "política",
+      "image_url": "https://uecluster.blob.core.windows.net/images//1742222416_foto-1.jpg",
+      "user": {
+        "id": 5,
+        "documentId": "w2go4bdr26ipm3ywdep90qn3",
+        "username": "María Fernández",
+        "email": "maría@fernández.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:50:59.998Z",
+        "updatedAt": "2025-03-11T19:50:59.998Z",
+        "publishedAt": "2025-03-11T19:50:59.621Z"
+      },
+      "comments": []
+    },
+    {
+      "id": 62,
+      "documentId": "s9bt4v5jv4bym6cbs2tz75wb",
+      "Title": "El extraño despido de Pedro Rivero, entrenador del Estudiantes, tras siete victorias seguidas: \"Definitivamente, no entiendo nada\"",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Desde que hace cuatro años el Movistar Estudiantes descendiera a LEB Oro -hasta 2021 era, junto a Real Madrid y Joventut, el único club español que había participado en todas las ediciones de la máxima categoría-, todo ha sido una búsqueda desesperada y sin éxito del regreso a la elite. Este lunes, la frustración ha llevado a la histórica entidad a tomar una decisión que pocos entienden. Después de una racha de siete victorias consecutivas y todas las opciones del ascenso todavía intactas (sigue dependiendo de sí mismo hasta para lograrlo de forma directa), el club del Ramiro ha decidido destituir a su entrenador."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Pedro Rivero llegó en el verano del 2023 con la vitola de ser experto en ascensos. El segoviano, un histórico base de la LEB (también jugó brevemente en ACB con el Cajasol y el Murcia), logró subir como jugador al Zaragoza en 2010, al Murcia en 2011, al Alicante en 2013 y al Ourense en 2015. Como técnico, en su primera temporada consiguió el ascenso de Plata a Oro con el Lucentum Alicante. Y en 2023 llevó a ACB al Palencia, con el que también ganó la Copa Princesa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El curso pasado se quedó a las puertas con el Estudiantes. Perdió la final de los playoffs contra el Lleida, como dos cursos antes lo había hecho ante el Girona de Marc Gasol. Cierto es que había muchas dudas con el juego actual del equipo, con la consistencia de una plantilla que hace unos días fue reforzada con Joaquín Rodríguez, cedido desde el Casademont Zaragoza. El domingo contra el Súper Agropal Palencia (104-98) anotó 33 puntos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "\"Inocentada\""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Era el séptimo triunfo de carrerilla para los colegiales, para un balance de 22-3. Con uno de los billetes hacia la Liga Endesa muy avanzado por el San Pablo Burgos, líder destacado, a los madrileños les tocaba afrontar con solvencia unos playoffs que en el pasado no les fueron nada bien. Esa puede ser la razón por la que la directiva que encabeza Ignacio Triana ha decidido prescindir de Rivero. Aunque eso no sólo haya causado un gran asombro en parte de los aficionados. También incluso en los jugadores."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-24T16:21:49.348Z",
+      "updatedAt": "2025-03-24T16:21:49.348Z",
+      "publishedAt": "2025-03-24T16:21:49.392Z",
+      "short_description": "El histórico club madrileño, que busca el retorno a ACB, es segundo en Primera FEB y sigue dependiendo de sí mismo.",
+      "category1": "deportes",
+      "category2": "entretenimiento",
+      "category3": "política",
+      "image_url": "https://phantom-elmundo.uecdn.es/d35b83db041719c37d6882fe751ed8dd/crop/0x56/1875x1306/resize/920/f/webp/assets/multimedia/imagenes/2025/03/17/17422383057375.jpg",
+      "user": {
+        "id": 4,
+        "documentId": "zkftsz0a4hq9m9ybd94vsiho",
+        "username": "Pedro López",
+        "email": "wdaw@gmail.com",
+        "provider": "local",
+        "confirmed": false,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:50:34.009Z",
+        "updatedAt": "2025-03-11T19:50:34.009Z",
+        "publishedAt": "2025-03-11T19:50:33.598Z"
+      },
+      "comments": []
+    },
+    {
+      "id": 66,
+      "documentId": "gzcg62qmoa81q9ki8b06gej3",
+      "Title": "Las oposiciones con menor competencia en 2025: ¿cuáles son y cómo inscribirte?",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "A la hora de presentarse a una oposición hay que tener en cuenta varios factores importantes: número de plazas, dificultad del temario, cada cuánto tiempo salen nuevas plazas y competencia para las mismas. La unión de todos estos factores nos dará pistas de cuál puede ser más asequible o menos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Sin embargo, hay una serie de plazas poco conocidas y, por tanto, poco demandadas que pueden suponer una buena oportunidad para entrar en la Administración, tal y como señala Oposita Test, el blog sobre oposiciones. Te contamos algunas de ellas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Cuerpo superior de interventores y auditores (A1)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "En las oposiciones de 2024 se convocaron 25 plazas de acceso por turno libre y 25 de promoción interna y se presentaron 106 aspirantes y 38 respectivamente, por lo que el ratio es bastante bajo. Eso sí, el proceso no es sencillo ni corto. Hay seis ejercicios obligatorios y eliminatorios y, una vez superados, empieza un curso selectivo que puede durar hasta 10 meses. En total, cientos de temas y la obligatoriedad de tener título de Grado, Licenciado, Ingeniero o Arquitecto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Cuerpo de Ayudantes de Archivos, Bibliotecas y Museos (A2)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Estas plazas se dividen por secciones, teniendo Archivos, Bibliotecas y Museos su propia categoría. Son entre 70 y 80 temas, dependiendo de la especialidad y el único requisito es tener un título de Diplomado, Ingeniero Técnico, Arquitecto Técnico o Grado. El plazo de presentación de solicitudes para la última convocatoria finalizó en enero de 2025."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Vigilancia aduanera (C1)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Este 2025 también hay oposiciones para este puesto. Concretamente, son 210 plazas en turno libre, de las cuales 160 son para la especialidad de Investigación y 50 para la especialidad Marítima. Entre los requisitos, estar en posesión del título de Bachiller o Técnico y tener el carné de conducir"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "En el caso de presentarse a la especialidad Marítima:tener el certificado de competencia marinera exigido por el artículo 56 de la Ley 66/1997, o de los certificados, títulos o tarjetas equivalentes, que son: título profesional de Marinero de Puente, título profesional de Marinero de Máquinas, tarjeta profesional de Marinero Pescador. Son un total de 37 temas, divididos en cuatro bloques, de los cuales tres son comunes y el otro relacionado con la especialidad."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Técnico de la Administración de la Seguridad Social (A1)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Para 2025 se han convocado 381 plazas por el sistema de acceso libre y 297por el sistema de promoción interna. Se trata de una fase de oposición compuesta por cuatro ejercicios obligatorios y eliminatorios y un curso selectivo. En total, son 87 temas y es necesario tener un título de Doctor, Licenciado, Ingeniero, Arquitecto o Grado."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-24T16:28:22.742Z",
+      "updatedAt": "2025-03-24T16:28:22.742Z",
+      "publishedAt": "2025-03-24T16:28:22.784Z",
+      "short_description": "Depende de factores como el número de plazas o la cantidad y dificultad del temario",
+      "category1": "política",
+      "category2": "mundo",
+      "category3": null,
+      "image_url": "https://phantom-elmundo.uecdn.es/cfd28c8f3b9eb1411966a688afa01343/resize/920/f/webp/assets/multimedia/imagenes/2025/03/24/17428051771347.jpg",
+      "user": {
+        "id": 7,
+        "documentId": "rz2xqzpm9afylviedwv1ynd9",
+        "username": "Javier Sánchez",
+        "email": "javier@xn--snchez-pta.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:51:43.287Z",
+        "updatedAt": "2025-03-11T19:51:43.287Z",
+        "publishedAt": "2025-03-11T19:51:42.886Z"
+      },
+      "comments": []
+    },
+    {
+      "id": 72,
+      "documentId": "yx4qpmu5qwbpl523mzas4rta",
+      "Title": "Los desafíos para el nuevo presidente: premios, Rusia, dopaje, trans y... ¿Arabia Saudí como sede olímpica?",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "«Podemos introducir los premios económicos en los Juegos. Desde mis años como atleta siempre he hablado de la importancia del bienestar financiero de los deportes. Y creo que se puede hacer respetando la filosofía olímpica. Debemos aceptar que ahora vivimos en un mundo diferente», anunciaba meses atrás Sebastian Coe, uno de los siete candidatos a la presidencia del Comité Olímpico Internacional (COI) y explotaba la campaña que terminaba este jueves. De repente, un asunto peliagudo en el que todos los aspirantes tenían que mojarse. Desde su creación, los Juegos Olímpicos promueven el espíritu amateur del deporte, «lo importante es participar», pero teniendo en cuenta que el COI facturó 7.000 millones de euros en el pasado ciclo olímpico, el debate es lógico. ¿Premiar las medallas o no hacerlo?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Muchos comités nacionales ya recompensan a sus deportistas por cada oro, por cada plata, por cada bronce -en España, 94.000, 48.000 y 30.000 euros, pero en este caso sería un premio de la propia organización. Coe lo tiene claro y los otros candidatos también: el resto, ni hablar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Excepto Coe, nadie más se ha proclamado a favor de los premios por una cuestión lógica: habría menos dinero a repartir. Si las más de 1.000 medallas repartidas en los Juegos Olímpicos llevasen consigo una retribución, los comités nacionales y las federaciones internacionales verían reducidos sus ingresos y sus presidentes forman el grueso de los votantes en las elecciones."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "«Estoy totalmente en desacuerdo [con Coe]. Los campeones deben ganarse la vida con ello, pero tienen que ser sus comités olímpicos, sus patrocinadores o sus países los que recompensen sus éxitos», respondía Juan Antonio Samaranch Jr. en la misma línea que el resto de aspirantes. De hecho, tan rotunda ha sido la negativa de los candidatos a la propuesta de Coe, que el ex mediofondista ha tenido que matizarla. En sus últimas comparecencias ha asegurado que no habría premios generalizados y que sólo existirán en determinados deportes."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-24T16:38:41.755Z",
+      "updatedAt": "2025-03-24T16:38:41.755Z",
+      "publishedAt": "2025-03-24T16:38:41.797Z",
+      "short_description": "El debate sobre pagar a los medallistas ha marcado una campaña sin muchas más diferencias. En el horizonte, la elección de 2036, con Riad de candidata",
+      "category1": "deportes",
+      "category2": "política",
+      "category3": null,
+      "image_url": "https://phantom-elmundo.uecdn.es/47c7a0bfbc0bd9e2495ddc6b7ce82322/resize/920/f/webp/assets/multimedia/imagenes/2025/03/19/17423775879310.jpg",
+      "user": {
+        "id": 3,
+        "documentId": "dy7fjuq0en3vhuj827hdsvjd",
+        "username": "Ana Martínez",
+        "email": "awdwa@gmail.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:50:04.122Z",
+        "updatedAt": "2025-03-11T19:50:04.122Z",
+        "publishedAt": "2025-03-11T19:50:03.775Z"
+      },
+      "comments": []
+    },
+    {
+      "id": 74,
+      "documentId": "vmitmjluf3x0hmcx2m1jhtjd",
+      "Title": "Pau Cubarsí, una estrella de 18 años: \"Si algún día el fútbol no va bien, la carpintería siempre está ahí\"",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "A finales de enero rebasó la mayoría de edad y, después de 16-18 clases, se ha sacado el carnet de conducir. Pau Cubarsí (Girona, 18 años) es una de las apariciones más impactantes, quizá junto a Lamine Yamal y Asencio, del panorama español en el último año y medio. Criado en un pueblo que tiene 350 metros de longitud entre su entrada y su salida, y menos de 200 habitantes, de nombre Estanyol, en la montaña de Girona, se expresa mejor en catalán que en castellano, pero en cualquiera de los dos se intuye un chaval bien educado y con un punto divertido que, por timidez, no preside la conversación. Tiene una pinta de titular en la eliminatoria contra los Países Bajos que no puede con ella. Y hablar con él, por mucho que sea una de las estrellas del Barça y de la selección, es hablar con un crío. Y tiene su gracia, porque, en el momento de charlar sobre la carpintería que tiene su familia desde 1905, él lo tiene claro. Muy claro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "PREGUNTA.¿Cómo está?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "RESPUESTA. Recuperando ya después del domingo, muy bien."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "P. ¿Cuántos días le duelen las piernas después de un partido?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "R. Me dura el dolor uno o dos días, que es lo que normalmente tenemos entre partido y partido. Como al tercero ya hay que jugar, pues estás a tope para el siguiente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "P. Sí claro, usted que tiene 18 años."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "R. ¡Bueno, claro! Cuando sea más mayor, ya veremos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "P. ¿Le reconocen por la calle?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "R. Sí, a veces. Por mi ciudad, por Girona, paso más desapercibido. También porque voy con mis amigos, y como vamos todos con el mismo peinado, pues me reconocen menos. Eso me ayuda a pasar desapercibido, que a veces no está mal."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-24T16:40:30.245Z",
+      "updatedAt": "2025-03-24T16:40:30.245Z",
+      "publishedAt": "2025-03-24T16:40:30.284Z",
+      "short_description": "Tenía todo (vídeo incluido) para ir a la Euro, pero se cayó de la lista. Recién sacado el carnet de conducir, habla, vive y se peina como lo que es, un crío que, eso sí, sabe lo que cuesta sacar adelante un negocio como el que sujeta a su familia desde 1905.",
+      "category1": "entretenimiento",
+      "category2": "deportes",
+      "category3": "política",
+      "image_url": "https://phantom-elmundo.uecdn.es/aff1850da409e854044d35085b2c04ac/crop/95x240/2716x1987/resize/920/f/webp/assets/multimedia/imagenes/2025/03/18/17423166127254.jpg",
+      "user": {
+        "id": 6,
+        "documentId": "yvfbovyczv3gq3vode3q8pij",
+        "username": "Laura Gómez",
+        "email": "laura@xn--gmez-qqa.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:51:23.002Z",
+        "updatedAt": "2025-03-11T19:51:23.002Z",
+        "publishedAt": "2025-03-11T19:51:22.652Z"
+      },
+      "comments": []
+    },
+    {
+      "id": 76,
+      "documentId": "l7mhgv3scl3tegdudvf8bfuw",
+      "Title": "Muere a los 82 años Akinori Nakayama, ganador de 10 medallas olímpicas de gimnasia",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Akinori Nakayama, gimnasta japonés ganador de seis medallas de oro olímpicas, murió el pasado 9 de marzo a los 82 años, según informaciones de este lunes de Federación Japonesa de gimnasia recogidas por Afp."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El deportista murió como consecuencia de un cáncer de estómago, según medios locales."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-24T16:41:26.369Z",
+      "updatedAt": "2025-03-24T16:41:26.369Z",
+      "publishedAt": "2025-03-24T16:41:26.402Z",
+      "short_description": "El deportista, que murió como consecuencia de un cáncer de estómago, era especialista en las anillas e incluso un movimiento de balanceo en este aparato lleva su nombre, el \"Nakayama\"",
+      "category1": "deportes",
+      "category2": "entretenimiento",
+      "category3": "mundo",
+      "image_url": "https://phantom-elmundo.uecdn.es/a2c73ada2d3a0795339e5e2c8561a932/resize/920/f/webp/assets/multimedia/imagenes/2025/03/18/17422933994687.jpg",
+      "user": {
+        "id": 6,
+        "documentId": "yvfbovyczv3gq3vode3q8pij",
+        "username": "Laura Gómez",
+        "email": "laura@xn--gmez-qqa.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:51:23.002Z",
+        "updatedAt": "2025-03-11T19:51:23.002Z",
+        "publishedAt": "2025-03-11T19:51:22.652Z"
+      },
+      "comments": []
+    },
+    {
+      "id": 77,
+      "documentId": "idd2fzvsvn3o7ve5ykn4hdfc",
+      "Title": "Conversaciones en Riad sobre el posible alto el fuego: Ucrania desea proteger su soberanía de injerencias rusas",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "En determinadas cuestiones, el régimen ruso resulta más transparente que ningún otro en el mundo. Dimitri Medvedev, el histriónico ex presidente de Rusia y vicepresidente del Consejo de Seguridad del país, publicó la pasada semana un mensaje diplomáticamente esclarecedor: \"La llamada telefónica entre los presidentes Putin y Trump demostró una idea bien conocida: solo hay Rusia y Estados Unidos en el comedor. El menú incluye aperitivos ligeros: coles de Bruselas, fish and chips británico y gallo parisino. El plato principal es una chuleta al estilo de Kiev. ¡Buen provecho!\". En pocas palabras, deja claro su ideal: negociación en la mesa de Washington y Moscú. Europa y Ucrania son el menú."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "En este contexto de reedición de los acuerdos Ribbentrop-Molotov de 1939 entre los nazis y la URSS para repartirse Polonia, todo lo que desea Ucrania puede definirse en una palabra: independencia. Para muchos historiadores ucranianos, esta no deja de ser otro capítulo más dentro de su lucha por la independencia contra Rusia, que se remonta a la lucha de los cosacos contra los zares. Por eso, por su superviviencia como estado, Ucrania combate la invasión Rusia desde el 24 de febrero de 2022."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El gobierno de Zelenski, que lleva clamando contra los incumplimientos rusos contra los acuerdos de Minsk e incluso contra el protocolo de Budapest de 1994, que reconocía la soberanía del país a cambio de su arsenal nuclear, desea preservar su Estado nacido de la caída de la URSS."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Además, necesita herramientas para protegerlo, vista la agresividad de los rusos desde 2014, año en el que Ucrania dejó de estar bajo el yugo de Moscú. Para sobrevivir, Kiev reclama en este proceso unas garantías de seguridad férreas. Para Zelenski, la mejor opción sería poder formar parte de la OTAN, pero esa opción de momento parece descartada al ser una de las líneas rojas para el alto el fuego."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-24T16:29:27.081Z",
+      "updatedAt": "2025-03-29T19:47:14.750Z",
+      "publishedAt": "2025-03-29T19:47:14.795Z",
+      "short_description": "Las líneas rojas de Kiev en la negociación de paz tienen que ver con la supervivencia",
+      "category1": "política",
+      "category2": "mundo",
+      "category3": null,
+      "image_url": "https://phantom-elmundo.uecdn.es/2169eb18ba3338c13c672507eab35a97/resize/920/f/webp/assets/multimedia/imagenes/2025/03/23/17427465761848.jpg",
+      "user": {
+        "id": 6,
+        "documentId": "yvfbovyczv3gq3vode3q8pij",
+        "username": "Laura Gómez",
+        "email": "laura@xn--gmez-qqa.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:51:23.002Z",
+        "updatedAt": "2025-03-11T19:51:23.002Z",
+        "publishedAt": "2025-03-11T19:51:22.652Z"
+      },
+      "comments": [
+        {
+          "id": 16,
+          "documentId": "ji9c9jlauqs2171qek89ed7t",
+          "Content": "La accesibilidad debería ser una prioridad en el diseño web. Es importante que todos puedan navegar sin barreras.",
+          "createdAt": "2025-03-11T20:14:33.420Z",
+          "updatedAt": "2025-03-11T20:14:33.420Z",
+          "publishedAt": "2025-03-11T20:14:33.454Z"
+        },
+        {
+          "id": 90,
+          "documentId": "ch6x020qfzhai8vbrj5hxkn8",
+          "Content": "El chaval es un auténtico superclase. Con la altura q tiene se mueve con un estilo y técnica brutales.",
+          "createdAt": "2025-03-24T15:38:06.918Z",
+          "updatedAt": "2025-03-24T15:38:06.918Z",
+          "publishedAt": "2025-03-24T15:38:06.944Z"
+        },
+        {
+          "id": 22,
+          "documentId": "ljti1tmy1ilb5vrnl73serfj",
+          "Content": "Ahora las empresas tendrán que ser más responsables, pero ¿realmente van a cumplir con estas leyes?",
+          "createdAt": "2025-03-11T20:15:19.120Z",
+          "updatedAt": "2025-03-11T20:15:19.120Z",
+          "publishedAt": "2025-03-11T20:15:19.139Z"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "documentId": "gu2ahs6a04ds55q238a8f5v1",
+      "Title": "La resiliencia de Jofre tras perder a sus padres: \"Eran mis mejores amigos, ahora hablo con ellos de otra forma, les pido que me den fuerza antes del partido\"",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Hay una llamada que Jofre Carreras (Girona, 2001) añora en cada partido que juega. La de sus padres, que fallecieron prematuramente, su padre cuando el jugador tenía 19 años y su madre cuando alcanzaba los 22. \"Hablábamos antes y después de los partidos, eran como mis mejores amigos, ahora lo hago de otra forma, les pido que me den fuerza y suerte. Cuando meto un gol siempre se lo dedico\", apunta el futbolista a EL MUNDO."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El centrocampista del RCD Espanyol les \"echa mucho de menos\" y su ausencia le ha servido para darse cuenta que tienes que \"intentar dedicar más tiempo a los tuyos\". Así que las charlas que antes eran para sus progenitores, hoy son para su chica y para su representante, que ejerce un poco de padre, y le ayudan a sobrellevar la ausencia de dos personas insustituibles, \"únicas\", para él."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El contrapunto, que no el consuelo, es que el futbolista ha cumplido su objetivo de pequeño. Ese que les respondía a sus profesores del colegio desde su etapa infantil cuando le preguntaban qué quería ser de mayor. \"Yo sabía que era muy difícil, pero era mi sueño\", revela y añade las dificultades que entraña y los obstáculos que tienes que superar, una grave lesión de rodilla entre ellos, pero que lo hacen más bonito cuando al fin se llega a la cima de la montaña."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Tras pasar por la sección de fútbol de un club de excursionistas, el Geieg, liderado entonces por el hoy presidente del Girona, Delfí Geli, Jofre creció futbolísticamente y llegó al infantil del RCD Espanyol. Con 20 años y 197 días debutó en Primera División, un 31 de diciembre de 2021, ante el Valencia. Apenas nueve minutos inolvidables. \"Tenía los típicos nervios, pero a la que me llamó el míster, estaba preparado. Venía de una lesión muy larga y había trabajado muchísimo para llegar ahí\", cuenta el futbolista que asegura que mantiene esa camiseta guardada como oro en paño."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T19:49:44.467Z",
+      "updatedAt": "2025-03-29T19:49:54.040Z",
+      "publishedAt": "2025-03-29T19:49:54.066Z",
+      "short_description": "El joven extremo del Espanyol se quedó huérfano en el espacio de un año y cada gol que marca lo hace en su memoria. Este sábado recibe al Atlético.",
+      "category1": "deportes",
+      "category2": "entretenimiento",
+      "category3": null,
+      "image_url": "https://phantom-elmundo.uecdn.es/26bf1c82cc271f081cee708792fac36b/resize/920/f/webp/assets/multimedia/imagenes/2025/03/27/17430970156244.jpg",
+      "user": {
+        "id": 7,
+        "documentId": "rz2xqzpm9afylviedwv1ynd9",
+        "username": "Javier Sánchez",
+        "email": "javier@xn--snchez-pta.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:51:43.287Z",
+        "updatedAt": "2025-03-11T19:51:43.287Z",
+        "publishedAt": "2025-03-11T19:51:42.886Z"
+      },
+      "comments": [
+        {
+          "id": 108,
+          "documentId": "yrmogjh6so3mke3ixhbtaq26",
+          "Content": "Resiliencia? Y si hablamos normal, mejor ?",
+          "createdAt": "2025-03-29T19:51:10.164Z",
+          "updatedAt": "2025-03-29T19:51:10.164Z",
+          "publishedAt": "2025-03-29T19:51:10.173Z"
+        },
+        {
+          "id": 110,
+          "documentId": "x5rsvyixcxrqqqvrbndx3kzm",
+          "Content": "Ojalá y marques 1000 goles!!! Mucho ánimo y fuerza!",
+          "createdAt": "2025-03-29T19:51:28.143Z",
+          "updatedAt": "2025-03-29T19:51:28.143Z",
+          "publishedAt": "2025-03-29T19:51:28.153Z"
+        },
+        {
+          "id": 112,
+          "documentId": "jn08rq9pqaj4kvgpy7ihnxuj",
+          "Content": "No te conozco en persona pero te envío mucho ánimo y a seguir luchando!",
+          "createdAt": "2025-03-29T19:51:58.791Z",
+          "updatedAt": "2025-03-29T19:51:58.791Z",
+          "publishedAt": "2025-03-29T19:51:58.809Z"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "documentId": "jmwaf6ln3waarvt56gclpfyd",
+      "Title": "La 'estrella' del Real Madrid brilla en Belgrado",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El Real Madrid, merced a un comienzo demoledor, dio un golpe de autoridad al vencer en la pista del Estrella Roja (72-78) y con ello dio un paso importante con destino hacia el objetivo de disputar la postemporada en la Euroliga."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Encaraba el conjunto blanco una 'final' en Belgrado ante un cuadro local que también se jugaba mucho, pues un triunfo le daba el pase matemático a los playoffs. Bien lo sabían sus aficionados, que cumplieron con los pronósticos y convirtieron en infernal el ambiente en la previa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Se daba pues el contexto propicio para una tortura, pero de todos los escenarios apocalípticos posibles no se cumplió ninguno. Al contrario, el Real Madrid se paseó por el averno con bata y zapatillas de estar por casa, en la línea de lo que había sucedido en sus dos partidos anteriores ante el ASVEL Villeurbanne y el EA7 Emporio Armani. Con la diferencia de que aquellos fueron como local."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Ante los franceses irrumpieron con un 15-0. Contra los italianos se presentaron en la oficina luciendo un 12-3. Y esta vez su puesta en escena fue un 0-14, el mejor parcial de salida de un visitante en la máxima competición europea desde un 0-15 del CSKA de Moscú en Valencia en la 2017-2018. Solo en ese partido y en otros dos se vio algo mejor en la historia de la Euroliga que lo que hizo el conjunto de Chus Mateo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Principios prometedores que en los tres casos tuvieron algo en común, Walter Tavares. El pívot caboverdiano, aprovechando los problemas de efectivos en el juego interior del rival, se cebó bajo el aro opuesto. Y en el propio condicionó el juego del equipo serbio, obligado este a recurrir al triple como arma arrojadiza."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Para su desgracia, el cuarto inicial fue un cúmulo de desaciertos. Lo reflejan datos como que la primera canasta en juego del anfitrión no llegó hasta que quedaban 03:35 para el final del primer acto. O que los primeros once lanzamientos exteriores se fueron al limbo, llegando a los diez primeros minutos con 1 de 15 en ese apartado y 3 de 22 en tiros totales. Y pese a un dominio abrumador en el rebote ofensivo, que hizo el drama menor (9-22, m.10)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Todo ello lo fue parcheando el Estrella Roja antes del descanso, maquillando ligeramente sus pésimos guarismos con el lanzamiento lejano, que en el caso del Real Madrid solo fueron buenos en el primer cuarto. Aún así aguantó el plantel foráneo el mano a mano pese a perder para la causa al pívot angoleño Bruno Fernando, lesionado con un minuto de juego del segundo cuarto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Un triple de Codi Miller-Mcintyre dio paso al descanso y fue el fuego que prendió la mecha del ex del Baskonia, autor de los siete primeros puntos de los suyos en el retorno al parqué tras el paso por los vestuarios. Convertido en el rostro visible de un equipo con otra energía, el contrario consiguió resistir sin que su ventaja bajase de los diez puntos en ningún momento del tercer acto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Vital fue para ello que Mario Hezonja y Alberto Abalde, desde hoy en el club de los jugadores con 500 rebotes en la Euroliga, resucitasen a los suyos en lo que a tiros lejanos se refiere en algunos momentos más delicados. La sensación a la media hora era que si el Real Madrid era capaz de mantener el ritmo y no bajar la concentración, debía salir airoso (45-55, m.30)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Esta vez no cayó en esos pecados. Dos canastas de Sergio Llull y de Andrés Feliz le permitieron entrar con buen pie en el tramo decisivo y acomodarse sobre el colchón de la decena de puntos favorables hasta que una canasta de John Brown III a falta de 06:11 le quitó esa red (52-61, m.34)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Un triple de Sergio Llull apaciguó los ánimos del Estrella Roja y devolvió la confianza a un cuadro blanco sólido hasta que empezó a cobrar excesivo protagonismo el vídeo. Varios parones por revisión enfriaron al bando madridista y calentaron las gargantas de los seguidores y las manos de McIntyre, quien con un acierto perimetral situó a los suyos a dos a falta de 45 segundos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T19:53:58.890Z",
+      "updatedAt": "2025-03-29T19:53:58.890Z",
+      "publishedAt": "2025-03-29T19:53:58.918Z",
+      "short_description": "Dio un golpe de autoridad al vencer en la pista del Estrella Roja (72-78) y con ello dio un paso importante con destino hacia el objetivo de disputar la postemporada en la Euroliga",
+      "category1": "deportes",
+      "category2": "entretenimiento",
+      "category3": null,
+      "image_url": "https://phantom-elmundo.uecdn.es/21a8644779db8edc3c21efd294ff6450/resize/920/f/webp/assets/multimedia/imagenes/2025/03/28/17431986938406.jpg",
+      "user": {
+        "id": 3,
+        "documentId": "dy7fjuq0en3vhuj827hdsvjd",
+        "username": "Ana Martínez",
+        "email": "awdwa@gmail.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:50:04.122Z",
+        "updatedAt": "2025-03-11T19:50:04.122Z",
+        "publishedAt": "2025-03-11T19:50:03.775Z"
+      },
+      "comments": [
+        {
+          "id": 114,
+          "documentId": "veb5gtr9z4fv8s1vukued3yg",
+          "Content": "Y lo mejor es que quién se va a quedar fuera del playoff es el Barça.",
+          "createdAt": "2025-03-29T19:54:26.940Z",
+          "updatedAt": "2025-03-29T19:54:26.940Z",
+          "publishedAt": "2025-03-29T19:54:26.959Z"
+        },
+        {
+          "id": 116,
+          "documentId": "uzw5id34q5gxcfyjr52u8uxq",
+          "Content": "Aún queda señores. Partidos a cara de perro contra Paris Basketball y Partizán. Pero después de la derrota contra el PAO se veía lejos el Play-in, ahora soñamos con el Play-off. No soy fan de Simeone, pero partido a partido.",
+          "createdAt": "2025-03-29T19:54:51.346Z",
+          "updatedAt": "2025-03-29T19:54:51.346Z",
+          "publishedAt": "2025-03-29T19:54:51.371Z"
+        },
+        {
+          "id": 118,
+          "documentId": "tn9sjihrifl2objpuhtd7hxz",
+          "Content": "Ahora a seguir remando, que esto no está hecho, para quedar en mejor posición",
+          "createdAt": "2025-03-29T19:55:12.578Z",
+          "updatedAt": "2025-03-29T19:55:12.578Z",
+          "publishedAt": "2025-03-29T19:55:12.588Z"
+        },
+        {
+          "id": 120,
+          "documentId": "qcsootvcxr529lidlx8a7abf",
+          "Content": "Sacando la clase de campeón cuando ya se mascaba la tragedia. Ganar a Unicaja ha reforzado la racha en una Euroliga muy igualada este año. Un esfuerzo más y al menos el mínimo objetivo está a tiro. Vamos!!",
+          "createdAt": "2025-03-29T19:55:37.129Z",
+          "updatedAt": "2025-03-29T19:55:37.129Z",
+          "publishedAt": "2025-03-29T19:55:37.145Z"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "documentId": "agpo5juv1bufz4k99ns1n870",
+      "Title": "En Singapur, el lujo no es tener un Ferrari o un Lamborghini. El verdadero lujo es simplemente conducir",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Singapur, esa pequeña ciudad/país-estado entre Malasia e Indonesia donde apenas superan los cinco millones de habitantes, es un lugar de contrastes. Mientras el enclave tiene un alto grado de control gubernamental y ciertas prácticas que pueden calificarse como represivas, por el otro se abraza a las nuevas tecnologías hasta el punto de ser un referente mundial en el ámbito público hacia la IA. Allí, tener un coche no es una necesidad práctica, es una declaración de estatus."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Conducir en Singapur. La historia la contaba esta semana el New York Times. En Singapur, poseer un coche no es algo práctico, es más bien una declaración comparable a vestir un traje de diseñador o lucir un reloj de lujo. ¿La razón? El sistema de certificados de propiedad (introducido en 1990 para controlar la congestión y la contaminación) impone a los ciudadanos el pago de sumas astronómicas solo por el derecho a comprar un vehículo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Estos certificados, conocidos como certificates of entitlement (COE), pueden alcanzar hasta 84.000 dólares, elevando el precio total de automóviles comunes a cifras desorbitadas más propias de un superdeportivo. Como le contaba al diario el agente de seguros Andre Lee, que en 2020 pagó 24.000 dólares por un Kia Forte de segunda mano, tener un coche era simplemente parte de su imagen profesional, aunque luego reconoció que el gasto no se justificaba y optó por venderlo."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T19:57:31.520Z",
+      "updatedAt": "2025-03-29T19:57:31.520Z",
+      "publishedAt": "2025-03-29T19:57:31.539Z",
+      "short_description": "Su sistema plantea un gran dilema para la clase media, que debe sopesar su comodidad diaria frente a un gasto difícil de justificar",
+      "category1": "política",
+      "category2": "entretenimiento",
+      "category3": null,
+      "image_url": "https://i.blogs.es/906962/6342641015_a6d2b2a632_k/1200_800.jpeg",
+      "user": {
+        "id": 7,
+        "documentId": "rz2xqzpm9afylviedwv1ynd9",
+        "username": "Javier Sánchez",
+        "email": "javier@xn--snchez-pta.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:51:43.287Z",
+        "updatedAt": "2025-03-11T19:51:43.287Z",
+        "publishedAt": "2025-03-11T19:51:42.886Z"
+      },
+      "comments": [
+        {
+          "id": 122,
+          "documentId": "f1n3naeirxne0op4txnvveoq",
+          "Content": "Aquí pronto será así... un lujo para ricos, miembros del partido y resto de casta funcionarial.  Solo que sin un sistema de transporte público eficiente pero bien lleno de subseres subvencionados y prescindibles.  Por de pronto ya hay fabricas de automoción pensando en pasarse al armamento... Que hay 800k calentitos a punto de salir del horno, de los impuestos de nuestros improbables nietos.",
+          "createdAt": "2025-03-29T19:57:45.281Z",
+          "updatedAt": "2025-03-29T19:57:45.281Z",
+          "publishedAt": "2025-03-29T19:57:45.298Z"
+        },
+        {
+          "id": 125,
+          "documentId": "mbq6ptjn4hwfv54eq8q6i576",
+          "Content": "¡Sorpresa! ¡Tener un sistema de transporte público eficiente elimina la necesidad de tener un vehículo propio!",
+          "createdAt": "2025-03-29T19:57:58.894Z",
+          "updatedAt": "2025-03-29T19:58:04.365Z",
+          "publishedAt": "2025-03-29T19:58:04.381Z"
+        },
+        {
+          "id": 127,
+          "documentId": "v91ssrm6s5s3al24ulmfvg5q",
+          "Content": "Claro si yo quiero ir a la sierra a practicar ciclismo llevando mi bicicleta puedo prescindir de mi vehículo particular ,me van a poner en exclusiva un transporte público que me lleve a mi y a mi bici a un sitio en concreto y a la hora que yo quiera ida y vuelta .No te jode. ",
+          "createdAt": "2025-03-29T19:58:28.203Z",
+          "updatedAt": "2025-03-29T19:58:28.203Z",
+          "publishedAt": "2025-03-29T19:58:28.212Z"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "documentId": "twtxsi9txquwszdt57665p30",
+      "Title": "\"En un año o dos los editores de código no van a existir\": cuatro programadores nos explican la revolución del vibe coding",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Da igual que no sepas programar. Puedes decirle a una máquina que programe por ti. Esa es la idea básica del vibe coding, la nueva tendencia de la IA que se ha convertido en viral en redes sociales y que nos ha hecho asomarnos a un futuro potencialmente extraordinario: uno en el que bastará hablar con las máquinas para que programen la aplicación que necesitamos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Por que de eso va el vibe coding, de \"programar por sensaciones\", casi sin necesidad de teclear, simplemente explicándole a tu ordenador qué es lo que quieres y \"conversando\" con la máquina para corregir errores o ir completando el proyecto poco a poco. Tú habla, que la máquina programará."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Pero aquí, como en otros ámbitos de la inteligencia artificial, hay muchas promesas y no tantas realidades. De lo que puedes o no puedes conseguir con el vibe coding hemos conversado con cuatro expertos, y todos ellos ayudan a comprender mucho mejor hasta dónde puede llegar esta tendencia y qué significa para el mundo de la tecnología en general y de la programación en particular."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El vibe coding es fantástico, pero \"no te va a crear el próximo Airbnb de la nada\""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Miguel Ángel \"midu\" Durán (@midudev) es ingeniero de software y es uno de los grandes influenciadores españoles del segmento de la programación. Para él lo interesante del vibe coding es que \"está democratizando la capacidad de convertir ideas en realidades\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Midu"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Pero también advierte de cómo en este ámbito también hay algo de \"humo\" y de exageración en cuanto a las capacidades que se le dan a la IA. \"No te pienses que con decirle algo sin saber nada de programación te va a dar el próximo Airbnb\", explica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Durán explica que los programadores deben abrazar este tipo de innovaciones, porque la programación siempre se ha ido adaptando a los cambios y los programadores también. Para él el vibe coding y hablar en lenguaje natural para que la máquina programe \"no deja de ser otro nivel de abstracción más cerca del lenguaje más humano, más cercano al nuestro\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Sin embargo aclara que \"se están viendo muchas limitaciones\" en este tipo de programación, y aunque \"un conocimiento no técnico te puede llevar hasta cierto punto, necesitas conocimientos para ese extra\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Es lo que vimos hace unos días cuando un usuario de X llamado Leo contó cómo había creado una plataforma SaaS sin escribir una línea de código: aprovechó Cursor y la magia del vibe coding para programarla. No solo eso: la gente al parecer estaba pagando por su app."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T19:59:53.688Z",
+      "updatedAt": "2025-03-29T19:59:53.688Z",
+      "publishedAt": "2025-03-29T19:59:53.702Z",
+      "short_description": "Las herramientas de IA se han infiltrado de lleno en el día a día de quienes desarrollan aplicaciones",
+      "category1": "ciencia",
+      "category2": "entretenimiento",
+      "category3": null,
+      "image_url": "https://i.blogs.es/728f40/codigo/1200_800.jpeg",
+      "user": {
+        "id": 5,
+        "documentId": "w2go4bdr26ipm3ywdep90qn3",
+        "username": "María Fernández",
+        "email": "maría@fernández.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:50:59.998Z",
+        "updatedAt": "2025-03-11T19:50:59.998Z",
+        "publishedAt": "2025-03-11T19:50:59.621Z"
+      },
+      "comments": [
+        {
+          "id": 129,
+          "documentId": "s8b1179tcamt2j4xtigw8s3a",
+          "Content": "- Yo permutando 20 valores con ChatGPT para no abrir el Excel. - ChatGPT dándole valores completamente inventados. - \"La IA va a dejar en el paro a los desarrolladores de código\" - Yo 👌",
+          "createdAt": "2025-03-29T20:00:26.728Z",
+          "updatedAt": "2025-03-29T20:00:26.728Z",
+          "publishedAt": "2025-03-29T20:00:26.744Z"
+        },
+        {
+          "id": 131,
+          "documentId": "eghvof7a41jykyf0p91zalnd",
+          "Content": "El Vibe Coding es como aprender Física viendo vídeos en Youtube.",
+          "createdAt": "2025-03-29T20:00:45.498Z",
+          "updatedAt": "2025-03-29T20:00:45.498Z",
+          "publishedAt": "2025-03-29T20:00:45.513Z"
+        },
+        {
+          "id": 133,
+          "documentId": "ifl2n7ppr0gshv5wslsxxylm",
+          "Content": "Vibe coding es un término horrible que parece sacado de un grupo de gente que quiere parecer guay xD.  La IA será una ayuda pero yo no dejaría mi código donde hay claves y configuraciones sensibles. Es como abrirle la puerta a los cacos a tu casa. Puedes ejecutarla en local, si, pero entonces no es tan potente.",
+          "createdAt": "2025-03-29T20:01:00.656Z",
+          "updatedAt": "2025-03-29T20:01:00.656Z",
+          "publishedAt": "2025-03-29T20:01:00.669Z"
+        },
+        {
+          "id": 135,
+          "documentId": "i76i8l098n15lrjpvhvm1mol",
+          "Content": "El vibe coding no va a desplazar a los programadores, al menos no todos. Cuando haya que depurar el software para arreglar errores o refactorizar el código para nuevos requisitos, a ver quién mete la mano en código IA. Hay cosas que si se pueden hacer. Las páginas web automáticas llevan mucho tiempo entre nosotros pero tampoco han desplazado a la producción de software web profesional.  Hay otro detalle a tener en cuenta. Las IAs necesitan entrenamiento. Y para entrenarse necesitan mucho, mucho código. Cuando salga un nuevo lenguaje, framework o revisión de C++, alguien tendrá que picar código para entrenar IAs.  Cuando hayan agujeros de seguridad en todas las páginas generadas por IA porque esta hace el código igual en todos los casos veremos el mundo arder. Cuando haya que tocar algo que la IA no puede hacer, o al menos no como tu quieres, tendremos problemas. Cuando haya que optimizar un programa porque la IA ha generado código poco óptimo, los programadores también tendrán mucho trabajo.  La industria del software ya está en crisis y la \"democratización\" que traen las IAs va a traer un sinfín de problemas. Ya hay muchos posts en reddit de gente diciendo que no sabe programar y tira de las IAs para todo. Al final se sienten fraudes, y de cierta manera lo son.   Responder",
+          "createdAt": "2025-03-29T20:01:20.614Z",
+          "updatedAt": "2025-03-29T20:01:20.614Z",
+          "publishedAt": "2025-03-29T20:01:20.636Z"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "documentId": "j2u173di11s0jbmub2kyaaq4",
+      "Title": "Trump anuncia aranceles del 25% a los países que compran petróleo o gas de Venezuela",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "imposición de aranceles del 25 % a los países que compren petróleo o gas de Venezuela. Estos aranceles entrarán en vigor el próximo 2 de abril."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "\"Cualquier país que compre petróleo y/o gas a Venezuela deberá pagar un arancel del 25 % a Estados Unidos sobre cualquier transacción comercial que realice con nuestro país\", anunció en un comunicado publicado en su red social, Truth Social."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Este \"arancel secundario\" responde, según Trump, a que Venezuela ha enviado a Estados Unidos \"a decenas de miles de criminales de alto nivel y otros delincuentes\" de manera \"intencionada y fraudulenta\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "\"Entre las bandas que han enviado a Estados Unidos se encuentra el Tren de Aragua, que ha sido designado como 'Organización Terrorista Extranjera'. Estamos en el proceso de devolverlos a Venezuela. ¡Es una tarea enorme!\", añadió."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Además, Trump citó que Venezuela \"ha mostrado una actitud muy hostil hacia Estados Unidos y las libertades\" que, según el presidente, representa su país."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "La selección del Director"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Joaquín Manso, director de El Mundo, selecciona las noticias de mayor interés y las comenta para ti."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": " "
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Correo electrónico"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Apuntarme"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "¿Ya tienes cuenta? Inicia sesión"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-24T16:27:23.616Z",
+      "updatedAt": "2025-03-29T20:36:28.521Z",
+      "publishedAt": "2025-03-29T20:36:28.556Z",
+      "short_description": "En respuesta a que Venezuela ha enviado a Estados Unidos \"a decenas de miles de criminales de alto nivel y otros delincuentes\" de manera \"intencionada y fraudulenta\"",
+      "category1": "política",
+      "category2": "mundo",
+      "category3": null,
+      "image_url": "https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/9f98/live/c83761d0-0a8b-11f0-97d3-37df2b293ed1.jpg.webp",
+      "user": {
+        "id": 3,
+        "documentId": "dy7fjuq0en3vhuj827hdsvjd",
+        "username": "Ana Martínez",
+        "email": "awdwa@gmail.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:50:04.122Z",
+        "updatedAt": "2025-03-11T19:50:04.122Z",
+        "publishedAt": "2025-03-11T19:50:03.775Z"
+      },
+      "comments": []
+    },
+    {
+      "id": 90,
+      "documentId": "mgmddifq9mb45q6xzldkby94",
+      "Title": "Seis gadgets que nunca pensé que necesitaría y que han mejorado mi vida diaria en un 1000%",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Durante estos últimos años he comprado una buena cantidad de gadgets o accesorios. No os voy a mentir, algunos no me han gustado nada y esperaba mucho más de ellos. Pero hay otros que me han gustado mucho más de lo que pensaba, y he llegado a darles una utilidad incluso diaria. Por ello, he reunido los seis accesorios que más me han gustado de los que he comprado en estos últimos años."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Logitech MX Vertical por 69,94 euros, un ratón con diseño ergonómico que ofrece una comodidad en mano muy agradable."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Logitech G PRO X TKL LightSpeed por 181,22 euros, un teclado mecánico espectacular con configuración de macros y teclas bastante silenciosas y agradables."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Huawei Watch Fit 3 por 113 euros, una de las mejores pulseras de actividad que he tenido hasta el momento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Mochila Tomtoc por 69,99 euros, una mochila de viaje con muchísima capacidad para evitar viajar siempre con maleta."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "TP-Link Tapo P100 por 10,90 euros, un enchufe inteligente al que le estoy sacando mucho partido."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Soundcore Space Q45 por 94,99 euros, unos auriculares Bluetooth que me encantan. Los utilizo para trabajar y para uso personal."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T20:46:25.864Z",
+      "updatedAt": "2025-03-29T20:46:25.864Z",
+      "publishedAt": "2025-03-29T20:46:25.907Z",
+      "short_description": "Seis accesorios (y algún que otro extra) que me han gustado mucho más de lo que esperaba",
+      "category1": "ciencia",
+      "category2": null,
+      "category3": null,
+      "image_url": "https://i.blogs.es/e406dd/soundcore-space-q45/1200_800.jpeg",
+      "user": {
+        "id": 7,
+        "documentId": "rz2xqzpm9afylviedwv1ynd9",
+        "username": "Javier Sánchez",
+        "email": "javier@xn--snchez-pta.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:51:43.287Z",
+        "updatedAt": "2025-03-11T19:51:43.287Z",
+        "publishedAt": "2025-03-11T19:51:42.886Z"
+      },
+      "comments": [
+        {
+          "id": 137,
+          "documentId": "prbtr9gse2e809386wtkm49y",
+          "Content": "Se os ha colado algo de artículo en la publicidad. Revisarlo por favor.",
+          "createdAt": "2025-03-29T20:46:53.186Z",
+          "updatedAt": "2025-03-29T20:46:53.186Z",
+          "publishedAt": "2025-03-29T20:46:53.200Z"
+        },
+        {
+          "id": 139,
+          "documentId": "eqxya9afrspyesxc5qcnurax",
+          "Content": "publireportaje para meter enlaces de afiliados de amazon??",
+          "createdAt": "2025-03-29T20:47:06.657Z",
+          "updatedAt": "2025-03-29T20:47:06.657Z",
+          "publishedAt": "2025-03-29T20:47:06.693Z"
+        },
+        {
+          "id": 141,
+          "documentId": "xl6sw0a90uzgrizm5mj9d3y1",
+          "Content": "Muy caro el teclado logi, yo los estuve mirando y probando y los keychron, mountain y RK le dan caña en calidad-precio. Terminé con un RK y estoy encantado. Por cierto en coolmod hay varios modelos en liquidación muy bien de precio.  Y lo del reposamuñecas a 30 pavos ya ni te cuento..",
+          "createdAt": "2025-03-29T20:47:23.193Z",
+          "updatedAt": "2025-03-29T20:47:23.193Z",
+          "publishedAt": "2025-03-29T20:47:23.214Z"
+        },
+        {
+          "id": 143,
+          "documentId": "mzup99pn0o5rpet8z6bdapiq",
+          "Content": "Tengo un teclado+ratón multimedia inalámbrico de logitech que compré hace 20 años y no encuentro ningún teclado que me ofrezca lo mismo, es el modelo LX700, una maravilla.",
+          "createdAt": "2025-03-29T20:47:45.487Z",
+          "updatedAt": "2025-03-29T20:47:45.487Z",
+          "publishedAt": "2025-03-29T20:47:45.498Z"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "documentId": "zl78xn02io6fzy4miadjbr81",
+      "Title": "La industria del pelo en Turquía tiene un nuevo enemigo: una proteína que nos protege de la calvicie",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "En los últimos años hemos visto la rápida expansión de la cirugía capilar como forma efectiva de luchar contra la pérdida de pelo, la alopecia. Sin embargo aún estamos lejos de encontrar soluciones efectivas y eficientes, y que no requieran pasar por quirófano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "MCL-1. Ahora, un equipo internacional de investigadores ha hallado una proteína vinculada con el crecimiento del pelo, una “guardiana” contra la pérdida de cabello. El descubrimiento abre una nueva vía de investigación en el ámbito de la alopecia y la salud capilar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Se trata de la proteína MCL-1, una proteína perteneciente a la familia de proteínas Bcl-2. Este grupo de proteínas desempeña un importante papel en la apoptosis celular, la muerte celular programada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "HFSC. El equipo detectó la importancia de estas proteínas en el funcionamiento de las células madre del folículo piloso o HFSC (hair follicle stem cells). Estas células regulan el crecimiento capilar con su activación e inactivación."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T20:59:59.265Z",
+      "updatedAt": "2025-03-29T20:59:59.265Z",
+      "publishedAt": "2025-03-29T20:59:59.281Z",
+      "short_description": "MCL-1 desempeña un papel immportante a la hora de salvaguardar la integridad de las células madre responsables del crecimiento capilar",
+      "category1": "ciencia",
+      "category2": null,
+      "category3": null,
+      "image_url": "https://i.blogs.es/995094/calvicie/1200_800.jpeg",
+      "user": {
+        "id": 4,
+        "documentId": "zkftsz0a4hq9m9ybd94vsiho",
+        "username": "Pedro López",
+        "email": "wdaw@gmail.com",
+        "provider": "local",
+        "confirmed": false,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:50:34.009Z",
+        "updatedAt": "2025-03-11T19:50:34.009Z",
+        "publishedAt": "2025-03-11T19:50:33.598Z"
+      },
+      "comments": [
+        {
+          "id": 145,
+          "documentId": "irmhe2gf2cxoky1y1omecj4e",
+          "Content": "Y para los que ya no tenemos..",
+          "createdAt": "2025-03-29T21:00:24.202Z",
+          "updatedAt": "2025-03-29T21:00:24.202Z",
+          "publishedAt": "2025-03-29T21:00:24.216Z"
+        },
+        {
+          "id": 147,
+          "documentId": "asisbtaaywlpsdxjsalvlizn",
+          "Content": "Dentro de 100 años todos calvos.",
+          "createdAt": "2025-03-29T21:00:43.308Z",
+          "updatedAt": "2025-03-29T21:00:43.308Z",
+          "publishedAt": "2025-03-29T21:00:43.323Z"
+        },
+        {
+          "id": 149,
+          "documentId": "z8yfnuysz197rttcewq8dlhn",
+          "Content": "Pues na.",
+          "createdAt": "2025-03-29T21:00:57.645Z",
+          "updatedAt": "2025-03-29T21:00:57.645Z",
+          "publishedAt": "2025-03-29T21:00:57.662Z"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "documentId": "mcvganxp9xrpaz9xw1wp0z5e",
+      "Title": "A las dos serán las tres y millones de personas tardarán semanas en recuperarse: cómo afecta el cambio de hora al sueño",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "A las dos serán las tres y, como consecuencia de eso, los patrones de sueños de toda Europa se van a poner patas arriba. Otro año más. Y es lógico: el día después de cambio de hora, la gente tarda 33 minutos más de media en irse a la cama. Además, se despiertan 19 minutos antes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "¿O sea, que sí que nos afecta? Claro. Y no solo en términos cuantitativos; sino también en término cualitativos. La calidad del sueño durante la semana siguiente al cambio de hora es francamente mala. Mucho peor en las personas de entre 20 y 30."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Estas son las conclusiones de un análisis de los patrones de sueño de los usuarios de Samsung Health en más de 40 países y es interesante."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "No porque sea extremadamente representativo. Al fin y al cabo, los datos parte de un enorme sesgo de selección de muestra: solo son sus usuarios. Sin embargo, sí nos permite acercarnos a este curioso fenómeno con datos de primera mano. Algo que, hasta hace poco, era bastante complicado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "La sorpresa española. Ahí es donde nos llega una sorpresa. Como digo, el análisis cubre más de 40 países de todo el mundo donde se produce el cambio de hora. De todos ellos, España es el que mostraba mayor estabilidad en sus patrones de sueño. Es decir, los usuarios de Samsung Health de España son los que menos se vieron afectado en su sueño por el cambio horario."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "De media, solo retrasaron la hora de acostarse en 16 minutos (el país más cercano a nosotros fue Italia con 19) y el horario de despertarse solo se vio afectado en cinco minutos durante la primera semana; dos durante la segunda."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "¿Por qué pasa esto? Pues la verdad es que es difícil de decir. Un posible motivo puede ser, por supuesto, que los españoles nos acostamos muy tarde. Eso nos deja poco margen, de media, para retrasar la hora de acostarnos."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T21:07:01.593Z",
+      "updatedAt": "2025-03-29T21:07:01.593Z",
+      "publishedAt": "2025-03-29T21:07:01.606Z",
+      "short_description": "Tras años hablando del impacto del cambio de hora en el sueño, estos investigadores dicen que en España casi no se nota",
+      "category1": "ciencia",
+      "category2": null,
+      "category3": null,
+      "image_url": "https://i.blogs.es/d3c9c4/plantilla-xtk/1200_800.png",
+      "user": {
+        "id": 3,
+        "documentId": "dy7fjuq0en3vhuj827hdsvjd",
+        "username": "Ana Martínez",
+        "email": "awdwa@gmail.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:50:04.122Z",
+        "updatedAt": "2025-03-11T19:50:04.122Z",
+        "publishedAt": "2025-03-11T19:50:03.775Z"
+      },
+      "comments": [
+        {
+          "id": 151,
+          "documentId": "vf7sxub4q8o5q6v30rqg9w55",
+          "Content": "Es una estafa el cambio de hora, solo sirve para joder",
+          "createdAt": "2025-03-29T21:07:19.637Z",
+          "updatedAt": "2025-03-29T21:07:19.637Z",
+          "publishedAt": "2025-03-29T21:07:19.667Z"
+        },
+        {
+          "id": 153,
+          "documentId": "bdnsdfgza1gi21qa375659e4",
+          "Content": "Horario de verano todo el año YA, por favor!",
+          "createdAt": "2025-03-29T21:07:35.470Z",
+          "updatedAt": "2025-03-29T21:07:35.470Z",
+          "publishedAt": "2025-03-29T21:07:35.487Z"
+        },
+        {
+          "id": 155,
+          "documentId": "lkbm8f3zyxcqkn6fpm2ek8aw",
+          "Content": "Solución, poner el horario de verano y no volverlo a cambiar. Dejadnos disfrutar de la luz solar y el que quiera salir de trabajar de noche, que haga horas extra.",
+          "createdAt": "2025-03-29T21:07:49.119Z",
+          "updatedAt": "2025-03-29T21:07:49.119Z",
+          "publishedAt": "2025-03-29T21:07:49.136Z"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "documentId": "y2t89d21lahpela7mwb2dgqj",
+      "Title": "Sabíamos que el olfato y la memoria están estrechamente relacionados. Y eso nos desbloquea una ventaja: detectar el Alzheimer",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "La enfermedad de Alzheimer puede resultad difícil de detectar. Los síntomas de este trastorno suelen hacerse evidentes solo tras el avance de esta demencia, lo cual supone un enorme problema. Y es que, a falta de una cura definitiva, nuestra capacidad para frenar el impacto de la enfermedad depende en gran medida de una detección temprana."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Olfato. Una de las pistas con las que contamos a la hora de detectar el Alzheimer en sus etapas tempranas es a través del olfato. Un estudio realizado por investigadores de la Universidad de Chicago analizó el impacto de la enfermedad sobre nuestra capacidad sensorial y detectó que esta una rápida pérdida del olfato al hacernos mayores podía predecir con cierta exactitud el advenimiento de la enfermedad de Alzheimer."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Olor a magdalena. La relación entre memoria y olfato es muy estrecha. Sabemos que la capacidad evocativa de los olores no pasaba desapercibida, pero en las últimas décadas la ciencia ha podido confirmar esta singular conexión."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "El motivo de esta estrecha relación puede ser anatómico. El bulbo olfativo es la región del cerebro que procesa en primera instancia los olores para después enviar la señal a otras áreas del cerebro. Esta señal atraviesa zonas clave del sistema límbico, áreas vinculadas a emociones y memoria. “Las señales olfativas llegan muy rápidamente al sistema límbico”, explica a The Harvard Gazette Venkatesh Murthy, jefe del Departmento de Biología Celular y Molecular de la universidad."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T21:12:18.960Z",
+      "updatedAt": "2025-03-29T21:12:18.960Z",
+      "publishedAt": "2025-03-29T21:12:19.007Z",
+      "short_description": "Comer, ducharse u oler una flor, detectar uno de los primeros síntomas del Alzheimer está a nuestro alcance",
+      "category1": "ciencia",
+      "category2": null,
+      "category3": null,
+      "image_url": "https://i.blogs.es/899932/olfato-alzheimer-edit/1200_800.jpeg",
+      "user": {
+        "id": 7,
+        "documentId": "rz2xqzpm9afylviedwv1ynd9",
+        "username": "Javier Sánchez",
+        "email": "javier@xn--snchez-pta.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:51:43.287Z",
+        "updatedAt": "2025-03-11T19:51:43.287Z",
+        "publishedAt": "2025-03-11T19:51:42.886Z"
+      },
+      "comments": [
+        {
+          "id": 157,
+          "documentId": "lt0ulznvimrus98x1moirti7",
+          "Content": "Y si no tiene cura, para qué?",
+          "createdAt": "2025-03-29T21:12:38.705Z",
+          "updatedAt": "2025-03-29T21:12:38.705Z",
+          "publishedAt": "2025-03-29T21:12:38.733Z"
+        },
+        {
+          "id": 159,
+          "documentId": "yu13ktf9y5gpff18rry5clj5",
+          "Content": "¿Y el impuesto a la comida chatarra y a las grasas hidrogenadas, cuándo?  Las bebidas, con o sin azúcar, siguen siendo una golosina no nutritiva llena de químicos, cuando lo más sano es tomar agua o una limonada natural.  Un ultraprocesado lleno de grasas trans tampoco va a ser mas sano porque lleve menos sal.",
+          "createdAt": "2025-03-29T21:12:56.960Z",
+          "updatedAt": "2025-03-29T21:12:56.960Z",
+          "publishedAt": "2025-03-29T21:12:56.988Z"
+        },
+        {
+          "id": 161,
+          "documentId": "q4iw5sj09kne7xxkcuenv4x5",
+          "Content": "Porque detectarlo en sus inicios puede permitir terapias o tratamientos para retrasarlo lo más posible o apuntarse a tratamientos experimentales... como dice el artículo.",
+          "createdAt": "2025-03-29T21:13:11.912Z",
+          "updatedAt": "2025-03-29T21:13:11.912Z",
+          "publishedAt": "2025-03-29T21:13:11.932Z"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "documentId": "m8iu68m2lzb8vcb3b8asrtjl",
+      "Title": "He probado un exoesqueleto pensando que me daría superpoderes. El Hypershell X me acabó dando una lección sobre accesibilidad",
+      "Content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Hace casi un año accedí, en nombre del periodismo gonzo, a pincharme un glucómetro sin ser diabético simplemente para contar a mis lectores de qué iba eso en clave de rendimiento deportivo y de conocer nuestro cuerpo, y qué ventajas podía aportar. No hubo subida salarial como para justificar que mi trabajo ya estuviese rebasando ciertas líneas rojas de mi vida personal y de mi propia sangre."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Con la esperanza de que mi fortuna cambie de cara a la próxima revisión anual, he accedido a un nuevo experimento menos invasivo pero mucho más arriesgado para mi reputación: probar el Hypershell X, oficialmente un exoesqueleto y extraoficialmente algo que encajaría mejor en el término \"faja ortopédica futurista\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "A ver si este año hay suerte."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Un cinturón y dos perneras"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Empecemos dando contexto: tengo 34 años, hago muchas horas de deporte a la semana y no tengo ninguna patología que me haga ser el público objetivo de un exoesqueleto diseñado para \"aumentar la fuerza de las piernas hasta un 40%\". Pero mi arrojo pudo más."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Un exoesqueleto para el mercado de consumo es, en esencia, la promesa de superar los límites físicos con la simple acción de ponernos un cinturón motorizado con acoples robóticos y pulsar un botón."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Hypershell"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "La caja del Hypershell X llegó un martes. Al abrirla encontré un artefacto más compacto de lo que esperaba, a medio camino entre un cinturón táctico y unas órtesis futuristas. Pesa casi dos kilos y representa décadas de investigación en robótica condensadas en un dispositivo que puede usar cualquiera."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Me lo puse siguiendo las instrucciones de la app, que me pidió datos básicos como peso y estatura."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Caminando con el Hypershell"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Antes de iniciar actividades con un exoesqueleto, conviene recordar que su uso inapropiado puede generar riesgos biomecánicos o lesiones debido a cambios bruscos en la postura o sobreesfuerzos en músculos y articulaciones no habituados. La literatura médica recomienda que cualquier persona interesada consulte antes a un fisioterapeuta o especialista en biomecánica para identificar posibles riesgos o patologías que puedan agravarse con el uso prolongado del exoesqueleto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Ea primera sensación fue extraña. El cinturón abrazando mi cintura, los brazos mecánicos sujetos a los muslos. No es incómodo, pero tampoco natural. Ajusté las correas para dejar todo firme y pulsé el botón de encendido. Un zumbido y ya estaba listo para dar mis primeros pasos como un hombre biónico. O algo así."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "text": "Aquí llegó la sorpresa inicial: esperaba algo más dramático, pero mis primeros pasos fueron desconcertantes. No es que de repente sintiera una potencia descomunal. Era más sutil, como si alguien me empujara ligeramente hacia adelante en cada zancada. Mi mente tardó unos minutos en procesar esta nueva sensación: mis piernas querían moverse a su ritmo habitual, pero el Hypershell tenía sus propias ideas."
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-03-29T21:17:22.041Z",
+      "updatedAt": "2025-03-29T21:17:22.041Z",
+      "publishedAt": "2025-03-29T21:17:22.055Z",
+      "short_description": "Acepté probar este \"cinturón futurista\" por periodismo y por curiosidad. A mis 34 años y en buena forma, apenas noté beneficios. Su valor real: devolver independencia a quienes la perdieron",
+      "category1": "ciencia",
+      "category2": null,
+      "category3": null,
+      "image_url": "https://i.blogs.es/d50157/exoesqueleto-01/1200_800.jpeg",
+      "user": {
+        "id": 8,
+        "documentId": "dj4hgc2vluzzl9frqebyb67p",
+        "username": "Raúl Torres",
+        "email": "raúl@torres.com",
+        "provider": "local",
+        "confirmed": true,
+        "blocked": false,
+        "createdAt": "2025-03-11T19:52:04.472Z",
+        "updatedAt": "2025-03-11T19:52:04.472Z",
+        "publishedAt": "2025-03-11T19:52:04.136Z"
+      },
+      "comments": [
+        {
+          "id": 163,
+          "documentId": "fgbnli9jwszgibtiwb3dd7pm",
+          "Content": "Pues alomejor para personas de 80/90 años se les abre un mundo con esto, mi abuela apenas se mantiene en pie y vcositas así mejorarán mucho la vida, ahora se que aún es pronto pero alomejor cuando yo tenga 80/90 si que lo veremos normal",
+          "createdAt": "2025-03-29T21:17:55.536Z",
+          "updatedAt": "2025-03-29T21:17:55.536Z",
+          "publishedAt": "2025-03-29T21:17:55.548Z"
+        },
+        {
+          "id": 165,
+          "documentId": "j4mjf5t861qr46w3lo3i3n3i",
+          "Content": "No entiendo esta cosa, ¿cómo va a aligerarte peso si quien hace contacto con el suelo siguen siendo las piernas? De hecho cargas más peso llevando el propio cacharro.  Tendría que ser el aparato quien toque el suelo también y soportar la carga extra, todo el esfuerzo lo sigues haciendo tú.",
+          "createdAt": "2025-03-29T21:18:15.536Z",
+          "updatedAt": "2025-03-29T21:18:15.536Z",
+          "publishedAt": "2025-03-29T21:18:15.559Z"
+        },
+        {
+          "id": 167,
+          "documentId": "kysyv23rfh14f64bq59ako9a",
+          "Content": "Deberia probarlo alguien fuera de forma no alguien en forma",
+          "createdAt": "2025-03-29T21:18:39.026Z",
+          "updatedAt": "2025-03-29T21:18:39.026Z",
+          "publishedAt": "2025-03-29T21:18:39.039Z"
+        },
+        {
+          "id": 169,
+          "documentId": "f944seu0zqjxb3k7nopweyg9",
+          "Content": "Yo veo un reportaje interesante. Sobre todo para esos listos que quieren iniciarse en el mundo iron man para que les aporte poderes sobrehumanos. Por las pruebas se nota que está pensada para ayudar, sin más. Y tampoco para correr. Lo que se nota es que ayuda en los momentos que las personas más dependientes lo necesitan, pesos y cuestas. Así que me parece bien y de precio no anda mal.  Luego tenemos las de altísimo nivel. Esta no recoge cadera, pero se supone que corrige la postura y mecánica de la o las piernas para caminar bien. Eso si, el precio ya como que se dispara un poco:",
+          "createdAt": "2025-03-29T21:19:17.536Z",
+          "updatedAt": "2025-03-29T21:19:17.536Z",
+          "publishedAt": "2025-03-29T21:19:17.544Z"
+        }
+      ]
     }
   ],
   "meta": {
     "pagination": {
       "page": 1,
-      "pageSize": 25,
-      "pageCount": 2,
-      "total": 33
+      "pageSize": 100,
+      "pageCount": 1,
+      "total": 42
     }
   }
 }
