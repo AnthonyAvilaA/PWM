@@ -27,15 +27,25 @@
     display: none;
 }
 
+/*Desktop (does nothing is default behaviour)*/
+@media (min-width: 1024px) {
+
+}
+
+/*Tablet (does nothing is default behaviour)*/
+@media (max-width: 1024px) {
+
+}
+
 /*Mobile*/
-@media (max-aspect-ratio: 9/16) {
+@media (max-width: 768px) {
+    .live-headline {
+        display: none !important;;    
+    }
+
     .featured-news-wrapper {
         display: flex;
         flex-wrap: wrap;
-    }
-
-    .live-headline {
-        display: none !important;;    
     }
 
     .side-article {
@@ -47,6 +57,3 @@
     }
 }
 
-/*Desktop*/
-@media (min-aspect-ratio: 16/9) {
-}

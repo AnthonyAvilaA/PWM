@@ -186,8 +186,9 @@ nav ul li a {
     font-size: 18px;
 }
 
-/*Does nothing is default behaviour*/
+/*Desktop (does nothing is default behaviour)*/
 @media (min-width: 1024px) {
+    
 }
 
 /*Tablet*/
@@ -252,6 +253,7 @@ nav ul li a {
     }
 }
 
+/*Mobile*/
 @media (max-width: 768px) {
     header img {
         display: none   ;
@@ -269,4 +271,3 @@ nav ul li a {
         display: none;
     }
 }
-

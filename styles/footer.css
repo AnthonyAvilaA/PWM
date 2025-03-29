@@ -70,3 +70,67 @@ footer {
 .footer-links a:hover {
     text-decoration: underline;
 }
+
+/*Desktop (does nothing is default behaviour)*/
+@media (min-width: 1024px) {
+
+}
+
+/*Tablet*/
+@media (max-width: 1024px) {
+    footer {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        text-align: center;
+        padding: 3% 5%;
+    }
+
+    .footer-subscription {
+        width: 80%; /* Adjust width for better balance */
+    }
+
+    .footer-form {
+        justify-content: center;
+    }
+
+    .footer-links {
+        width: 90%;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .footer-links ul {
+        text-align: center;
+    }
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+    .footer-links {
+        display: none; /* Hide the footer links section */
+    }
+
+    footer {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-subscription {
+        width: 90%;
+    }
+
+    .footer-form {
+        flex-direction: column; /* Stack input and button */
+        align-items: center;
+    }
+
+    .footer-form input {
+        width: 100%;
+    }
+
+    .footer-form button {
+        width: 100%;
+    }
+}
+
