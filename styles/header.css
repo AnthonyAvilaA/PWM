@@ -79,6 +79,7 @@ nav ul li {
 }
 
 nav ul li a {
+    justify-content: left;
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -157,6 +158,14 @@ nav ul li a {
     flex-direction: column; /* Ensure the items are in a column */
 }
 
+.ultra-short-size {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column; /* Ensure the items are in a column */
+}
+
 .short-size li {
     margin: 1% 0;
 }
@@ -167,37 +176,73 @@ nav ul li a {
     font-size: 18px;
 }
 
-/*Movil*/
-@media (max-aspect-ratio: 9/16) {
+.ultra-short-size li {
+    margin: 1% 0;
+}
+
+.ultra-short-size li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/*Does nothing is default behaviour*/
+@media (min-width: 1024px) {
+}
+
+/*Tablet*/
+@media (max-width: 1024px) {
     header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         position: relative;
+        padding: 10px;
+    }
+
+    header a {
+        order: 2;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .language-menu {
+        order: 0; /* Forces language menu to the left */
     }
 
     header a img {
-        position: absolute;
+        position: static;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: none;
+        height: auto;
+        width: auto;
     }
 
     .language-button {
-        font-size: 1.2em; /* Aumenta el tamaño del texto */
-        padding: 10px 20px; /* Aumenta el relleno */
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    .burger-menu {
+        order: 4;
     }
 
     .burger-icon {
-        font-size: 3em; /* Hace el icono del menú más grande */
+        font-size: 3em;
     }
 
-    .login-register a {
-        font-size: 1.2em; /* Aumenta el tamaño del texto */
-        padding: 10px 15px; /* Aumenta el espacio dentro del botón */
+    .login-register {
+        order: 3; /* Moves login buttons to the right */
+        display: flex;
+        gap: 10px;
     }
     
     .short-size {
         display: flex;
     }
-    
+
     .normal-size {
         display: none;
     }
@@ -206,3 +251,22 @@ nav ul li a {
         display: none;
     }
 }
+
+@media (max-width: 768px) {
+    header img {
+        display: none   ;
+    }
+
+    .short-size {
+        display: none;
+    }
+
+    .ultra-short-size {
+        display: flex;
+    }
+
+    .login-register {
+        display: none;
+    }
+}
+
