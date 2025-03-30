@@ -93,3 +93,39 @@ h1 {
 .sub-category section {
     width: 45%;
 }
+
+/*Desktop (does nothing is default behaviour)*/
+@media (min-width: 1024px) {
+
+}
+
+/*Tablet (does nothing is default behaviour)*/
+@media (max-width: 1024px) {
+
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+    .main-video {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sub-category {
+        flex-direction: column;
+    }
+
+    .sub-category article {
+        flex-direction: column;
+        gap: 2%;
+        width: 100%;
+    }
+
+    .sub-category section {
+        width: 100%;
+    }
+
+    .row-button {
+        display: none;
+    }
+}

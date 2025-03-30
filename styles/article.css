@@ -23,6 +23,7 @@
     color: #555;
 }
 .news-article .text-content .read-more {
+    font-size: 1.2vw;
     color: #007BFF;
     text-decoration: none;
     font-weight: bold;
@@ -34,6 +35,7 @@
 }
 
 .news-article .image-container {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;

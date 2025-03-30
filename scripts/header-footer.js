@@ -14,6 +14,12 @@ function checkSession() {
         for (let button of loginRegisterButtons) {
             button.style.visibility = 'hidden';
         }
+
+        // Hide login and register links in burger menu
+        const loginRegisterLinks = document.querySelectorAll('#burger-login, #burger-register');
+        loginRegisterLinks.forEach(link => {
+            link.style.display = 'none'; // Hides the links completely
+        });
         
         // Show logout button if session is active
         const logoutButtons = document.querySelectorAll('.logout');
