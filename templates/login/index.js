@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Generar un session_id único (puede ser cualquier identificador o token que uses)
+        const sessionId = generateSessionId(); // Esta es una función que podrías implementar
+
+        // Guardar el session_id en localStorage
+        localStorage.setItem('session_id', sessionId);
+        
         alert("Inicio de sesión exitoso");
         window.location.href = "/templates/home/";
     });
@@ -56,3 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return regex.test(email);
     }
 });
+
+// Función para generar un session_id único (puedes usar un UUID o algo similar)
+function generateSessionId() {
+    // Puedes usar un UUID para generar un identificador único
+    // Aquí se genera un simple valor basado en la fecha y un valor aleatorio
+    return 'session_' + new Date().getTime() + '_' + Math.floor(Math.random() * 10000);
+}

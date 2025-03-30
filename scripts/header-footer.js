@@ -1,12 +1,50 @@
+// Function to load HTML components
 async function loadHTML(id, url) {
     const response = await fetch(url);
     document.getElementById(id).innerHTML = await response.text();
 }
 
+// Check session state and update UI accordingly
+function checkSession() {
+    const session_id = localStorage.getItem('session_id');
+    
+    if (session_id) { // If session exists
+        // Hide login and register buttons
+        const loginRegisterButtons = document.getElementsByClassName('login-register');
+        for (let button of loginRegisterButtons) {
+            button.style.visibility = 'hidden';
+        }
+        
+        // Show logout button if session is active
+        const logoutButtons = document.querySelectorAll('.logout');
+        for (let button of logoutButtons) {
+            button.style.display = 'block';
+        }
+    } else {
+        // Hide logout button if no session
+        const logoutButtons = document.querySelectorAll('.logout');
+        for (let button of logoutButtons) {
+            button.style.display = 'none';
+        }
+    }
+}
+
+// Logout function: clears the session and redirects to the login page
+function logout() {
+    // Clear session from localStorage
+    localStorage.removeItem('session_id');
+    
+    // Redirect to login page
+    window.location.href = '/templates/login/index.html'; // Redirect to login page after logout
+}
+
+// Load components like header and footer
 loadHTML("header", "/components/header.html");
-loadHTML("footer", "/components/footer.html");
+loadHTML("footer", "/components/footer.html").then(() => {
+    checkSession(); // Run session check when the page loads
+});
 
-
+// Fetch categories (this part seems fine, no changes needed)
 fetch('/resources/json/categories.json')
     .then(response => response.json())
     .then(data => {
