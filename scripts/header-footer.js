@@ -55,7 +55,7 @@ fetch('/resources/json/categories.json')
     .then(response => response.json())
     .then(data => {
         const category_data = data.data;
-        const categoryLinks = document.querySelectorAll('.categories ul li a, .short-size li a, .ultra-short-size li a');
+        const categoryLinks = document.querySelectorAll('.categories ul li a, .short-size li a');
         
         // Create a map of category names to their documentIds
         const categoryMap = {};

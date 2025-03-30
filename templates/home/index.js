@@ -17,17 +17,6 @@ fetch('/resources/json/news.json')
             article_content.querySelector('.read-more').href = `/templates/news/index.html?id=${data.documentId}`;
 
             image_container = news_article.querySelector('.image-container img').src = `${data.image_url}`;
-            figcaption = news_article.querySelector('.image-container figcaption')
-            
-            const createdAt = new Date(data.createdAt);
-            const formattedDate = createdAt.toLocaleDateString('es-ES', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-            });
-            
-            figcaption.innerHTML = `${data.user.username} - ${formattedDate}`;
-
 
             news_data.pop();
             len_data--;
