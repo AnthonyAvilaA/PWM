@@ -107,11 +107,23 @@ footer {
 /*Mobile*/
 @media (max-width: 768px) {
     .footer-links {
-        display: none; /* Hide the footer links section */
+        margin-top: 0;
+        display: flex; /* Mantener visible la sección */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links ul {
+        display: none; /* Ocultar las listas por defecto */
+    }
+
+    .footer-links ul:nth-child(2) { 
+        display: block; /* Mostrar la segunda lista (Sobre Nosotros) */
     }
 
     footer {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column;
         align-items: center;
         text-align: center;
     }

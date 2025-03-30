@@ -1,5 +1,7 @@
 .live-headline {
-    font-size: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    font-size: 3vw;
     font-weight: bold;
     text-align: center;
     letter-spacing: 1px;

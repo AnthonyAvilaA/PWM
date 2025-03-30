@@ -39,9 +39,6 @@
 
 /*Mobile*/
 @media (max-width: 768px) {
-    .live-headline {
-        display: none !important;;    
-    }
 
     .featured-news-wrapper {
         display: flex;
