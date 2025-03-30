@@ -45,10 +45,15 @@ body{
     border-radius: 5px;
 }
 .related {
-    margin: 2% 0;
-    padding: 2%;
+    width: 100%;
+    margin: 2% 1% 0 0;
+    padding: 1%;
     border-radius: 5px;
     background-color: rgb(227, 227, 227);
+}
+
+.main-container .related {
+    width: 98%;
 }
 
 .related-item {
@@ -81,4 +86,11 @@ body{
 .comment h4 {
     display: inline-flex;
     margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    #other-news {
+        display: none;
+    }
 }

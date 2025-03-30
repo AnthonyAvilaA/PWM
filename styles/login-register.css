@@ -21,14 +21,14 @@ main {
     width: 100%;
 }
 
-form {
+.page-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 70%;
 }
 
-form * {
+.page-form * {
     margin: 1.5% 0;
 }
 
