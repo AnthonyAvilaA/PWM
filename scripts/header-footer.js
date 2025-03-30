@@ -26,12 +26,27 @@ function checkSession() {
         for (let button of logoutButtons) {
             button.style.display = 'block';
         }
+
+        // Update "Mi cuenta" link to point to the profile page
+        const accountLinks = document.querySelectorAll('.account-link');
+
+        accountLinks.forEach(link => {
+            link.href = '/templates/profile/index.html';
+        })
+
     } else {
         // Hide logout button if no session
         const logoutButtons = document.querySelectorAll('.logout');
         for (let button of logoutButtons) {
             button.style.display = 'none';
         }
+
+        // Update "Mi cuenta" link to point to the profile page
+        const accountLinks = document.querySelectorAll('.account-link');
+
+        accountLinks.forEach(link => {
+            link.href = '/templates/login/index.html';
+        })
     }
 }
 
