@@ -1,0 +1,273 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c0504d;
+    margin: 0;
+    padding: 1% 2%;
+}
+
+.header img {
+    height: 100%;
+}
+
+/* Hidden checkbox */
+#language-toggle {
+    display: none;
+}
+
+.language-options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-options ul li a {
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
+}
+
+.language-options ul li a:visited {
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
+}
+
+#language-toggle:checked ~ .language-options {
+    display: block;
+}
+
+.language-button {
+    background-color: #900;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #900;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    font-size: 1.2vw;
+}
+
+nav ul li a {
+    justify-content: left;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.categories a:hover {
+    text-decoration: underline;
+}
+
+.login-register {
+    display: flex;
+    gap: 10px;
+}
+
+.login-register a {
+    background-color: #8a0303;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* When checkbox is checked, show the menu */
+#menu-toggle:checked ~ nav {
+    display: block;
+}
+
+.burger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+    color: white;
+    padding: 10px;
+}
+
+/* Default: Hide the menu */
+.burger-menu nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 1);
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Style for the menu */
+.normal-size {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Ensure the items are in a column */
+}
+
+.normal-size li {
+    margin: 1% 0;
+}
+
+.normal-size li a {
+    color: white;
+    text-decoration: none;
+    font-size
+    : 18px;
+}
+.short-size { 
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column; /* Ensure the items are in a column */
+}
+
+.ultra-short-size {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column; /* Ensure the items are in a column */
+}
+
+.short-size li {
+    margin: 1% 0;
+}
+
+.short-size li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.ultra-short-size li {
+    margin: 1% 0;
+}
+
+.ultra-short-size li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/*Desktop (does nothing is default behaviour)*/
+@media (min-width: 1024px) {
+    
+}
+
+/*Tablet*/
+@media (max-width: 1024px) {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: 10px;
+    }
+
+    .header a {
+        order: 2;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .language-menu {
+        order: 0; /* Forces language menu to the left */
+    }
+
+    .header a img {
+        position: static;
+        top: 50%;
+        left: 50%;
+        transform: none;
+        height: auto;
+        width: auto;
+    }
+
+    .language-button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    .burger-menu {
+        order: 4;
+    }
+
+    .burger-icon {
+        font-size: 3em;
+    }
+
+    .login-register {
+        order: 3; /* Moves login buttons to the right */
+        display: flex;
+        gap: 10px;
+    }
+    
+    .short-size {
+        display: flex;
+    }
+
+    .normal-size {
+        display: none;
+    }
+
+    .categories ul {
+        display: none;
+    }
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+    .header img {
+        display: none   ;
+    }
+
+    .short-size {
+        display: none;
+    }
+
+    .ultra-short-size {
+        display: flex;
+    }
+
+    .login-register {
+        display: none;
+    }
+}
