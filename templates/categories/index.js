@@ -12,10 +12,7 @@ async function loadHTMLByClass(className, url) {
 }
 
 // Main function to coordinate all fetches
-async function initializePage() {
-    // Load HTML components first
-    await loadHTMLByClass("basic-news", "/components/basic-news.html");
-    
+async function initializePage() {    
     // Load categories and set category name
     try {
         const categoryResponse = await fetch('/resources/json/categories.json');
