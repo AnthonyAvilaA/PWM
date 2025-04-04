@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Añadir noticias - Argony News</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <main class="main-container">
+            <article class="add_news">
+                <h2>Añadir noticia</h2>
+                <form>
+                    <!-- Title -->
+                    <label for="title">Titulo:</label>
+                    <input type="text" id="title" name="title" maxlength="50" required> 
+
+                    <!-- Image Upload -->
+                     <div class="image-upload">
+                        <img src="/resources/images/formato_imagen.png" alt="foto noticia" height="250" width="400">
+                        <input type="text" id="url" name="url" placeholder="URL: " required>
+                     </div>
+                    
+                    <!-- Place -->
+                    <label for="place">Lugar:</label>
+                    <input type="text" id="place" name="place" required>
+
+                    <!-- Description -->
+                    <label for="description">Descripcion:</label>
+                    <textarea id="description" name="description" maxlength="250" rows="4" required></textarea>
+
+                    <!-- Paragraphs -->
+                    <label for="content">Contenido:</label>
+                    <textarea id="content" name="content" maxlength="2000" rows="12" required></textarea>
+
+                    <!-- Category -->
+                    <label for="category">Categoria:</label>
+                    <select id="category" required>
+                        <option value="">--Seleccionar--</option>
+                        <option value="Deportes">Deportes</option>
+                        <option value="Ciencias">Ciencias</option>
+                        <option value="Politica">Política</option>
+                        <option value="Entretenimiento">Entretenimiento</option>
+                        <option value="Mundo">Mundo</option>
+                    </select>
+                    <!-- Action Buttons -->
+                    <div class="separed_buttons">
+                        <button type="button">Guardar borrador</button>
+                        <button type="submit">Subir noticia</button>  
+                    </div>
+                </form>
+            </article>
+        </main>
+    </body>
+</html>

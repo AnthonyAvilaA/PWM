@@ -3,6 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer';
 import { BasicVideoComponent } from "./components/basic-video/basic-video.component";
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { AddNewsComponent } from './pages/add-news/add-news.component';
 
 @Component({
   selector: 'app-root',
