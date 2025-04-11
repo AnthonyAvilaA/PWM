@@ -1,6 +1,6 @@
 import { DocumentData, DocumentReference } from "firebase/firestore";
-import { News } from "../../../models/news";
-import { Category as Category } from "../../../models/types/categories";
+import { News } from "@models/news";
+import { Category as Category } from "@models/types/categories";
 
 export interface NewsProvider {
     
@@ -10,5 +10,5 @@ export interface NewsProvider {
 
     getNewsById(id: string): Promise<News>;
 
-    addNews(news: News): Promise<DocumentReference<News, DocumentData>>;
+    addNews(news: News): Promise<string>;
 }

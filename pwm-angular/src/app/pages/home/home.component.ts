@@ -1,10 +1,12 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { ArticleComponent } from "@components/article/article.component";
-import { NewsProviderServiceService } from '@services/news-provider-service.service';
-import { NewsFirebaseProviderServiceService } from '@services/providers/firebase/news.firebase.provider.service.service';
+import { ProviderServiceService } from '@services/provider-service.service';
 import { NewsProvider } from '@services/providers/interfaces/news.provider';
-import { NewsJsonProviderService } from '@services/providers/json/news.json.provider.service';
+import { UserProvider } from '@services/providers/interfaces/user.provider';
+import { collection, CollectionReference, doc, Firestore, setDoc } from 'firebase/firestore';
+import { Comment } from '@models/comment';
 import { db } from 'environments/firebase.config';
+import { CommentProvider } from '@services/providers/interfaces/comment.provider';
 
 @Component({
   selector: 'app-home',
@@ -13,37 +15,44 @@ import { db } from 'environments/firebase.config';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  private newsProvider: NewsProvider; // leer Json
-  private jsonProviderTEMP: NewsJsonProviderService //  escribir a Firebase
-  // En realidad solo deberíamos usar news provider conectado a fb
-  // pero lo hice de esta forma para leer los json y escribir a firebase
+  private newsProvider: NewsProvider;
+  private userProvider: UserProvider;
+  private commentProvider: CommentProvider;
+  private db: Firestore;
 
-  constructor(private providerService: NewsProviderServiceService) {
+  constructor(private providerService: ProviderServiceService) {
     this.newsProvider = providerService.newsProvider;
-    this.jsonProviderTEMP = new NewsJsonProviderService();
+    this.userProvider = providerService.usersProvider;
+    this.commentProvider = providerService.commentsProvider;
+    this.db = db;
   }
 
   async ngOnInit(): Promise<void> {  
     /*
-    const added = await this.newsProvider.addNews({
-      title: "string",
-      authorID: "string",
-      description: "string",
-      content: "string",
-      image: "string",
-      categories: ["string[]"],
-      usersCommentsID: ["string[]"],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    });
+    try {
+      // Fetch data.json
+      const response = await fetch('assets/data.json');
+      const data = await response.json();
 
-    let news = await this.jsonProviderTEMP.getAllNews();
-    console.log(news.length);
-    news = await this.newsProvider.getAllNews();
-    console.log(news.length); 
+      // Extract comments from data.json
+      data.data.forEach((newsItem: any) => {
+        if (Array.isArray(newsItem.comments)) {
+          newsItem.comments.forEach((comment: any) => {
+            if (comment.id && comment.Content && comment.createdAt) {
+              const commentToAdd = ({
+                userID: comment.User.id,
+                content: comment.Content,
+                createdAt: comment.createdAt
+              }) as Comment;
+              this.commentProvider.addCommentByID(commentToAdd, `${comment.id}`);
+            }
+          });
+        }
+      });
 
-    for (const article of news) {
-        await this.newsProvider.addNews(article); 
+      console.log('Comments uploaded successfully!');
+    } catch (error) {
+      console.error('Error uploading comments:', error);
     }
     */
   }

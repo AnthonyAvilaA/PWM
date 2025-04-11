@@ -1,4 +1,4 @@
-import { addDoc, collection, CollectionReference, doc, DocumentData, DocumentReference, DocumentSnapshot, Firestore, FirestoreDataConverter, getDocs, setDoc, SnapshotOptions } from 'firebase/firestore';
+import { addDoc, collection, CollectionReference, doc, DocumentData, DocumentReference, DocumentSnapshot, Firestore, FirestoreDataConverter, getDoc, getDocs, setDoc, SnapshotOptions } from 'firebase/firestore';
 import { News } from '@models/news';
 import { Category } from '@models/types/categories';
 import { NewsProvider } from '../interfaces/news.provider';
@@ -50,8 +50,8 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
     this.posts = collection(this.db, '/news').withConverter(newsConverter);
   }
 
-  async addNews(news: News): Promise<DocumentReference<News, DocumentData>> {
-    return await addDoc(this.posts, news);
+  async addNews(news: News): Promise<string> {
+    return (await addDoc(this.posts, news)).id;
   }
 
   async getAllNews(): Promise<News[]> {
@@ -62,10 +62,10 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
   }
 
   getNewsByCategory(category: Category): Promise<News[]> {
-    throw new Error('Method not implemented.');
+    throw new Error('Category Method not implemented Yet.');
   }
 
-  getNewsById(id: string): Promise<News> {
-    throw new Error('Method not implemented.');
+  async getNewsById(id: string): Promise<News> {
+    return (await getDoc(doc(this.posts, id))).data() as News;
   }
 }
