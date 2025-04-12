@@ -1,4 +1,5 @@
 export interface News {
+    ID: string;
     title: string;
     authorID: string;
     description: string;

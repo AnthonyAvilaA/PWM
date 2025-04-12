@@ -39,7 +39,7 @@ export class UsersFirebaseProviderServiceService implements UserProvider {
     }
 
   async getUserById(id: string): Promise<User> {
-    return (await getDoc(doc(this.users, id))).data() as User;
+    return (await getDoc(doc(this.users, `${id}`))).data() as User;
   }
 
   async addUser(User: User): Promise<string> {

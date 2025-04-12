@@ -30,6 +30,7 @@ export const newsConverter: FirestoreDataConverter<News, FirestoreNews> = {
   fromFirestore: (snapshot: DocumentSnapshot, options: SnapshotOptions) => {
     const data = snapshot.data(options)! as FirestoreNews;
     return {
+      ID: snapshot.id,
       title: data.title,
       authorID: data.authorID,
       description: data.description,
@@ -66,6 +67,6 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
   }
 
   async getNewsById(id: string): Promise<News> {
-    return (await getDoc(doc(this.posts, id))).data() as News;
+    return (await getDoc(doc(this.posts, `${id}`))).data() as News;
   }
 }

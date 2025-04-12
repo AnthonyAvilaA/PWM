@@ -41,7 +41,7 @@ export class CommentsFirebaseProviderServiceService implements CommentProvider {
   }
 
   async getCommentById(id: string): Promise<Comment> {
-    return (await getDoc(doc(this.comments, id))).data() as Comment;
+    return (await getDoc(doc(this.comments, `${id}`))).data() as Comment;
   }
 
   async addComment(comment: Comment): Promise<string> {
