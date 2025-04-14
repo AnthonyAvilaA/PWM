@@ -1,0 +1,12 @@
+<div class="legal-container">
+  <h1>{{ pageTitle }}</h1>
+  <p class="date">Última actualización: {{ lastUpdate | date:'yyyy-MM-dd' }}</p>
+
+  <ng-container *ngFor="let section of sections; let i = index">
+    <h2>{{ i+1 }}. {{ section.title }}</h2>
+    <p [innerHTML]="section.content"></p>
+  </ng-container>
+
+  <h2>{{ sections.length + 1 }}. Contacto</h2>
+  <p>Si tienes preguntas sobre {{ pageTitle }}, contáctanos en <a href="mailto:{{contactEmail}}">{{contactEmail}}</a>.</p>
+</div>
