@@ -1,11 +1,11 @@
-<article class="news-article">
-    <div class="text-content">
-        <h1 class="title">Título de la Noticia</h1>
-        <p class="extract">Breve descripción de la noticia para captar la atención del lector.</p>
-        <a href="/templates/news/index.html" class="read-more">Leer más</a>
-    </div>
-    <figure class="image-container">
-        <img src="/assets/formato_imagen.png" alt="Imagen de la noticia">
-        <figcaption class="caption">Redactor | Lugar | Día | Hora</figcaption>
-    </figure>
+<article class="news-article" *ngIf="news">
+  <div class="text-content">
+    <h1 class="title">{{ news.title }}</h1>
+    <p class="extract">{{ news.description }}</p>
+    <a [routerLink]="['/news', news.ID]" class="read-more">Leer más</a>
+  </div>
+  <figure class="image-container">
+    <img [src]="news.image" alt="Imagen de {{ news.title }}">
+    <figcaption class="caption">{{ news.updatedAt | date:'short' }}</figcaption>
+  </figure>
 </article>

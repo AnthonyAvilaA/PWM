@@ -23,6 +23,7 @@
             <li><a routerLink="category">Mundo</a></li>
         </ul>
     </nav>
+
     <div class="login-register">
         <a routerLink="login">Iniciar Sesión</a>
         <a routerLink="register">Registrarse</a>
@@ -31,35 +32,17 @@
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="burger-icon">&#9776;</label>
         <nav>
-            <ul class="normal-size">
-                <li><a routerLink="home">Inicio</a></li>
-                <li><a routerLink="profile" class="account-link">Mi Cuenta</a></li>
-                <li class="logout" style="display: none;"><a href="javascript:void(0);" onclick="logout()">Cerrar
-                        Sesión</a></li>
-            </ul>
-
-            <ul class="short-size">
-                <li><a routerLink="home">Inicio</a></li>
-                <li><a routerLink="profile" class="account-link">Mi Cuenta</a></li>
-                <li class="logout"><a href="javascript:void(0);" onclick="logout()">Cerrar Sesión</a></li>
-                <li><a routerLink="videos">Videos</a></li>
-                <li><a routerLink="category">Deportes</a></li>
-                <li><a routerLink="category">Ciencia</a></li>
-                <li><a routerLink="category">Política</a></li>
-                <li><a routerLink="category">Entretenimiento</a></li>
-            </ul>
-
-            <ul class="ultra-short-size">
-                <li><a routerLink="home">Inicio</a></li>
-                <li><a routerLink="profile" class="account-link">Mi Cuenta</a></li>
-                <li class="logout"><a href="javascript:void(0);" onclick="logout()">Cerrar Sesión</a></li>
+            <ul class="nav-links">
+                <li id="burger-home"><a routerLink="home">Inicio</a></li>
+                <li id="burger-profile"><a routerLink="profile" class="account-link">Mi Cuenta</a></li>
                 <li id="burger-login"><a routerLink="login">Iniciar Sesion</a></li>
                 <li id="burger-register"><a routerLink="register">Registrarse</a></li>
-                <li><a routerLink="videos">Videos</a></li>
-                <li><a routerLink="category">Deportes</a></li>
-                <li><a routerLink="category">Ciencia</a></li>
-                <li><a routerLink="category">Política</a></li>
-                <li><a routerLink="category">Entretenimiento</a></li>
+                <li class="burger-logout"><a>Cerrar Sesión</a></li>
+                <li class="burger-videos"><a routerLink="videos">Videos</a></li>
+                <li class="burger-category"><a routerLink="category">Deportes</a></li>
+                <li class="burger-category"><a routerLink="category">Ciencia</a></li>
+                <li class="burger-category"><a routerLink="category">Política</a></li>
+                <li class="burger-category"><a routerLink="category">Entretenimiento</a></li>
             </ul>
         </nav>
     </div>

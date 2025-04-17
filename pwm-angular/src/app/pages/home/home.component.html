@@ -1,1 +1,40 @@
-<app-article></app-article>
+<div class="main-container">
+  <!-- Loading indicator -->
+  <div *ngIf="loading" class="loading-container">
+    <p>Cargando noticias...</p>
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="error" class="error-container">
+    <p>{{ error }}</p>
+    <button (click)="loadNews()">Reintentar</button>
+  </div>
+
+  <!-- Main content - only shown when not loading and no error -->
+  <div *ngIf="!loading && !error">
+    <!-- Live Headline -->
+    <a [routerLink]="['/live-news']" class="live-headline">
+      <span *ngIf="liveNews">{{ liveNews.title }}</span>
+      <span *ngIf="!liveNews">Noticias en vivo - Sigue los acontecimientos más recientes</span>
+    </a>
+
+    <!-- Main Featured News Grid -->
+    <div class="featured-news-wrapper">
+      <!-- Top Stories (Main Column) -->
+      <section class="top-stories">
+        <app-article *ngFor="let news of topStories" [news]="news"></app-article>
+      </section>
+
+      <!-- Suggested Content (Side Column) -->
+      <aside id="suggested-content">
+        <app-side-article *ngFor="let news of suggestedContent" [news]="news"></app-side-article>
+      </aside>
+    </div>
+
+    <!-- Show More Button -->
+    <button id="show-more" (click)="loadMoreNews()" [class.hidden]="noMoreNews">
+      Mostrar más
+    </button>
+  </div>
+</div>

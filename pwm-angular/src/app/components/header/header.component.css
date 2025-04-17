@@ -59,6 +59,7 @@
     margin-top: 5px;
 }
 
+/* Should only modify the main nav, burger styles added in another component */
 nav {
     flex-grow: 1;
     display: flex;
@@ -150,7 +151,7 @@ nav ul li a {
     font-size
     : 18px;
 }
-.short-size { 
+.short-size {
     display: none;
     list-style: none;
     padding: 0;
@@ -188,7 +189,7 @@ nav ul li a {
 
 /*Desktop (does nothing is default behaviour)*/
 @media (min-width: 1024px) {
-    
+
 }
 
 /*Tablet*/
@@ -239,7 +240,7 @@ nav ul li a {
         display: flex;
         gap: 10px;
     }
-    
+
     .short-size {
         display: flex;
     }
