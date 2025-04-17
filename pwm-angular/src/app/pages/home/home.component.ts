@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ArticleComponent} from "@components/article/article.component";
-import { SideArticleComponent} from '@components/side-article/side-article.component';
-import { NewsService } from '@services/news.service';
-import { News } from '@models/news';
+import { CommonModule } from '@angular/common';
+import { ArticleComponent} from "../../components/article/article.component";
+import { SideArticleComponent} from '../../components/side-article/side-article.component';
+import { NewsService } from '../../services/news.service';
+import { News } from '../../models/news';
 
 
 @Component({
   selector: 'app-home',
-  imports: [ArticleComponent, SideArticleComponent, RouterLink],
+  standalone: true,
+  imports: [ArticleComponent, SideArticleComponent, RouterLink, CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   // News collections
@@ -135,6 +137,4 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-}
-
 }

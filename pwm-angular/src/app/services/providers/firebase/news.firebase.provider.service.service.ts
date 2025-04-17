@@ -153,10 +153,12 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
       // You would load additional data like author info and comments here
       // This is a simplified implementation
       const fullNews: FullNews = {
-        ...news,
-        author: null, // You would fetch the author data here
-        comments: [],  // You would fetch comments here
-        contentBlocks: [] // You would parse or fetch content blocks here
+        news: news,
+        author: {
+          name: 'Unknown Author',
+          email: ''
+        }, // Default user object with correct properties
+        comments: []  // You would fetch comments here
       };
 
       return fullNews;
