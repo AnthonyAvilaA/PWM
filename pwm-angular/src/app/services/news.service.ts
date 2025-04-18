@@ -69,15 +69,9 @@ export class NewsService {
    * @param news News object to create
    * @returns Observable with the ID of the created news
    */
-  createNews(news: Omit<News, 'ID'>): Observable<string> {
-    const newsWithId = { ...news, ID: '' } as News;
-    return this.provider.getAllNewsObservable().pipe(
-      // Using the first response as a trigger to call addNews
-      // This is a workaround since addNews returns a Promise<string> and we need an Observable<string>
-      concatMap(() => from(this.provider.addNews(newsWithId)))
-    );
+  async createNews(news: News): Promise<string> {
+    return await this.provider.addNews(news);
   }
-
   /**
    * Update an existing news article
    * @param id News ID
