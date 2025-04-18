@@ -15,12 +15,12 @@
 
     <nav class="categories">
         <ul>
-            <li><a routerLink="videos">Videos</a></li>
-            <li><a routerLink="category">Deportes</a></li>
-            <li><a routerLink="category">Ciencia</a></li>
-            <li><a routerLink="category">Política</a></li>
-            <li><a routerLink="category">Entretenimiento</a></li>
-            <li><a routerLink="category">Mundo</a></li>
+            <li><a routerLink="/videos">Videos</a></li>
+            <li><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
+            <li><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
+            <li><a [routerLink]="['/category', 'politica']">Política</a></li>
+            <li><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
+            <li><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
         </ul>
     </nav>
 
@@ -38,11 +38,12 @@
                 <li id="burger-login"><a routerLink="login">Iniciar Sesion</a></li>
                 <li id="burger-register"><a routerLink="register">Registrarse</a></li>
                 <li class="burger-logout"><a>Cerrar Sesión</a></li>
-                <li class="burger-videos"><a routerLink="videos">Videos</a></li>
-                <li class="burger-category"><a routerLink="category">Deportes</a></li>
-                <li class="burger-category"><a routerLink="category">Ciencia</a></li>
-                <li class="burger-category"><a routerLink="category">Política</a></li>
-                <li class="burger-category"><a routerLink="category">Entretenimiento</a></li>
+                <li class="burger-videos"><a routerLink="/videos">Videos</a></li>
+                <li class="burger-category"><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
+                <li class="burger-category"><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
+                <li class="burger-category"><a [routerLink]="['/category', 'politica']">Política</a></li>
+                <li class="burger-category"><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
+                <li class="burger-category"><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
             </ul>
         </nav>
     </div>

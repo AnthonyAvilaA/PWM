@@ -1,65 +1,61 @@
-<!DOCTYPE html>
-<html lang="es">
+<div class="main-container">
+  <!-- Loading indicator -->
+  <div *ngIf="loading" class="loading-container">
+    <p>Cargando noticias de {{ categoryName || 'todas las categorías' }}...</p>
+    <div class="loading-spinner"></div>
+  </div>
 
-<head>
-    <title>Argony News --Categorías--</title>
-    <script src="../../scripts/header-footer.js"></script>
-    <script src="/scripts/load_component.js"></script>
-    <script src="index.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/global.css">
-    <link rel="stylesheet" href="/styles/header.css">
-    <link rel="stylesheet" href="/styles/footer.css">
-    <link rel="stylesheet" href="/styles/article.css">
-    <link rel="stylesheet" href="/styles/side_article.css">
-    <link rel="stylesheet" href="/templates/categories/index.css">
-</head>
-<body>
-    <div id="header"></div>
-    <main>
-        <h1 id="title">Categoría</h1>
-        <div class="main-container">
-            <section class="top">
-                <div class="top-news">
-                    <div class="top-main-news">
-                        <div class="article"></div>
-                    </div>
-                    <div class="top-other-news">
-                        <div class="side_article"></div>
-                        <div class="side_article"></div>
-                    </div>
-                </div>
+  <!-- Error message -->
+  <div *ngIf="error" class="error-container">
+    <p>{{ error }}</p>
+    <button (click)="ngOnInit()">Reintentar</button>
+  </div>
 
-                <div class="top-sider">
-                    <h2>Leer Más</h2>
-                    <div class="side_article"></div>
-                    <div class="side_article"></div>
-                </div>
-            </section>
-            <section class="subcategory bg-white">
-                <h2>Subcategoría 1</h2>
-                <div class="side_article"></div>
-                <div class="side_article"></div>
-                <div class="side_article"></div>
-            </section>
-
-            <section class="subcategory bg-grey">
-                <h2>Subcategoría 2</h2>
-                <div class="side_article"></div>
-                <div class="side_article"></div>
-                <div class="side_article"></div>
-            </section>
-
-            <section class="subcategory bg-white">
-                <h2>Subcategoría 3</h2>
-                <div class="side_article"></div>
-                <div class="side_article"></div>
-                <div class="side_article"></div>
-            </section>
+  <!-- Main content - only shown when not loading and no error -->
+  <div *ngIf="!loading && !error">
+    <h1 class="category-title">{{ categoryName ? (categoryName | titlecase) : 'Todas las Categorías' }}</h1>
+    
+    <!-- Featured News Section -->
+    <section class="top">
+      <div class="top-news">
+        <!-- Main Featured Article -->
+        <div class="top-main-news" *ngIf="featuredNews">
+          <app-article [news]="featuredNews"></app-article>
         </div>
-    </main>
-    <div id="footer"></div>
-</body>
+        
+        <!-- Secondary News -->
+        <div class="top-other-news">
+          <app-side-article *ngFor="let news of secondaryNews" [news]="news"></app-side-article>
+        </div>
+      </div>
 
-</html>
+      <!-- Related News Sidebar -->
+      <div class="top-sider" *ngIf="relatedNews.length > 0">
+        <h2>Leer Más</h2>
+        <app-side-article *ngFor="let news of relatedNews.slice(0, 2)" [news]="news"></app-side-article>
+      </div>
+    </section>
+
+    <!-- More Related News - First Section -->
+    <section class="subcategory bg-white" *ngIf="relatedNews.length > 2">
+      <h2>Noticias Relacionadas</h2>
+      <div class="related-news-grid">
+        <app-side-article *ngFor="let news of relatedNews.slice(2, 5)" [news]="news"></app-side-article>
+      </div>
+    </section>
+
+    <!-- More Related News - Second Section -->
+    <section class="subcategory bg-grey" *ngIf="relatedNews.length > 5">
+      <h2>Más Noticias</h2>
+      <div class="related-news-grid">
+        <app-side-article *ngFor="let news of relatedNews.slice(5, 8)" [news]="news"></app-side-article>
+      </div>
+    </section>
+
+    <!-- Empty state for no news -->
+    <div *ngIf="news.length === 0" class="empty-state">
+      <p>No se encontraron noticias para esta categoría.</p>
+      <a routerLink="/home">Volver a la página principal</a>
+    </div>
+  </div>
+</div>

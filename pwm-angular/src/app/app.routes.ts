@@ -12,6 +12,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   { path: 'register', component: RegisterComponent, data: { title: 'Register' } },
   { path: 'category', component: CategoriesComponent, data: { title: 'Categories' } },
+  { path: 'category/:categoryName', component: CategoriesComponent, data: { title: 'Categories' } },
   { path: 'privacy', component: PrivacyComponent, data: { title: 'Privacy Policy' } },
   { path: 'terms', component: TermsComponent, data: { title: 'Terms of Service' } }
 ];
