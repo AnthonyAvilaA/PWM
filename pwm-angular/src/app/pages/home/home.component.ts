@@ -118,8 +118,8 @@ export class HomeComponent implements OnInit {
    * Distributes news items between top stories and suggested content
    */
   private distributeNews(newsItems: News[]): void {
-    // Use 2/3 for top stories and 1/3 for suggested content
-    const topCount = Math.ceil(newsItems.length * 0.67);
+    // Use 1/2 for top stories and 1/2 for suggested content
+    const topCount = Math.ceil(newsItems.length * 0.5);
 
     // Get items for top stories
     for (let i = 0; i < topCount && i < newsItems.length; i++) {
