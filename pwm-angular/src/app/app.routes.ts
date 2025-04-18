@@ -8,10 +8,10 @@ import { TermsComponent } from './pages/legal/terms/terms.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'category', component: CategoriesComponent },
-  { path: 'privacy', component: PrivacyComponent },
-  { path: 'terms', component: TermsComponent }
+  { path: 'home', component: HomeComponent, data: { title: 'Home' } },
+  { path: 'login', component: LoginComponent, data: { title: 'Login' } },
+  { path: 'register', component: RegisterComponent, data: { title: 'Register' } },
+  { path: 'category', component: CategoriesComponent, data: { title: 'Categories' } },
+  { path: 'privacy', component: PrivacyComponent, data: { title: 'Privacy Policy' } },
+  { path: 'terms', component: TermsComponent, data: { title: 'Terms of Service' } }
 ];
