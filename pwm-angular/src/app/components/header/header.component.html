@@ -1,58 +1,81 @@
-<div class="header">
-    <a routerLink="home">
-        <img src="/assets/logo.png" alt="logo" height="65" width="100">
+<header class="header">
+  <!-- Left Section -->
+  <div class="header-left">
+    <!-- Logo - on left for desktop, will be centered in tablet with CSS -->
+    <a routerLink="home" class="logo">
+      <img src="/assets/logo.png" alt="logo" height="65" width="100">
     </a>
+    
+    <!-- Language menu -->
     <div class="language-menu">
-        <input type="checkbox" id="language-toggle">
-        <label for="language-toggle" class="language-button">IDIOMA</label>
-        <div class="language-options">
-            <ul>
-                <li><a href="#">Español</a></li>
-                <li><a href="#">English</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <nav class="categories">
+      <input type="checkbox" id="language-toggle">
+      <label for="language-toggle" class="language-button">IDIOMA</label>
+      <div class="language-options">
         <ul>
-            <li><a routerLink="/videos">Videos</a></li>
-            <li><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
-            <li><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
-            <li><a [routerLink]="['/category', 'politica']">Política</a></li>
-            <li><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
-            <li><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
+          <li><a href="#">Español</a></li>
+          <li><a href="#">English</a></li>
         </ul>
-    </nav>
+      </div>
+    </div>
+  </div>
 
-    <!-- Login/Register section - only shown when not authenticated -->
+  <!-- Center Section - Categories Navigation (Desktop Only) -->
+  <nav class="header-center categories">
+    <ul>
+      <li><a routerLink="/videos">Videos</a></li>
+      <li><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
+      <li><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
+      <li><a [routerLink]="['/category', 'politica']">Política</a></li>
+      <li><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
+      <li><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
+    </ul>
+  </nav>
+
+  <!-- Right Section -->
+  <div class="header-right">
+    <!-- Username - Always displayed -->
+    <span class="username always-visible" *ngIf="isAuthenticated">
+      {{ currentUser?.username || currentUser?.name }}
+    </span>
+    
+    <!-- Login/Register section - only shown when not authenticated (desktop & tablet) -->
     <div class="login-register" *ngIf="!isAuthenticated">
-        <a routerLink="login">Iniciar Sesión</a>
-        <a routerLink="register">Registrarse</a>
+      <a routerLink="login">Iniciar Sesión</a>
+      <a routerLink="register">Registrarse</a>
     </div>
 
-    <!-- User menu - only shown when authenticated -->
-    <div class="user-menu" *ngIf="isAuthenticated">
-        <span class="username">{{ currentUser?.username || currentUser?.name }}</span>
-        <a href="javascript:void(0)" (click)="logout()" class="logout-btn">Cerrar Sesión</a>
-    </div>
+    <!-- Logout button - only shown when authenticated (desktop & tablet) -->
+    <a href="javascript:void(0)" (click)="logout()" class="logout-btn desktop-tablet-only" *ngIf="isAuthenticated">
+      Cerrar Sesión
+    </a>
 
+    <!-- Burger Menu -->
     <div class="burger-menu">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="burger-icon">&#9776;</label>
-        <nav>
-            <ul class="nav-links">
-                <li id="burger-home"><a routerLink="home">Inicio</a></li>
-                <li id="burger-profile" *ngIf="isAuthenticated"><a routerLink="profile" class="account-link">Mi Cuenta</a></li>
-                <li id="burger-login" *ngIf="!isAuthenticated"><a routerLink="login">Iniciar Sesion</a></li>
-                <li id="burger-register" *ngIf="!isAuthenticated"><a routerLink="register">Registrarse</a></li>
-                <li class="burger-logout" *ngIf="isAuthenticated"><a (click)="logout()">Cerrar Sesión</a></li>
-                <li class="burger-videos"><a routerLink="/videos">Videos</a></li>
-                <li class="burger-category"><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
-                <li class="burger-category"><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
-                <li class="burger-category"><a [routerLink]="['/category', 'politica']">Política</a></li>
-                <li class="burger-category"><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
-                <li class="burger-category"><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
-            </ul>
-        </nav>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="burger-icon">&#9776;</label>
+      <nav class="burger-nav">
+        <ul class="nav-links">
+          <!-- Always visible in burger menu -->
+          <li><a routerLink="home">Inicio</a></li>
+          
+          <!-- My Account and Logout grouped together -->
+          <li *ngIf="isAuthenticated"><a routerLink="profile">Mi Cuenta</a></li>
+          <li *ngIf="isAuthenticated" class="burger-logout mobile-only-small"><a (click)="logout()">Cerrar Sesión</a></li>
+          <li *ngIf="!isAuthenticated"><a routerLink="login">Mi Cuenta</a></li>
+          
+          <!-- Only visible in tablet/mobile -->
+          <li class="mobile-only"><a routerLink="/videos">Videos</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'politica']">Política</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
+          
+          <!-- Only visible in mobile -->
+          <li class="mobile-only-small" *ngIf="!isAuthenticated"><a routerLink="login">Iniciar Sesión</a></li>
+          <li class="mobile-only-small" *ngIf="!isAuthenticated"><a routerLink="register">Registrarse</a></li>
+        </ul>
+      </nav>
     </div>
-</div>
+  </div>
+</header>

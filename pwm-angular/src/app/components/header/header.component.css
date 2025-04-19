@@ -1,305 +1,310 @@
+/* Basic Header Styles */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #c0504d;
-    margin: 0;
-    padding: 1% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c0504d;
+  margin: 0;
+  padding: clamp(8px, 2vh, 25px) clamp(15px, 2.5vw, 35px);
+  position: relative;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.header img {
-    height: 100%;
+/* Left Section Styles */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.8vw, 20px);
 }
 
-/* Hidden checkbox */
+/* Logo Styles */
+.logo {
+  display: inline-block;
+}
+
+.logo img {
+  height: clamp(45px, 7vh, 70px);
+  width: auto;
+}
+
+/* Center Section Styles */
+.header-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-center ul {
+  list-style: none;
+  display: flex;
+  gap: clamp(12px, 2.2vw, 24px);
+  padding: 0;
+  margin: 0;
+}
+
+.header-center ul li {
+  display: inline;
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
+}
+
+.header-center ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.header-center a:hover {
+  text-decoration: underline;
+}
+
+/* Language Menu Styles */
+.language-menu {
+  position: relative;
+}
+
 #language-toggle {
-    display: none;
-}
-
-.language-options ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.language-options ul li a {
-    list-style: none;
-    text-decoration: none;
-    color: #000000;
-}
-
-.language-options ul li a:visited {
-    list-style: none;
-    text-decoration: none;
-    color: #000000;
-}
-
-#language-toggle:checked ~ .language-options {
-    display: block;
+  display: none;
 }
 
 .language-button {
-    background-color: #900;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    text-align: center;
+  background-color: #900;
+  color: white;
+  padding: clamp(4px, 0.6vh, 7px) clamp(8px, 1.2vw, 12px);
+  border-radius: 5px;
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .language-options {
-    display: none;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #900;
-    padding: 5px;
-    margin-top: 5px;
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #900;
+  padding: 5px;
+  margin-top: 5px;
+  z-index: 1001;
 }
 
-/* Should only modify the main nav, burger styles added in another component */
-nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
+.language-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
+.language-options ul li a {
+  text-decoration: none;
+  color: #000000;
 }
 
-nav ul li {
-    display: inline;
-    font-size: 1.2vw;
+#language-toggle:checked ~ .language-options {
+  display: block;
 }
 
-nav ul li a {
-    justify-content: left;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-.categories a:hover {
-    text-decoration: underline;
-}
-
-.login-register {
-    display: flex;
-    gap: 10px;
-}
-
-.login-register a {
-    background-color: #8a0303;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-}
-
-#menu-toggle {
-    display: none;
-}
-
-/* When checkbox is checked, show the menu */
-#menu-toggle:checked ~ nav {
-    display: block;
-}
-
-.burger-icon {
-    font-size: 30px;
-    cursor: pointer;
-    display: block;
-    color: white;
-    padding: 10px;
-}
-
-/* Default: Hide the menu */
-.burger-menu nav {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: rgba(0, 0, 0, 1);
-    padding: 15px;
-    border-radius: 5px;
-    z-index: 1000;
-}
-
-/* Style for the menu */
-.normal-size {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Ensure the items are in a column */
-}
-
-.normal-size li {
-    margin: 1% 0;
-}
-
-.normal-size li a {
-    color: white;
-    text-decoration: none;
-    font-size
-    : 18px;
-}
-.short-size {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-direction: column; /* Ensure the items are in a column */
-}
-
-.ultra-short-size {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-direction: column; /* Ensure the items are in a column */
-}
-
-.short-size li {
-    margin: 1% 0;
-}
-
-.short-size li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.ultra-short-size li {
-    margin: 1% 0;
-}
-
-.ultra-short-size li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* User menu - shown when authenticated */
-.user-menu {
+/* Right Section Styles */
+.header-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(12px, 1.8vw, 22px);
 }
 
-.username {
+/* Username - Always visible */
+.username.always-visible {
   color: white;
   font-weight: bold;
+  font-size: clamp(13px, 1vw, 16px);
+  white-space: nowrap;
+  display: block;
   margin-right: 5px;
 }
 
+/* Login/Register Styles */
+.login-register {
+  display: flex;
+  gap: clamp(6px, 1.2vw, 12px);
+}
+
+.login-register a {
+  background-color: #8a0303;
+  padding: clamp(4px, 0.6vh, 7px) clamp(8px, 1.2vw, 12px);
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(13px, 1vw, 16px);
+  white-space: nowrap;
+}
+
+/* Logout Button */
 .logout-btn {
   background-color: #8a0303;
-  padding: 5px 10px;
+  padding: clamp(4px, 0.6vh, 7px) clamp(8px, 1.2vw, 12px);
   border-radius: 5px;
   color: white;
   text-decoration: none;
   cursor: pointer;
+  font-size: clamp(13px, 1vw, 16px);
+  white-space: nowrap;
 }
 
-.logout-btn:hover {
-  background-color: #6b0202;
+/* Desktop and Tablet Only elements */
+.desktop-tablet-only {
+  display: inline-block;
 }
 
-/* Make burger menu logout clickable */
+/* Burger Menu Styles */
+.burger-menu {
+  position: relative;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.burger-icon {
+  font-size: clamp(22px, 2.8vw, 34px);
+  cursor: pointer;
+  display: block;
+  color: white;
+  padding: clamp(4px, 0.6vh, 7px) clamp(8px, 1.2vw, 12px);
+}
+
+.burger-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+#menu-toggle:checked ~ .burger-nav {
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(15px, 1.1vw, 17px);
+  display: block;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Burger logout link */
 .burger-logout a {
+  color: #ff9999;
   cursor: pointer;
 }
 
-/*Desktop (does nothing is default behaviour)*/
-@media (min-width: 1024px) {
-
+/* Hide mobile-only elements by default */
+.mobile-only, .mobile-only-small {
+  display: none;
 }
 
-/*Tablet*/
-@media (max-width: 1024px) {
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        padding: 10px;
-    }
+/**
+ * RESPONSIVE STYLES
+ */
 
-    .header a {
-        order: 2;
-        flex-grow: 1;
-        display: flex;
-        justify-content: center;
-    }
+/* Desktop Layout (≥1024px) - Default */
 
-    .language-menu {
-        order: 0; /* Forces language menu to the left */
-    }
-
-    .header a img {
-        position: static;
-        top: 50%;
-        left: 50%;
-        transform: none;
-        height: auto;
-        width: auto;
-    }
-
-    .language-button {
-        font-size: 1.2em;
-        padding: 10px 20px;
-    }
-
-    .burger-menu {
-        order: 4;
-    }
-
-    .burger-icon {
-        font-size: 3em;
-    }
-
-    .login-register {
-        order: 3; /* Moves login buttons to the right */
-        display: flex;
-        gap: 10px;
-    }
-
-    .short-size {
-        display: flex;
-    }
-
-    .normal-size {
-        display: none;
-    }
-
-    .categories ul {
-        display: none;
-    }
+/* Tablet Layout (≥768px and <1024px) */
+@media (max-width: 1023px) {
+  .header {
+    padding: clamp(6px, 1.2vh, 12px) clamp(12px, 1.7vw, 18px);
+    position: relative;
+  }
+  
+  /* Header-left only contains language menu in tablet mode */
+  .header-left {
+    width: auto;
+    flex: 0 0 auto;
+  }
+  
+  /* Hide navigation links */
+  .header-center {
+    display: none;
+  }
+  
+  /* Position logo in the center */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  /* Show mobile menu items */
+  .mobile-only {
+    display: block;
+  }
 }
 
-/*Mobile*/
-@media (max-width: 768px) {
-    .header img {
-        display: none   ;
-    }
+/* Mobile Layout (<768px) */
+@media (max-width: 767px) {
+  .header {
+    padding: clamp(6px, 1vh, 10px) clamp(10px, 1.4vw, 12px);
+    justify-content: space-between;
+  }
+  
+  /* Hide logo */
+  .logo {
+    display: none;
+  }
+  
+  /* Left only has language selector */
+  .header-left {
+    flex: 0 0 auto;
+  }
+  
+  /* Right only has username and burger menu */
+  .header-right {
+    flex: 0 0 auto;
+    align-items: center;
+  }
+  
+  /* Hide desktop/tablet elements */
+  .desktop-tablet-only {
+    display: none;
+  }
 
-    .short-size {
-        display: none;
-    }
-
-    .ultra-short-size {
-        display: flex;
-    }
-
-    .login-register {
-        display: none;
-    }
+  /* Keep username visible but make it smaller */
+  .username.always-visible {
+    font-size: clamp(12px, 0.9vw, 14px);
+  }
+  
+  /* Hide login/register buttons */
+  .login-register {
+    display: none;
+  }
+  
+  /* Show mobile-only-small items */
+  .mobile-only-small {
+    display: block;
+  }
+  
+  /* Reduce language button size */
+  .language-button {
+    padding: clamp(3px, 0.5vh, 5px) clamp(6px, 1vw, 10px);
+    font-size: clamp(11px, 0.9vw, 14px);
+  }
 }
