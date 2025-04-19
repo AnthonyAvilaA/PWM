@@ -14,6 +14,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  rememberMe: boolean = false; 
   errorMessage: string | null = null;
   isLoading: boolean = false;
 
@@ -44,7 +45,8 @@ export class LoginComponent {
 
     this.authService.login({
       email: this.email,
-      password: this.password
+      password: this.password,
+      rememberMe: this.rememberMe 
     }).subscribe(success => {
       if (success) {
         this.router.navigate(['/']);

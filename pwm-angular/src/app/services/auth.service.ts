@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, catchError, from, of, tap } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ProviderServiceService } from './provider-service.service';
 import { AuthUser, LoginData, RegisterData } from '@models/auth';
 import { Router } from '@angular/router';
@@ -15,8 +16,10 @@ export class AuthService {
   private errorMessageSubject = new BehaviorSubject<string | null>(null);
   public errorMessage$ = this.errorMessageSubject.asObservable();
 
-  // Keys for localStorage
+  // Keys for storage
   private readonly USER_DATA_KEY = 'pwm_user_data';
+  private readonly SESSION_STORAGE_KEY = 'pwm_session_user';
+  private readonly USE_PERSISTENT_STORAGE_KEY = 'pwm_use_persistent';
 
   constructor(
     private providerService: ProviderServiceService,
@@ -26,30 +29,43 @@ export class AuthService {
     this.initAuthState();
   }
 
-  // Initialize authentication state from localStorage
+  // Initialize authentication state from storage
   private initAuthState(): void {
     this.isLoadingSubject.next(true);
 
     try {
-      // Try to get user data from localStorage
-      const userData = localStorage.getItem(this.USER_DATA_KEY);
-
-      if (userData) {
+      // First check localStorage (persistent login)
+      const persistentData = localStorage.getItem(this.USER_DATA_KEY);
+      const usePersistent = localStorage.getItem(this.USE_PERSISTENT_STORAGE_KEY) === 'true';
+      
+      // Then check sessionStorage (temporary login)
+      const sessionData = sessionStorage.getItem(this.SESSION_STORAGE_KEY);
+      
+      if (persistentData && usePersistent) {
+        // User chose to be remembered
         try {
-          // Parse the user data and set it in the current user subject
-          const user = JSON.parse(userData) as AuthUser;
+          const user = JSON.parse(persistentData) as AuthUser;
           this.currentUserSubject.next(user);
         } catch (e) {
           console.error('Error parsing user data from localStorage:', e);
-          this.clearSession();
+          this.clearAllSessions();
+        }
+      } else if (sessionData) {
+        // User didn't choose to be remembered, but has an active session
+        try {
+          const user = JSON.parse(sessionData) as AuthUser;
+          this.currentUserSubject.next(user);
+        } catch (e) {
+          console.error('Error parsing user data from sessionStorage:', e);
+          this.clearAllSessions();
         }
       } else {
-        // No session, check with Firebase
+        // No valid session found, check with Firebase
         this.refreshUserFromFirebase();
       }
     } catch (e) {
       console.error('Error initializing auth state:', e);
-      this.clearSession();
+      this.clearAllSessions();
     } finally {
       this.isLoadingSubject.next(false);
     }
@@ -60,33 +76,54 @@ export class AuthService {
     from(this.providerService.authProvider.getCurrentUser()).pipe(
       tap(user => {
         if (user) {
-          // Save the user data to localStorage and update the current user
-          this.saveUserData(user);
+          // Get the storage preference
+          const usePersistent = localStorage.getItem(this.USE_PERSISTENT_STORAGE_KEY) === 'true';
+          
+          // Save the user based on their preference
+          if (usePersistent) {
+            this.saveUserDataPersistent(user);
+          } else {
+            this.saveUserDataSession(user);
+          }
         } else {
-          // No user found in Firebase, clear the session
-          this.clearSession();
+          // No user found in Firebase, clear all sessions
+          this.clearAllSessions();
         }
       }),
       catchError(() => {
-        this.clearSession();
+        this.clearAllSessions();
         return of(null);
       })
     ).subscribe();
   }
 
-  // Save user data to localStorage
-  private saveUserData(user: AuthUser): void {
+  // Save user data to localStorage (persistent)
+  private saveUserDataPersistent(user: AuthUser): void {
     try {
       localStorage.setItem(this.USER_DATA_KEY, JSON.stringify(user));
+      localStorage.setItem(this.USE_PERSISTENT_STORAGE_KEY, 'true');
       this.currentUserSubject.next(user);
     } catch (e) {
       console.error('Error saving user data to localStorage:', e);
     }
   }
 
-  // Clear the session data from localStorage
-  private clearSession(): void {
+  // Save user data to sessionStorage (temporary)
+  private saveUserDataSession(user: AuthUser): void {
+    try {
+      sessionStorage.setItem(this.SESSION_STORAGE_KEY, JSON.stringify(user));
+      localStorage.setItem(this.USE_PERSISTENT_STORAGE_KEY, 'false');
+      this.currentUserSubject.next(user);
+    } catch (e) {
+      console.error('Error saving user data to sessionStorage:', e);
+    }
+  }
+
+  // Clear all session data
+  private clearAllSessions(): void {
     localStorage.removeItem(this.USER_DATA_KEY);
+    localStorage.removeItem(this.USE_PERSISTENT_STORAGE_KEY);
+    sessionStorage.removeItem(this.SESSION_STORAGE_KEY);
     this.currentUserSubject.next(null);
   }
 
@@ -98,8 +135,8 @@ export class AuthService {
     return from(this.providerService.authProvider.register(data)).pipe(
       map(result => {
         if (result.success && result.user) {
-          // Save the user data
-          this.saveUserData(result.user);
+          // Save the user data to session storage by default for new registrations
+          this.saveUserDataSession(result.user);
           return true;
         } else {
           this.errorMessageSubject.next(result.error || 'Registration failed.');
@@ -123,8 +160,12 @@ export class AuthService {
     return from(this.providerService.authProvider.login(data)).pipe(
       map(result => {
         if (result.success && result.user) {
-          // Save the user data
-          this.saveUserData(result.user);
+          // Save user data based on rememberMe preference
+          if (data.rememberMe) {
+            this.saveUserDataPersistent(result.user);
+          } else {
+            this.saveUserDataSession(result.user);
+          }
           return true;
         } else {
           this.errorMessageSubject.next(result.error || 'Login failed.');
@@ -147,17 +188,13 @@ export class AuthService {
     return from(this.providerService.authProvider.logout()).pipe(
       tap(success => {
         if (success) {
-          // Clear the session data
-          this.clearSession();
-          // Navigate to login page
-          this.router.navigate(['/login']);
+          // Clear all session data
+          this.clearAllSessions();
         }
       }),
       catchError(error => {
         console.error('Logout error:', error);
-        // Clear the session data anyway to ensure the user is logged out locally
-        this.clearSession();
-        return of(true);
+        return of(false);
       }),
       tap(() => this.isLoadingSubject.next(false))
     );
@@ -173,6 +210,3 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 }
-
-// Add missing import
-import { map } from 'rxjs/operators';
