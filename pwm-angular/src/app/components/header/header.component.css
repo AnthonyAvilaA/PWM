@@ -187,6 +187,37 @@ nav ul li a {
     font-size: 18px;
 }
 
+/* User menu - shown when authenticated */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  color: white;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.logout-btn {
+  background-color: #8a0303;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #6b0202;
+}
+
+/* Make burger menu logout clickable */
+.burger-logout a {
+  cursor: pointer;
+}
+
 /*Desktop (does nothing is default behaviour)*/
 @media (min-width: 1024px) {
 

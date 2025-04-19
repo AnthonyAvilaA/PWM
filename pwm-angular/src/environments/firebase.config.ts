@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAMqfSeuX1zIwTdbBEaozW9neaAwW7Nfgc",
@@ -10,6 +11,12 @@ export const firebaseConfig = {
   appId: "1:679835672082:web:8870bf7d6e1aef998b42cb"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Initialize services
 export const db = getFirestore(app);
+export const auth = getAuth(app);
+
+// Make sure Firebase knows which auth domain to use
+auth.useDeviceLanguage();

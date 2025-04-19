@@ -24,20 +24,28 @@
         </ul>
     </nav>
 
-    <div class="login-register">
+    <!-- Login/Register section - only shown when not authenticated -->
+    <div class="login-register" *ngIf="!isAuthenticated">
         <a routerLink="login">Iniciar Sesión</a>
         <a routerLink="register">Registrarse</a>
     </div>
+
+    <!-- User menu - only shown when authenticated -->
+    <div class="user-menu" *ngIf="isAuthenticated">
+        <span class="username">{{ currentUser?.username || currentUser?.name }}</span>
+        <a href="javascript:void(0)" (click)="logout()" class="logout-btn">Cerrar Sesión</a>
+    </div>
+
     <div class="burger-menu">
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="burger-icon">&#9776;</label>
         <nav>
             <ul class="nav-links">
                 <li id="burger-home"><a routerLink="home">Inicio</a></li>
-                <li id="burger-profile"><a routerLink="profile" class="account-link">Mi Cuenta</a></li>
-                <li id="burger-login"><a routerLink="login">Iniciar Sesion</a></li>
-                <li id="burger-register"><a routerLink="register">Registrarse</a></li>
-                <li class="burger-logout"><a>Cerrar Sesión</a></li>
+                <li id="burger-profile" *ngIf="isAuthenticated"><a routerLink="profile" class="account-link">Mi Cuenta</a></li>
+                <li id="burger-login" *ngIf="!isAuthenticated"><a routerLink="login">Iniciar Sesion</a></li>
+                <li id="burger-register" *ngIf="!isAuthenticated"><a routerLink="register">Registrarse</a></li>
+                <li class="burger-logout" *ngIf="isAuthenticated"><a (click)="logout()">Cerrar Sesión</a></li>
                 <li class="burger-videos"><a routerLink="/videos">Videos</a></li>
                 <li class="burger-category"><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
                 <li class="burger-category"><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>

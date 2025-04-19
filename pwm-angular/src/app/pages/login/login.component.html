@@ -1,23 +1,29 @@
-
     <main>
         <h1>Inicio de sesión</h1>
         <div class="main-container">
-            <form action="#" method="post" class="page-form">
+            <form (ngSubmit)="login()" class="page-form">
+                <div *ngIf="errorMessage" class="error-message">
+                    {{ errorMessage }}
+                </div>
+                
                 <div class="form-item">
                     <p>Email</p>
-                    <input type="email" required>
+                    <input type="email" name="email" [(ngModel)]="email" required>
                 </div>
 
                 <div class="form-item">
                     <p>Contraseña</p>
-                    <input type="password" required>
+                    <input type="password" name="password" [(ngModel)]="password" required>
                 </div>
 
                 <div class="form-stay-loged">
                     <input type="checkbox" name="keep-logged" id="keep-logged">
                     <label for="keep-logged">Mantener la sesión iniciada.</label>
                 </div>
-                <button>Iniciar sesion</button>
+                <button type="submit" [disabled]="isLoading">
+                    <span *ngIf="!isLoading">Iniciar sesión</span>
+                    <span *ngIf="isLoading">Cargando...</span>
+                </button>
             </form>
             <p>
                 ¿No tienes cuenta? <a routerLink="/register">Registrarse</a>

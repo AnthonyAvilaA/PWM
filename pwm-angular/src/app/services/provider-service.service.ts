@@ -10,6 +10,8 @@ import { FullNews } from '@models/fullNews';
 import { Comment } from '@models/comment';
 import { User } from '@models/user';
 import { News } from '@models/news';
+import { AuthProvider } from './providers/interfaces/auth.provider';
+import { AuthFirebaseProviderService } from './providers/firebase/auth.firebase.provider.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,8 @@ export class ProviderServiceService {
   public usersProvider: UserProvider = new UsersFirebaseProviderServiceService(db);
   
   public commentsProvider: CommentProvider = new CommentsFirebaseProviderServiceService(db);
+
+  public authProvider: AuthProvider = new AuthFirebaseProviderService(db);
 
   public async getFullNewsById(id: string): Promise<FullNews> {
     const news : News = await this.newsProvider.getNewsById(id);
