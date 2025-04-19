@@ -117,7 +117,6 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
     const q = query(
       this.posts,
       where('categories', 'array-contains', category.toLowerCase()),
-      orderBy('createdAt', 'desc')
     );
 
     const snapshot = await getDocs(q);

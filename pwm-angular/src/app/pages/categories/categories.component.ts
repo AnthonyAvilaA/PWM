@@ -8,6 +8,7 @@ import { SideArticleComponent } from '../../components/side-article/side-article
 import { NewsService } from '../../services/news.service';
 import { News } from '../../models/news';
 import { Title } from '@angular/platform-browser';
+import { Category } from '../../models/types/categories';
 
 @Component({
   selector: 'app-categories',
@@ -18,6 +19,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class CategoriesComponent implements OnInit, OnDestroy {
   categoryName: string = '';
+  displayCategoryName: string = '';
   news: News[] = [];
   featuredNews: News | null = null;
   secondaryNews: News[] = [];
@@ -35,6 +37,33 @@ export class CategoriesComponent implements OnInit, OnDestroy {
     private titleService: Title
   ) {}
 
+  /**
+   * Normalizes text by removing accents
+   * @param text Text to normalize
+   * @returns Normalized text without accents
+   */
+  private normalizeText(text: string): string {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  /**
+   * Maps a URL parameter (without accents) to the proper display name (with accents)
+   */
+  private getDisplayCategoryName(urlParam: string): string {
+    if (!urlParam) return '';
+    
+    // Normalize the input parameter
+    const normalizedParam = this.normalizeText(urlParam);
+    
+    // Find the matching category enum value
+    const matchingCategory = Object.values(Category).find(enumValue => 
+      this.normalizeText(enumValue as string) === normalizedParam
+    );
+    
+    // Return the original enum value (with accents) or fallback to the URL parameter
+    return matchingCategory as string || urlParam.charAt(0).toUpperCase() + urlParam.slice(1);
+  }
+
   ngOnInit(): void {
     // Subscribe to route parameter changes
     this.routeSubscription = this.route.paramMap.pipe(
@@ -44,6 +73,9 @@ export class CategoriesComponent implements OnInit, OnDestroy {
         
         // Get category from URL or use default
         this.categoryName = params.get('categoryName') || '';
+        
+        // Get the proper display name with accents
+        this.displayCategoryName = this.getDisplayCategoryName(this.categoryName);
         
         // Set page title
         this.updateTitle();
@@ -76,10 +108,8 @@ export class CategoriesComponent implements OnInit, OnDestroy {
   }
 
   private updateTitle(): void {
-    // Format category name for display (capitalize first letter)
-    const formattedCategory = this.categoryName 
-      ? this.categoryName.charAt(0).toUpperCase() + this.categoryName.slice(1) 
-      : 'Todas las Categorías';
+    // Use the proper display name with accents
+    const formattedCategory = this.displayCategoryName || 'Todas las Categorías';
     
     this.titleService.setTitle(`Argony News | ${formattedCategory}`);
   }

@@ -1,7 +1,7 @@
 <div class="main-container">
   <!-- Loading indicator -->
   <div *ngIf="loading" class="loading-container">
-    <p>Cargando noticias de {{ categoryName || 'todas las categorías' }}...</p>
+    <p>Cargando noticias de {{ displayCategoryName || 'todas las categorías' }}...</p>
     <div class="loading-spinner"></div>
   </div>
 
@@ -13,7 +13,7 @@
 
   <!-- Main content - only shown when not loading and no error -->
   <div *ngIf="!loading && !error">
-    <h1 class="category-title">{{ categoryName ? (categoryName | titlecase) : 'Todas las Categorías' }}</h1>
+    <h1 class="category-title">{{ displayCategoryName || 'Todas las Categorías' }}</h1>
     
     <!-- Featured News Section -->
     <section class="top">

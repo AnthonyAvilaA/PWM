@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { News } from '../models/news';
-import { Observable, concatMap, from } from 'rxjs';
+import { Observable, from, map } from 'rxjs';
 import { FullNews } from '../models/fullNews';
 import { Category } from '../models/types/categories';
 import { NewsFirebaseProviderServiceService } from './providers/firebase/news.firebase.provider.service.service';
@@ -35,12 +35,41 @@ export class NewsService {
   }
 
   /**
+   * Normalizes text by removing accents
+   * @param text Text to normalize
+   * @returns Normalized text without accents
+   */
+  private normalizeText(text: string): string {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  /**
    * Get news by category
    * @param category Category name
    * @returns Observable with array of News objects
    */
   getNewsByCategory(category: string): Observable<News[]> {
-    return this.provider.getNewsByCategoryObservable(category as Category);
+    // Find the matching category by normalizing both the input and the enum values
+    const normalizedInputCategory = this.normalizeText(category);
+
+    // Find the matching category from the enum
+    const matchingCategory = Object.values(Category).find(enumValue =>
+      this.normalizeText(enumValue as string) === normalizedInputCategory
+    );
+
+    // Use the matched category, or fallback to the original input
+    const categoryToUse = matchingCategory as Category || category as Category;
+
+    return this.provider.getNewsByCategoryObservable(categoryToUse)
+      .pipe(
+        // Sort news by createdAt date on the client side instead of in Firestore
+        // to avoid needing a composite index
+        map(news => news.sort((a, b) => {
+          const dateA = a.createdAt instanceof Date ? a.createdAt : new Date(a.createdAt);
+          const dateB = b.createdAt instanceof Date ? b.createdAt : new Date(b.createdAt);
+          return dateB.getTime() - dateA.getTime(); // Sort in descending order (newest first)
+        }))
+      );
   }
 
   /**
@@ -67,11 +96,12 @@ export class NewsService {
   /**
    * Create a new news article
    * @param news News object to create
-   * @returns Observable with the ID of the created news
+   * @returns Promise with the ID of the created news
    */
   async createNews(news: News): Promise<string> {
     return await this.provider.addNews(news);
   }
+
   /**
    * Update an existing news article
    * @param id News ID
@@ -91,9 +121,3 @@ export class NewsService {
     return from(this.provider.deleteNews(id));
   }
 }
-
-
-
-
-
-
