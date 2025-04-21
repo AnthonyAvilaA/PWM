@@ -13,7 +13,6 @@ export class NewsService {
   private provider: NewsFirebaseProviderServiceService;
 
   constructor() {
-    // Initialize the provider with Firestore database
     this.provider = new NewsFirebaseProviderServiceService(db);
   }
 
@@ -30,17 +29,8 @@ export class NewsService {
    * @param id News ID
    * @returns Observable with the News object
    */
-  getNewsById(id: string): Observable<FullNews | null> {
-    return this.provider.getFullNewsByIdObservable(id);
-  }
-
-  /**
-   * Normalizes text by removing accents
-   * @param text Text to normalize
-   * @returns Normalized text without accents
-   */
-  private normalizeText(text: string): string {
-    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  getNewsById(id: string): Observable<News | null> {
+    return this.provider.getNewsByIdObservable(id);
   }
 
   /**
@@ -48,26 +38,15 @@ export class NewsService {
    * @param category Category name
    * @returns Observable with array of News objects
    */
-  getNewsByCategory(category: string): Observable<News[]> {
-    // Find the matching category by normalizing both the input and the enum values
-    const normalizedInputCategory = this.normalizeText(category);
-
-    // Find the matching category from the enum
-    const matchingCategory = Object.values(Category).find(enumValue =>
-      this.normalizeText(enumValue as string) === normalizedInputCategory
-    );
-
-    // Use the matched category, or fallback to the original input
-    const categoryToUse = matchingCategory as Category || category as Category;
-
-    return this.provider.getNewsByCategoryObservable(categoryToUse)
+  getNewsByCategory(category: Category): Observable<News[]> {
+    
+    return this.provider.getNewsByCategoryObservable(category)
       .pipe(
-        // Sort news by createdAt date on the client side instead of in Firestore
-        // to avoid needing a composite index
+        //sort in descending order by createdAt date
         map(news => news.sort((a, b) => {
           const dateA = a.createdAt instanceof Date ? a.createdAt : new Date(a.createdAt);
           const dateB = b.createdAt instanceof Date ? b.createdAt : new Date(b.createdAt);
-          return dateB.getTime() - dateA.getTime(); // Sort in descending order (newest first)
+          return dateB.getTime() - dateA.getTime();
         }))
       );
   }
@@ -120,4 +99,5 @@ export class NewsService {
   deleteNews(id: string): Observable<void> {
     return from(this.provider.deleteNews(id));
   }
+
 }

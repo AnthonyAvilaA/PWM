@@ -3,6 +3,8 @@ export enum Category {
     Deportes = "Deportes",
     Ciencia = "Ciencia",
     Política = "Política",
+    Politica = "Política",
     Entretenimiento = "Entretenimiento",
     Mundo = "Mundo",
+    null = "null",
 }

@@ -3,14 +3,11 @@ import {
   collection,
   CollectionReference,
   doc,
-  DocumentData,
-  DocumentReference,
   DocumentSnapshot,
   Firestore,
   FirestoreDataConverter,
   getDoc,
   getDocs,
-  setDoc,
   SnapshotOptions,
   query,
   where,
@@ -18,7 +15,6 @@ import {
   orderBy,
   updateDoc,
   deleteDoc,
-  Timestamp,
   startAfter
 } from 'firebase/firestore';
 import { News } from '@models/news';
@@ -27,7 +23,7 @@ import { NewsProvider } from '../interfaces/news.provider';
 import { FullNews } from '@models/fullNews';
 import { Injectable } from '@angular/core';
 import { Observable, from, map, of, catchError, throwError, lastValueFrom } from 'rxjs';
-import { db } from 'environments/firebase.config'
+import { User } from '@models/user';
 
 interface FirestoreNews {
   title: string;
@@ -140,46 +136,16 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
     return docSnap.data() as News;
   }
 
-  /**
-   * Get full news details by ID
-   * @param id News ID
-   * @returns Promise with the FullNews object
-   */
-  async getFullNewsById(id: string): Promise<FullNews | null> {
-    try {
-      const news = await this.getNewsById(id);
-
-      // You would load additional data like author info and comments here
-      // This is a simplified implementation
-      const fullNews: FullNews = {
-        news: news,
-        author: {
-          name: 'Unknown Author',
-          email: ''
-        }, // Default user object with correct properties
-        comments: []  // You would fetch comments here
-      };
-
-      return fullNews;
-    } catch (error) {
-      console.error(`Error fetching full news with ID ${id}:`, error);
-      return null;
-    }
-  }
 
   /**
    * Get latest news articles
    * @param count Number of articles to fetch
-   * @param resetPagination Whether to reset pagination
    * @returns Promise with array of News objects
    */
   async getLatestNews(count: number = 6, resetPagination: boolean = false): Promise<News[]> {
-    if (resetPagination) {
-      this.lastVisibleDoc = null;
-    }
-
+    
     let q;
-    if (this.lastVisibleDoc && !resetPagination) {
+    if (this.lastVisibleDoc) {
       // Continue from last document
       q = query(
         this.posts,
@@ -296,14 +262,6 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
     return from(this.getNewsById(id));
   }
 
-  /**
-   * Observable wrapper for getFullNewsById
-   * @param id News ID
-   * @returns Observable with the FullNews object
-   */
-  getFullNewsByIdObservable(id: string): Observable<FullNews | null> {
-    return from(this.getFullNewsById(id));
-  }
 
   /**
    * Observable wrapper for getLatestNews

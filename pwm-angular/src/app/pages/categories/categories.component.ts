@@ -18,7 +18,7 @@ import { Category } from '../../models/types/categories';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit, OnDestroy {
-  categoryName: string = '';
+  categoryName: Category = Category.null;
   displayCategoryName: string = '';
   news: News[] = [];
   featuredNews: News | null = null;
@@ -71,17 +71,18 @@ export class CategoriesComponent implements OnInit, OnDestroy {
         this.loading = true;
         this.error = null;
         
-        // Get category from URL or use default
-        this.categoryName = params.get('categoryName') || '';
+        this.categoryName = params.get('categoryName') as Category || Category.null;
         
-        // Get the proper display name with accents
-        this.displayCategoryName = this.getDisplayCategoryName(this.categoryName);
+        if (this.categoryName === Category.null || this.categoryName === undefined) {
+          this.categoryName = Category.null;
+        } 
+        else {
+          this.displayCategoryName = this.getDisplayCategoryName(this.categoryName);
+          this.updateTitle();  
+          return this.newsService.getNewsByCategory(this.categoryName);
+        }
         
-        // Set page title
-        this.updateTitle();
-        
-        // Fetch news for this category
-        return this.newsService.getNewsByCategory(this.categoryName);
+        return [];
       })
     ).subscribe({
       next: (newsItems) => {
