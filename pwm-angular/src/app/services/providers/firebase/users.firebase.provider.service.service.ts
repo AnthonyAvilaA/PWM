@@ -7,6 +7,7 @@ import { UserProvider } from '../interfaces/user.provider';
 interface FirestoreUser {
   name: string;
   email: string;
+  image_url: string;
 }
 
 export const usersConverter: FirestoreDataConverter<User, FirestoreUser> = {
@@ -14,6 +15,7 @@ export const usersConverter: FirestoreDataConverter<User, FirestoreUser> = {
     return {
       name: user.name,
       email: user.email,
+      image_url: user.image_url,
     } as FirestoreUser;
   },
   fromFirestore: (snapshot: DocumentSnapshot, options: SnapshotOptions) => {
@@ -21,6 +23,7 @@ export const usersConverter: FirestoreDataConverter<User, FirestoreUser> = {
     return {
       name: data.name,
       email: data.email,
+      image_url: data.image_url,
     } as FirestoreUser;
   },
 };

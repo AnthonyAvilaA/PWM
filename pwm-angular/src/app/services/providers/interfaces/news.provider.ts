@@ -3,6 +3,7 @@ import { News } from "@models/news";
 import { Category as Category } from "@models/types/categories";
 
 export interface NewsProvider {
+    getRelatedNews(currentNewsId: string, categories: string[], count: number): Promise<News[]>;
     
     getAllNews(): Promise<News[]>;
 

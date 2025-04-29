@@ -1,0 +1,58 @@
+<div class="main-container">
+    <article class="principal-news">
+        <h1>{{principalNews?.news?.title}}</h1>
+        <img src="{{principalNews?.news?.image}}" class="principal-image"
+            alt="Imagen principal de {{principalNews?.news?.title}}">
+        <div class="author">
+            <img src="{{principalNews?.author?.image_url}}" class="author-avatar" alt="Avatar del autor">
+            <div class="author-info">
+                <h3>{{principalNews?.author?.name}}</h3>
+                <h4>{{getFirestoreDate(principalNews?.news?.createdAt)}}</h4>
+            </div>
+        </div>
+        <div class="content" style="white-space: pre-line;">
+            {{principalNews?.news?.content}}
+        </div>
+    </article>
+
+    <section class="related-news">
+        <h2>Puede interesarte:</h2>
+        <div class="related-news-list">
+            @for (news of otherNews; track news.ID) {
+            <section class="related-item-content">
+                <a href="/news/{{news?.ID}}">
+                    <h3>{{news?.title}}</h3>
+                    <img src="{{news?.image}}" class="related-image" alt="Imagen relacionada de {{news?.title}}">
+                    <p>{{getFirestoreDate(news?.createdAt)}}</p>
+                </a>
+            </section>
+            }
+        </div>
+    </section>
+
+</div>
+<aside id="other-news">
+    <h2>Contenido relacionado</h2>
+    <div class="related-content-wrapper">
+        @for (news of relatedNews; track news.ID) {
+        <section class="related-item">
+            <a href="/news/{{news?.ID}}">
+                <h3>{{news?.title}}</h3>
+                <img src="{{news?.image}}" class="related-image" alt="Imagen relacionada de {{news?.title}}">
+                <p>{{getFirestoreDate(news?.createdAt)}}</p>
+            </a>
+        </section>
+        }
+    </div>
+</aside>
+
+<div class="comments">
+    <h2>Comentarios</h2>
+    @for (comment of principalNews?.comments; track comment.createdAt) {
+    <div class="comment">
+        <img src={{getUser(comment.userID).image_url}} class="comment-avatar" alt="Avatar del usuario">
+        <h3>{{getUser(comment.userID).name}} / {{fromStringToDate(comment.createdAt)}}</h3>
+        <p>{{comment.content}}</p>
+    </div>
+    }
+</div>
