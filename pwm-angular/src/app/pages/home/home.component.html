@@ -13,11 +13,10 @@
 
   <!-- Main content - only shown when not loading and no error -->
   <div *ngIf="!loading && !error">
+
     <!-- Live Headline -->
-    <a [routerLink]="['/live-news']" class="live-headline">
-      <span *ngIf="liveNews">{{ liveNews.title }}</span>
-      <span *ngIf="!liveNews">Noticias en vivo - Sigue los acontecimientos más recientes</span>
-    </a>
+    <app-live-headline [liveNews]="liveNews" [link]="'/live-news'"></app-live-headline>
+
 
     <!-- Main Featured News Grid -->
     <div class="featured-news-wrapper">

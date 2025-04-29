@@ -5,12 +5,13 @@ import { ArticleComponent} from "../../components/article/article.component";
 import { SideArticleComponent} from '../../components/side-article/side-article.component';
 import { NewsService } from '../../services/news.service';
 import { News } from '../../models/news';
+import { LiveHeadlineComponent } from '@components/live-headline/live-headline.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ArticleComponent, SideArticleComponent, RouterLink, CommonModule],
+  imports: [ArticleComponent, SideArticleComponent, RouterLink, CommonModule, LiveHeadlineComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

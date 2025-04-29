@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Firestore, doc, getDoc, setDoc, collection } from 'firebase/firestore';
-import { 
-  signInWithEmailAndPassword, 
+import {
+  signInWithEmailAndPassword,
   signOut,
   User as FirebaseUser,
   createUserWithEmailAndPassword
@@ -15,7 +15,7 @@ import { auth } from 'environments/firebase.config';
 })
 export class AuthFirebaseProviderService implements AuthProvider {
   private readonly db: Firestore;
-  
+
   constructor(db: Firestore) {
     this.db = db;
   }
@@ -24,20 +24,20 @@ export class AuthFirebaseProviderService implements AuthProvider {
     try {
       // Create user with Firebase Auth
       const userCredential = await createUserWithEmailAndPassword(
-        auth, 
-        data.email, 
+        auth,
+        data.email,
         data.password
       );
-      
+
       // Create user document in Firestore
       const userDoc = {
         name: data.name,
         email: data.email,
         username: data.username || data.name,
       };
-      
+
       await setDoc(doc(this.db, 'users', userCredential.user.uid), userDoc);
-      
+
       // Return success with user data
       return {
         success: true,
@@ -59,17 +59,17 @@ export class AuthFirebaseProviderService implements AuthProvider {
     try {
       // Sign in with Firebase Auth
       const userCredential = await signInWithEmailAndPassword(
-        auth, 
-        data.email, 
+        auth,
+        data.email,
         data.password
       );
-      
+
       // Fetch additional user data from Firestore
       const userDoc = await getDoc(doc(this.db, 'users', userCredential.user.uid));
-      
+
       if (userDoc.exists()) {
         const userData = userDoc.data();
-        
+
         return {
           success: true,
           user: {
@@ -111,17 +111,17 @@ export class AuthFirebaseProviderService implements AuthProvider {
 
   async getCurrentUser(): Promise<AuthUser | null> {
     const currentUser = auth.currentUser;
-    
+
     if (!currentUser) {
       return null;
     }
-    
+
     try {
       const userDoc = await getDoc(doc(this.db, 'users', currentUser.uid));
-      
+
       if (userDoc.exists()) {
         const userData = userDoc.data();
-        
+
         return {
           id: currentUser.uid,
           name: userData['name'],

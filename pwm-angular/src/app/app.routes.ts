@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
+import { LiveNewsComponent } from './pages/live-news/live-news.component';
 import { PrivacyComponent} from './pages/legal/privacy/privacy.component';
 import { TermsComponent } from './pages/legal/terms/terms.component';
 import { noAuthGuard } from './guards/auth.guard';
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'category', component: CategoriesComponent, data: { title: 'Categories' } },
   { path: 'category/:categoryName', component: CategoriesComponent, data: { title: 'Categories' } },
   { path: 'privacy', component: PrivacyComponent, data: { title: 'Privacy Policy' } },
-  { path: 'terms', component: TermsComponent, data: { title: 'Terms of Service' } }
+  { path: 'terms', component: TermsComponent, data: { title: 'Terms of Service' } },
+  { path: 'live-news', component: LiveNewsComponent, data: { title: 'Live Headline' } },
 ];

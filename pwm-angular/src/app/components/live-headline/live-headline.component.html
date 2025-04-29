@@ -1,8 +1,8 @@
-<div>
-    <div class="live-dot">
-        <div class="circle"></div>
-        <div class="ringring"></div>
-    </div>
-    <p>DIRECTO</p>
-</div>
-<p> Titulo de la noticia en directo</p>
+<a [routerLink]="[link]" class="live-headline">
+  <span class="live-dot">
+    <span class="circle"></span>
+    <span class="ringring"></span>
+  </span>
+  <span *ngIf="liveNews.title">{{ liveNews.title }}</span>
+  <span *ngIf="!liveNews">Noticias en vivo - Sigue los acontecimientos más recientes</span>
+</a>
