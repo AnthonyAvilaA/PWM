@@ -140,12 +140,13 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
   /**
    * Get latest news articles
    * @param count Number of articles to fetch
+   * @param resetPagination
    * @returns Promise with array of News objects
    */
   async getLatestNews(count: number = 6, resetPagination: boolean = false): Promise<News[]> {
-    
+
     let q;
-    if (this.lastVisibleDoc) {
+    if (this.lastVisibleDoc && !resetPagination) {
       // Continue from last document
       q = query(
         this.posts,

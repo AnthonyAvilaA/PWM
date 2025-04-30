@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArticleComponent} from "../../components/article/article.component";
-import { SideArticleComponent} from '../../components/side-article/side-article.component';
-import { NewsService } from '../../services/news.service';
-import { News } from '../../models/news';
+import { ArticleComponent} from "@components/article/article.component";
+import { SideArticleComponent} from '@components/side-article/side-article.component';
+import { NewsService } from '@services/news.service';
+import { News } from '@models/news';
 import { LiveHeadlineComponent } from '@components/live-headline/live-headline.component';
 
 
