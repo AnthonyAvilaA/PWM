@@ -68,7 +68,11 @@
 | `ng generate component` | Generates a new component |
 | `ng test` | Executes unit tests |
 
-## 🖥️ Screenshots
+## 🖥️ Screenshots & Mockups
+
+<div align="center">
+  <p><i>INSERT MOCKUPS LINK HERE</i></p>
+</div>
 
 <div align="center">
   <p><i>Screenshots coming soon</i></p>
