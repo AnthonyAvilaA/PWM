@@ -27,6 +27,21 @@ section p{
     border-radius: 15px;
 }
 
+.photo_selector button{
+    display: inline;
+    margin: 2% 0;
+}
+
+.catagories_selector button{
+    display: inline;
+    margin: 2%;
+    padding: 1% 2%;
+}
+
+.catagories_selector p{
+    margin: 1% 0;
+}
+
 label {
     font-size: 80%;
     font-size: medium;
@@ -41,12 +56,30 @@ input{
     width: 100%;
     padding: 1%;
     display: block;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
+}
+
+.input_box{
+    width: 100%;
+    display: block;
+    margin-bottom: 4%;
 }
 
 #place{
     width: 20%;
 }
+
+button {
+    background-color: #ff0000;
+    border-radius: 10px;
+    border-width: 0;
+    padding: 2% 10%;
+    margin-top: 1%;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+}
+
 textarea{
     width: 100%;
     padding: 2%;
@@ -80,4 +113,17 @@ select {
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+}
+
+.error_message{
+    font-size: 90%;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ff0000;
+}
+
+.error{
+    text-align: center;
+    font-size: 120%;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ff0000;
 }

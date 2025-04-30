@@ -1,53 +1,93 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>Añadir noticias - Argony News</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <main class="main-container">
-            <article class="add_news">
-                <h2>Añadir noticia</h2>
-                <form>
-                    <!-- Title -->
-                    <label for="title">Titulo:</label>
-                    <input type="text" id="title" name="title" maxlength="50" required> 
+<div class="main-container">
+    <article class="add_news">
+        <h2>Añadir noticia</h2>
+        <form (ngSubmit)="add_news(newsForm)" #newsForm="ngForm">
+            <!-- Title -->
+            <label for="title">Titulo:</label>
+            <div class="input_box">
+                <input type="text" id="title" name="title" maxlength="50" [(ngModel)]="title" required 
+                pattern = "^[a-zA-ZÀ-ÿÑñ0-9\s.,:;'()\-!?]+$" #titleInput="ngModel">
+                <div *ngIf="titleInput.invalid && titleInput.touched">
+                    <span *ngIf="titleInput.errors?.['required']" class="error_message">* El título es obligatorio<br></span>
+                    <span *ngIf="titleInput.errors?.['pattern']" class="error_message">* No puede contener símbolos<br></span>
+                    <span *ngIf="title.length > 49" class="error_message">* Máximo 50 caracteres<br></span>
+                </div>
+            </div>
+            
+            <!-- Image Upload -->
+                <div class="image-upload">
+                    <img [src]="image_link" (error)="error_image()" alt="foto noticia" height="250" width="400">
+                    <div class="photo_selector">
+                        <input type="text" id="url" name="url" #url placeholder="URL: " [(ngModel)]="url" required>
+                        <button (click)="load_image(url.value)">Cargar Imagen</button>
+                    </div>
+                </div>
+            
+            <!-- Place -->
+            <div class="input_box">
+                <label for="place">Lugar:</label>
+                <input type="text" id="place" name="place" [(ngModel)]="place" required #placeInput="ngModel">
+                <div *ngIf="placeInput.errors?.['required'] && placeInput.touched">
+                    <span class="error_message">* Se debe especificar un lugar<br></span>
+                </div>
+                
+                <div *ngIf="placeInput.touched && place && !countries.includes(place.trim().toLowerCase())">
+                    <span class="error_message">* El país ingresado no es válido. Ej.: "Otros"<br></span>
+                </div>
+            </div>
+            
 
-                    <!-- Image Upload -->
-                     <div class="image-upload">
-                        <img src="/resources/images/formato_imagen.png" alt="foto noticia" height="250" width="400">
-                        <input type="text" id="url" name="url" placeholder="URL: " required>
-                     </div>
-                    
-                    <!-- Place -->
-                    <label for="place">Lugar:</label>
-                    <input type="text" id="place" name="place" required>
+            <!-- Description -->
+            <div class="input_box">
+                <label for="description">Descripcion:</label>
+                <textarea id="description" name="description" maxlength="250" rows="4" 
+                [(ngModel)]="description" required pattern = "^[a-zA-ZÀ-ÿÑñ0-9\s.,:;'()\-!?]+$"
+                #descriptionInput="ngModel"></textarea>
+                <div *ngIf="descriptionInput.invalid && descriptionInput.touched">
+                    <span *ngIf="descriptionInput.errors?.['required']" class="error_message">* La descripcion no puede estar vacia<br></span>
+                    <span *ngIf="descriptionInput.errors?.['pattern']" class="error_message">* No puede contener simbolos<br></span>
+                    <span *ngIf="description.length > 249" class="error_message">* Maximo 250 caracteres<br></span>
+                </div>
+            </div>
+            
 
-                    <!-- Description -->
-                    <label for="description">Descripcion:</label>
-                    <textarea id="description" name="description" maxlength="250" rows="4" required></textarea>
+            <!-- Paragraphs -->
+            <div class="input_box">
+                <label for="content">Contenido:</label>
+                <textarea id="content" name="content" maxlength="2000" rows="12" 
+                [(ngModel)]="content" required pattern = "^[a-zA-ZÀ-ÿÑñ0-9\s.,:;'()\-!?]+$"
+                #contentInput="ngModel"></textarea>
+                <div *ngIf="contentInput.invalid && contentInput.touched">
+                    <span *ngIf="descriptionInput.errors?.['required']" class="error_message">* El contenido no puede estar vacio<br></span>
+                    <span *ngIf="contentInput.errors?.['pattern']" class="error_message">* No puede contener simbolos<br></span>
+                    <span *ngIf="content.length > 1999" class="error_message">* Maximo 2000 caracteres<br></span>
+                </div>
+            </div>
+            
 
-                    <!-- Paragraphs -->
-                    <label for="content">Contenido:</label>
-                    <textarea id="content" name="content" maxlength="2000" rows="12" required></textarea>
-
-                    <!-- Category -->
-                    <label for="category">Categoria:</label>
-                    <select id="category" required>
+            <!-- Category -->
+            <label for="category">Categoria:</label>
+            <div class="catagories_selector">
+                <select id="category" name="categories" (change)="onSelectCategory($event)" required>
                         <option value="">--Seleccionar--</option>
                         <option value="Deportes">Deportes</option>
                         <option value="Ciencias">Ciencias</option>
                         <option value="Politica">Política</option>
                         <option value="Entretenimiento">Entretenimiento</option>
                         <option value="Mundo">Mundo</option>
-                    </select>
-                    <!-- Action Buttons -->
-                    <div class="separed_buttons">
-                        <button type="button">Guardar borrador</button>
-                        <button type="submit">Subir noticia</button>  
-                    </div>
-                </form>
-            </article>
-        </main>
-    </body>
-</html>
+                </select>
+                <button class="categories_cleaner" (click)="clearCategories()">Borrar</button>
+                <p>Categorías seleccionadas: {{ categories.join(' / ') }}</p>
+            </div>
+            <!-- Action Buttons -->
+            <div class="separed_buttons">
+                <button type="button">Guardar borrador</button>
+                <button type="submit" [disabled]="isLoading">
+                    <span *ngIf="!isLoading">Subir noticia</span>
+                    <span *ngIf="isLoading">Subiendo ...</span>
+                </button>  
+            </div>
+            <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+        </form>
+    </article>
+</div>

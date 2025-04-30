@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ArticleComponent} from "../../components/article/article.component";
 import { SideArticleComponent} from '../../components/side-article/side-article.component';
@@ -11,7 +10,7 @@ import { LiveHeadlineComponent } from '@components/live-headline/live-headline.c
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ArticleComponent, SideArticleComponent, RouterLink, CommonModule, LiveHeadlineComponent],
+  imports: [ArticleComponent, SideArticleComponent, CommonModule, LiveHeadlineComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
