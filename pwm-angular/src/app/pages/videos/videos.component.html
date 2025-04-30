@@ -1,0 +1,54 @@
+<div class="main-container-out">
+  <h1>VIDEOS</h1>
+  <div class="main-container-in">
+    <article class="main-video" *ngIf="mainVideo">
+      <div class="main-video-info">
+        <h2 class="video-title">{{ mainVideo.Title }}</h2>
+        <p class="video-author">{{ mainVideo.author.username}}</p>
+        <p class="video-description">{{ mainVideo.description }}</p>
+      </div>
+      <iframe class="video-content" width="240" height="140" hspace="0" vspace="0"
+              [src]="trustedVideoUrl" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation" frameborder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+      </iframe>
+    </article>
+
+    <span class="separator"><span></span></span>
+
+    <!-- Tecnología section -->
+    <div class="sub-category tecnología">
+      <input class="row-button" id="tecnología-left-button" type="button" value="←">
+      <article>
+        <h2>tecnología</h2>
+        <section class="basic-video"></section>
+        <section class="basic-video"></section>
+      </article>
+      <input class="row-button" id="tecnología-right-button" type="button" value="→">
+    </div>
+
+    <span class="separator"><span></span></span>
+
+    <div class="sub-category política">
+      <input class="row-button" id="política-left-button" type="button" value="←">
+      <article>
+        <h2>política</h2>
+        <section class="basic-video"></section>
+        <section class="basic-video"></section>
+      </article>
+      <input class="row-button" id="política-right-button" type="button" value="→">
+    </div>
+
+    <span class="separator"><span></span></span>
+
+    <div class="sub-category otros">
+      <input class="row-button" id="otros-left-button" type="button" value="←">
+      <article>
+        <h2>otros</h2>
+        <section class="basic-video"></section>
+        <section class="basic-video"></section>
+      </article>
+      <input class="row-button" id="otros-right-button" type="button" value="→">
+    </div>
+  </div>
+</div>

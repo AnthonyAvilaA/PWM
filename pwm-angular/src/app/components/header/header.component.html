@@ -5,7 +5,7 @@
     <a routerLink="home" class="logo">
       <img src="/assets/logo.png" alt="logo" height="65" width="100">
     </a>
-    
+
     <!-- Language menu -->
     <div class="language-menu">
       <input type="checkbox" id="language-toggle">
@@ -22,7 +22,7 @@
   <!-- Center Section - Categories Navigation (Desktop Only) -->
   <nav class="header-center categories">
     <ul>
-      <li><a routerLink="/videos">Videos</a></li>
+      <li><a routerLink="videos">Videos</a></li>
       <li><a [routerLink]="['/category', 'Deportes']">Deportes</a></li>
       <li><a [routerLink]="['/category', 'Ciencia']">Ciencia</a></li>
       <li><a [routerLink]="['/category', 'Política']">Política</a></li>
@@ -37,7 +37,7 @@
     <span class="username always-visible" *ngIf="isAuthenticated">
       {{ currentUser?.username || currentUser?.name }}
     </span>
-    
+
     <!-- Login/Register section - only shown when not authenticated (desktop & tablet) -->
     <div class="login-register" *ngIf="!isAuthenticated">
       <a routerLink="login">Iniciar Sesión</a>
@@ -57,20 +57,20 @@
         <ul class="nav-links">
           <!-- Always visible in burger menu -->
           <li><a routerLink="home">Inicio</a></li>
-          
+
           <!-- My Account and Logout grouped together -->
           <li *ngIf="isAuthenticated"><a routerLink="profile">Mi Cuenta</a></li>
           <li *ngIf="isAuthenticated" class="burger-logout mobile-only-small"><a (click)="logout()">Cerrar Sesión</a></li>
           <li *ngIf="!isAuthenticated"><a routerLink="login">Mi Cuenta</a></li>
-          
+
           <!-- Only visible in tablet/mobile -->
-          <li class="mobile-only"><a routerLink="/videos">Videos</a></li>
+          <li class="mobile-only"><a routerLink="videos">Videos</a></li>
           <li class="mobile-only"><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
           <li class="mobile-only"><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
           <li class="mobile-only"><a [routerLink]="['/category', 'politica']">Política</a></li>
           <li class="mobile-only"><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
           <li class="mobile-only"><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
-          
+
           <!-- Only visible in mobile -->
           <li class="mobile-only-small" *ngIf="!isAuthenticated"><a routerLink="login">Iniciar Sesión</a></li>
           <li class="mobile-only-small" *ngIf="!isAuthenticated"><a routerLink="register">Registrarse</a></li>

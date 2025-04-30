@@ -1,0 +1,132 @@
+main-cointainer-out {
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+.main-video-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+}
+
+.video {
+  margin: 0 2%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.main-video {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.row-button {
+  border-width: 3px;
+  border-radius: 100px;
+  border-color: #000000;
+  background-color: #ffffff;
+  padding: 0.5% 0.6%;
+  color: #000000;
+  cursor: pointer;
+}
+
+.separator {
+  background-color: #a70202;
+  height: 2px;
+  width: 100%;
+  margin: 2% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator span {
+  height: 30px;
+  width: 30px;
+  background-color: #a70202;
+  border-radius: 20px;
+}
+
+.sub-category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-category article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.sub-category article h2 {
+  display: inline;
+  width: 100%;
+}
+
+.sub-category section {
+  width: 45%;
+}
+
+/*Desktop (does nothing is default behaviour)*/
+@media (min-width: 1024px) {
+  /* No specific styles needed */
+}
+
+/*Tablet*/
+@media (max-width: 1024px) {
+  /* No specific styles needed */
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+  .main-video {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sub-category {
+    flex-direction: column;
+  }
+
+  .sub-category article {
+    flex-direction: column;
+    gap: 2%;
+    width: 100%;
+  }
+
+  .sub-category section {
+    width: 100%;
+  }
+
+  .row-button {
+    display: none;
+  }
+}

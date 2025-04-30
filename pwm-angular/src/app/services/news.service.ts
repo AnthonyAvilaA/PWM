@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { News } from '../models/news';
 import { Observable, from, map } from 'rxjs';
-import { FullNews } from '../models/fullNews';
-import { Category } from '../models/types/categories';
+import { Category } from '@models/types/categories';
 import { NewsFirebaseProviderServiceService } from './providers/firebase/news.firebase.provider.service.service';
 import { db } from '../../environments/firebase.config';
 
@@ -39,7 +38,7 @@ export class NewsService {
    * @returns Observable with array of News objects
    */
   getNewsByCategory(category: Category): Observable<News[]> {
-    
+
     return this.provider.getNewsByCategoryObservable(category)
       .pipe(
         //sort in descending order by createdAt date
