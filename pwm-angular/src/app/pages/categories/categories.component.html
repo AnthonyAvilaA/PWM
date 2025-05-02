@@ -1,8 +1,8 @@
 <div class="main-container">
   <!-- Loading indicator -->
   <div *ngIf="loading" class="loading-container">
-    <p>Cargando noticias de {{ displayCategoryName || 'todas las categorías' }}...</p>
     <div class="loading-spinner"></div>
+    <p>Cargando noticias de <strong>{{ displayCategoryName || 'todas las categorías' }}</strong></p>
   </div>
 
   <!-- Error message -->

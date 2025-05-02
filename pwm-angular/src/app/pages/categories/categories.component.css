@@ -9,6 +9,65 @@ main {
     align-items: start;
 }
 
+/* Loading animation styles */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.loading-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(192, 80, 77, 0.1);
+    border-radius: 50%;
+    border-top-color: #c0504d;
+    animation: spin 1s ease-in-out infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #e74c3c;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.error-container button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #c0504d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.error-container button:hover {
+    background-color: #b13c3a;
+}
+
 .top {
     display: flex;
     flex-direction: row;

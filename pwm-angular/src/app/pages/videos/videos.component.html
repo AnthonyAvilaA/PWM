@@ -1,6 +1,20 @@
 <div class="main-container-out">
   <h1>VIDEOS</h1>
-  <div class="main-container-in">
+  
+  <!-- Loading indicator -->
+  <div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Cargando videos...</p>
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="error" class="error-container">
+    <p>{{ error }}</p>
+    <button (click)="loadVideos()">Reintentar</button>
+  </div>
+  
+  <!-- Main content - only shown when not loading and no error -->
+  <div class="main-container-in" *ngIf="!loading && !error">
     <article class="main-video" *ngIf="mainVideo">
       <div class="main-video-info">
         <h2 class="video-title">{{ mainVideo.Title }}</h2>
