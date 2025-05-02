@@ -80,7 +80,11 @@
 
 ## 📝 License
 
-This project is NOT licensed
+his project is licensed under the [MIT License](./LICENSE.md).
+
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, provided that you include the original copyright notice and this license.
+
+This software is provided "as is", without warranty of any kind. See the full license text in the [`LICENSE`](./LICENSE) file.
 
 ## 👥 Contributors
 
