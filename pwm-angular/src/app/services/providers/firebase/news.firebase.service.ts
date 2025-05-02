@@ -2,28 +2,26 @@ import {
   addDoc,
   collection,
   CollectionReference,
+  deleteDoc,
   doc,
   DocumentSnapshot,
   Firestore,
   FirestoreDataConverter,
   getDoc,
   getDocs,
-  SnapshotOptions,
-  query,
-  where,
   limit,
   orderBy,
+  query,
+  SnapshotOptions,
+  startAfter,
   updateDoc,
-  deleteDoc,
-  startAfter
+  where
 } from 'firebase/firestore';
-import { News } from '@models/news';
-import { Category } from '@models/types/categories';
-import { NewsProvider } from '../interfaces/news.provider';
-import { FullNews } from '@models/fullNews';
+import { NewsModel } from '@models/news.model';
+import { Category } from '@models/types/categories.type';
+import { NewsFirebaseServiceInterface } from '@services/providers/firebase/interfaces/news-firebase-service.interface';
 import { Injectable } from '@angular/core';
-import { Observable, from, map, of, catchError, throwError, lastValueFrom } from 'rxjs';
-import { User } from '@models/user';
+import { from, Observable } from 'rxjs';
 
 interface FirestoreNews {
   title: string;
@@ -37,8 +35,8 @@ interface FirestoreNews {
   updatedAt: Date;
 }
 
-export const newsConverter: FirestoreDataConverter<News, FirestoreNews> = {
-  toFirestore: (news: News) => {
+export const newsConverter: FirestoreDataConverter<NewsModel, FirestoreNews> = {
+  toFirestore: (news: NewsModel) => {
     return {
       title: news.title,
       authorID: news.authorID,
@@ -64,17 +62,17 @@ export const newsConverter: FirestoreDataConverter<News, FirestoreNews> = {
       usersCommentsID: data.usersCommentsID,
       createdAt: data.createdAt,
       updatedAt: data.updatedAt,
-    } as News;
+    } as NewsModel;
   },
 };
 
 @Injectable({
   providedIn: 'root'
 })
-export class NewsFirebaseProviderServiceService implements NewsProvider {
+export class NewsFirebaseService implements NewsFirebaseServiceInterface {
   private readonly newsCollection = 'news';
   private readonly db: Firestore;
-  private readonly posts: CollectionReference<News>;
+  private readonly posts: CollectionReference<NewsModel>;
 
   // Last document for pagination
   private lastVisibleDoc: any = null;
@@ -86,46 +84,44 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
 
   /**
    * Add a new news article to Firestore
-   * @param news News object to create
+   * @param news NewsModel object to create
    * @returns Promise with the ID of the created news
    */
-  async addNews(news: News): Promise<string> {
+  async addNews(news: NewsModel): Promise<string> {
     return (await addDoc(this.posts, news)).id;
   }
 
   /**
    * Get all news articles
-   * @returns Promise with array of News objects
+   * @returns Promise with array of NewsModel objects
    */
-  async getAllNews(): Promise<News[]> {
+  async getAllNews(): Promise<NewsModel[]> {
     const q = query(this.posts, orderBy('createdAt', 'desc'));
     const snapshot = await getDocs(q);
-    const news: News[] = snapshot.docs.map((doc) => doc.data());
-    return news;
+    return snapshot.docs.map((doc) => doc.data());
   }
 
   /**
    * Get news by category
    * @param category Category to filter by
-   * @returns Promise with array of News objects matching the category
+   * @returns Promise with array of NewsModel objects matching the category
    */
-  async getNewsByCategory(category: Category): Promise<News[]> {
+  async getNewsByCategory(category: Category): Promise<NewsModel[]> {
     const q = query(
       this.posts,
       where('categories', 'array-contains', category.toLowerCase()),
     );
 
     const snapshot = await getDocs(q);
-    const news: News[] = snapshot.docs.map((doc) => doc.data());
-    return news;
+    return snapshot.docs.map((doc) => doc.data());
   }
 
   /**
    * Get news by ID
-   * @param id News ID
-   * @returns Promise with the News object
+   * @param id NewsModel ID
+   * @returns Promise with the NewsModel object
    */
-  async getNewsById(id: string): Promise<News> {
+  async getNewsById(id: string): Promise<NewsModel> {
     const docRef = doc(this.posts, id);
     const docSnap = await getDoc(docRef);
 
@@ -133,7 +129,7 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
       throw new Error(`News with ID ${id} not found`);
     }
 
-    return docSnap.data() as News;
+    return docSnap.data() as NewsModel;
   }
 
 
@@ -141,9 +137,9 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
    * Get latest news articles
    * @param count Number of articles to fetch
    * @param resetPagination
-   * @returns Promise with array of News objects
+   * @returns Promise with array of NewsModel objects
    */
-  async getLatestNews(count: number = 6, resetPagination: boolean = false): Promise<News[]> {
+  async getLatestNews(count: number = 6, resetPagination: boolean = false): Promise<NewsModel[]> {
 
     let q;
     if (this.lastVisibleDoc && !resetPagination) {
@@ -180,9 +176,9 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
    * @param currentNewsId ID of current news to exclude
    * @param categories Categories to match against
    * @param count Number of related articles to fetch
-   * @returns Promise with array of News objects
+   * @returns Promise with array of NewsModel objects
    */
-  async getRelatedNews(currentNewsId: string, categories: string[], count: number = 3): Promise<News[]> {
+  async getRelatedNews(currentNewsId: string, categories: string[], count: number = 3): Promise<NewsModel[]> {
     if (!categories || categories.length === 0) {
       return [];
     }
@@ -209,11 +205,11 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
 
   /**
    * Update an existing news article
-   * @param id News ID
+   * @param id NewsModel ID
    * @param news Updated news data
    * @returns Promise indicating success
    */
-  async updateNews(id: string, news: Partial<News>): Promise<void> {
+  async updateNews(id: string, news: Partial<NewsModel>): Promise<void> {
     const docRef = doc(this.posts, id);
 
     // Update the timestamp
@@ -227,7 +223,7 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
 
   /**
    * Delete a news article
-   * @param id News ID to delete
+   * @param id NewsModel ID to delete
    * @returns Promise indicating success
    */
   async deleteNews(id: string): Promise<void> {
@@ -239,27 +235,27 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
 
   /**
    * Observable wrapper for getAllNews
-   * @returns Observable with array of News objects
+   * @returns Observable with array of NewsModel objects
    */
-  getAllNewsObservable(): Observable<News[]> {
+  getAllNewsObservable(): Observable<NewsModel[]> {
     return from(this.getAllNews());
   }
 
   /**
    * Observable wrapper for getNewsByCategory
    * @param category Category to filter by
-   * @returns Observable with array of News objects
+   * @returns Observable with array of NewsModel objects
    */
-  getNewsByCategoryObservable(category: Category): Observable<News[]> {
+  getNewsByCategoryObservable(category: Category): Observable<NewsModel[]> {
     return from(this.getNewsByCategory(category));
   }
 
   /**
    * Observable wrapper for getNewsById
-   * @param id News ID
-   * @returns Observable with the News object
+   * @param id NewsModel ID
+   * @returns Observable with the NewsModel object
    */
-  getNewsByIdObservable(id: string): Observable<News> {
+  getNewsByIdObservable(id: string): Observable<NewsModel> {
     return from(this.getNewsById(id));
   }
 
@@ -268,9 +264,9 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
    * Observable wrapper for getLatestNews
    * @param count Number of articles to fetch
    * @param resetPagination Whether to reset pagination
-   * @returns Observable with array of News objects
+   * @returns Observable with array of NewsModel objects
    */
-  getLatestNewsObservable(count: number = 6, resetPagination: boolean = false): Observable<News[]> {
+  getLatestNewsObservable(count: number = 6, resetPagination: boolean = false): Observable<NewsModel[]> {
     return from(this.getLatestNews(count, resetPagination));
   }
 
@@ -279,9 +275,9 @@ export class NewsFirebaseProviderServiceService implements NewsProvider {
    * @param currentNewsId ID of current news to exclude
    * @param categories Categories to match against
    * @param count Number of related articles to fetch
-   * @returns Observable with array of News objects
+   * @returns Observable with array of NewsModel objects
    */
-  getRelatedNewsObservable(currentNewsId: string, categories: string[], count: number = 3): Observable<News[]> {
+  getRelatedNewsObservable(currentNewsId: string, categories: string[], count: number = 3): Observable<NewsModel[]> {
     return from(this.getRelatedNews(currentNewsId, categories, count));
   }
 }

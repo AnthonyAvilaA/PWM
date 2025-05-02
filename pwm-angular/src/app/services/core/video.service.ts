@@ -2,17 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { VideoData } from '@models/video';
-
-
-interface VideoResponse {
-  data: VideoData[];
-}
+import { VideoData } from '@models/video.model';
+import { IVideoService, VideoResponse } from '@services/core/interfaces/video-service.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VideoService {
+export class VideoService implements IVideoService {
   constructor(private http: HttpClient) { }
 
   /**
@@ -30,7 +26,7 @@ export class VideoService {
           video_url: item.video_url,
           category: item.category
         }));
-        
+
         return { data: transformedData };
       })
     );

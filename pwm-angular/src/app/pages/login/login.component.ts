@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '@services/core/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  rememberMe: boolean = false; 
+  rememberMe: boolean = false;
   errorMessage: string | null = null;
   isLoading: boolean = false;
 
@@ -26,12 +26,12 @@ export class LoginComponent {
     if (this.authService.isAuthenticated()) {
       this.router.navigate(['/']);
     }
-    
+
     // Subscribe to loading and error states
     this.authService.isLoading$.subscribe(loading => {
       this.isLoading = loading;
     });
-    
+
     this.authService.errorMessage$.subscribe(error => {
       this.errorMessage = error;
     });
@@ -46,7 +46,7 @@ export class LoginComponent {
     this.authService.login({
       email: this.email,
       password: this.password,
-      rememberMe: this.rememberMe 
+      rememberMe: this.rememberMe
     }).subscribe(success => {
       if (success) {
         this.router.navigate(['/']);

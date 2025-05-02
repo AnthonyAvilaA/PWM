@@ -6,14 +6,14 @@ import {
   User as FirebaseUser,
   createUserWithEmailAndPassword
 } from 'firebase/auth';
-import { AuthProvider } from '../interfaces/auth.provider';
-import { AuthResult, AuthUser, LoginData, RegisterData } from '@models/auth';
+import { AuthFirebaseServiceInterface } from '@services/providers/firebase/interfaces/auth-firebase-service.interface';
+import { AuthResult, AuthUser, LoginData, RegisterData } from '@models/auth.model';
 import { auth } from 'environments/firebase.config';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthFirebaseProviderService implements AuthProvider {
+export class AuthFirebaseService implements AuthFirebaseServiceInterface {
   private readonly db: Firestore;
 
   constructor(db: Firestore) {

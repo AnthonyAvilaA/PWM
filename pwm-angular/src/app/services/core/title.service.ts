@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
+import { ITitleService } from '@services/core/interfaces/title-service.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TitleService {
+export class TitleService implements ITitleService {
   private readonly baseTitle = 'Argony News';
-  
+
   constructor(
     private title: Title,
     private router: Router,

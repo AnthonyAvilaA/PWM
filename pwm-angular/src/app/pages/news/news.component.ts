@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { News } from '@models/news';
-import { ProviderServiceService } from '@services/provider-service.service';
-import { NewsProvider } from '@services/providers/interfaces/news.provider';
-import { UserProvider } from '@services/providers/interfaces/user.provider';
-import { CommentProvider } from '@services/providers/interfaces/comment.provider';
+import { NewsModel } from '@models/news.model';
+import { ProviderService } from '@services/providers/provider.service';
+import { NewsFirebaseServiceInterface } from '@services/providers/firebase/interfaces/news-firebase-service.interface';
+import { UserFirebaseServiceInterface } from '@services/providers/firebase/interfaces/user-firebase-service.interface';
+import { CommentFirebaseServiceInterface } from '@services/providers/firebase/interfaces/comment-firebase-service.interface';
 import { ActivatedRoute } from '@angular/router';
-import { FullNews } from '@models/fullNews';
+import { FullNewsModel } from '@models/fullNews.model';
 import { Timestamp } from 'firebase/firestore';
-import { Comment } from '@models/comment';
-import { User } from '@models/user';
+import { CommentModel } from '@models/comment.model';
+import { UserModel } from '@models/user.model';
 
 @Component({
   selector: 'app-news',
@@ -17,29 +17,29 @@ import { User } from '@models/user';
   styleUrl: './news.component.css'
 })
 export class NewsComponent {
-  
-  private newsService: NewsProvider;
-  private usersService: UserProvider;
-  private commentsService: CommentProvider;
-  public principalNews: FullNews | undefined;
-  public relatedNews: News[] = [];
-  public otherNews: News[] = [];
-  public commentUsers= new Map<string, User>();
-  
-  constructor(private providerService: ProviderServiceService, private route: ActivatedRoute) {
+
+  private newsService: NewsFirebaseServiceInterface;
+  private usersService: UserFirebaseServiceInterface;
+  private commentsService: CommentFirebaseServiceInterface;
+  public principalNews: FullNewsModel | undefined;
+  public relatedNews: NewsModel[] = [];
+  public otherNews: NewsModel[] = [];
+  public commentUsers= new Map<string, UserModel>();
+
+  constructor(private providerService: ProviderService, private route: ActivatedRoute) {
     this.newsService = providerService.newsProvider;
     this.usersService = providerService.usersProvider;
     this.commentsService = providerService.commentsProvider;
     this.initPrincipalNews();
   }
-  
+
   async initPrincipalNews() {
     var newsID: string = "";
     this.route.paramMap.subscribe(params => {
       newsID = params.get('newsID') as string;
     });
     this.principalNews = await this.providerService.getFullNewsById(newsID);
-    
+
     try {
       this.principalNews!.news!.content = this.principalNews.news.content
       .replace(/<p>/g, '') // Eliminar todas las etiquetas <p>
@@ -47,9 +47,9 @@ export class NewsComponent {
     } catch (error) {
       console.error('Error al procesar el contenido de la noticia:', error);
     }
-  
+
     const news =  await this.newsService.getRelatedNews(this.principalNews!.news!.ID, this.principalNews!.news!.categories, 6);
-    this.relatedNews = news.slice(0, 3); 
+    this.relatedNews = news.slice(0, 3);
     this.otherNews = news.slice(3, 6);
     this.initComments();
   }
@@ -67,12 +67,12 @@ export class NewsComponent {
 
   async initComments() {
     for (const comment of this.principalNews!.comments) {
-      const user: User = await this.usersService.getUserById(comment.userID);
+      const user: UserModel = await this.usersService.getUserById(comment.userID);
       this.commentUsers.set(comment.userID, user);
     }
   }
-  
-  public getUser(userId: string): User {
+
+  public getUser(userId: string): UserModel {
     console.log(this.commentUsers.get(userId));
     return this.commentUsers.get(userId)!;
   }

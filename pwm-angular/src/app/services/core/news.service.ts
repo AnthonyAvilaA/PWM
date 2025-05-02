@@ -1,43 +1,44 @@
 import { Injectable } from '@angular/core';
-import { News } from '../models/news';
+import { NewsModel } from '@models/news.model';
 import { Observable, from, map } from 'rxjs';
-import { Category } from '@models/types/categories';
-import { NewsFirebaseProviderServiceService } from './providers/firebase/news.firebase.provider.service.service';
-import { db } from '../../environments/firebase.config';
+import { Category } from '@models/types/categories.type';
+import { NewsFirebaseService } from '../providers/firebase/news.firebase.service';
+import { db } from '../../../environments/firebase.config';
+import { INewsService } from '@services/core/interfaces/news-service.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NewsService {
-  private provider: NewsFirebaseProviderServiceService;
+export class NewsService implements INewsService {
+  private provider: NewsFirebaseService;
 
   constructor() {
-    this.provider = new NewsFirebaseProviderServiceService(db);
+    this.provider = new NewsFirebaseService(db);
   }
 
   /**
    * Get all news articles
-   * @returns Observable with array of News objects
+   * @returns Observable with array of NewsModel objects
    */
-  getAllNews(): Observable<News[]> {
+  getAllNews(): Observable<NewsModel[]> {
     return this.provider.getAllNewsObservable();
   }
 
   /**
    * Get news by ID
-   * @param id News ID
-   * @returns Observable with the News object
+   * @param id NewsModel ID
+   * @returns Observable with the NewsModel object
    */
-  getNewsById(id: string): Observable<News | null> {
+  getNewsById(id: string): Observable<NewsModel | null> {
     return this.provider.getNewsByIdObservable(id);
   }
 
   /**
    * Get news by category
    * @param category Category name
-   * @returns Observable with array of News objects
+   * @returns Observable with array of NewsModel objects
    */
-  getNewsByCategory(category: Category): Observable<News[]> {
+  getNewsByCategory(category: Category): Observable<NewsModel[]> {
 
     return this.provider.getNewsByCategoryObservable(category)
       .pipe(
@@ -55,9 +56,9 @@ export class NewsService {
    * @param currentNewsId ID of the current news article to exclude
    * @param categories Categories to match against
    * @param count Number of related articles to fetch
-   * @returns Observable with array of News objects
+   * @returns Observable with array of NewsModel objects
    */
-  getRelatedNews(currentNewsId: string, categories: string[], count: number = 3): Observable<News[]> {
+  getRelatedNews(currentNewsId: string, categories: string[], count: number = 3): Observable<NewsModel[]> {
     return this.provider.getRelatedNewsObservable(currentNewsId, categories, count);
   }
 
@@ -65,34 +66,34 @@ export class NewsService {
    * Get latest news articles
    * @param count Number of articles to fetch
    * @param resetPagination Whether to reset pagination and start from the beginning
-   * @returns Observable with array of News objects
+   * @returns Observable with array of NewsModel objects
    */
-  getLatestNews(count: number = 6, resetPagination: boolean = false): Observable<News[]> {
+  getLatestNews(count: number = 6, resetPagination: boolean = false): Observable<NewsModel[]> {
     return this.provider.getLatestNewsObservable(count, resetPagination);
   }
 
   /**
    * Create a new news article
-   * @param news News object to create
+   * @param news NewsModel object to create
    * @returns Promise with the ID of the created news
    */
-  async createNews(news: News): Promise<string> {
+  async createNews(news: NewsModel): Promise<string> {
     return await this.provider.addNews(news);
   }
 
   /**
    * Update an existing news article
-   * @param id News ID
+   * @param id NewsModel ID
    * @param news Updated news data
    * @returns Observable indicating success
    */
-  updateNews(id: string, news: Partial<News>): Observable<void> {
+  updateNews(id: string, news: Partial<NewsModel>): Observable<void> {
     return from(this.provider.updateNews(id, news));
   }
 
   /**
    * Delete a news article
-   * @param id News ID to delete
+   * @param id NewsModel ID to delete
    * @returns Observable indicating success
    */
   deleteNews(id: string): Observable<void> {

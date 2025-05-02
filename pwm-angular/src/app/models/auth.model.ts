@@ -9,14 +9,14 @@ export interface UserAuth {
     password?: string;
 }
 
-export interface AuthUser extends User {
+export interface AuthUser extends UserModel {
     id: string;
     username?: string;
 }
 
 export interface RegisterData {
     name: string;
-    email: string; 
+    email: string;
     password: string;
     username?: string;
 }
@@ -33,4 +33,4 @@ export interface AuthResult {
     error?: string;
 }
 
-import { User } from './user';
+import { UserModel } from './user.model';

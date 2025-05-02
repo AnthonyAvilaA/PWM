@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { News } from '../../models/news';
+import { NewsModel } from '@models/news.model';
 
 @Component({
   selector: 'app-side-article',
@@ -11,5 +11,5 @@ import { News } from '../../models/news';
   styleUrls: ['./side-article.component.css']
 })
 export class SideArticleComponent {
-  @Input() news: News | null = null;
+  @Input() news: NewsModel | null = null;
 }

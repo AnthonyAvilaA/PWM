@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, catchError, from, of, tap } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ProviderServiceService } from './provider-service.service';
-import { AuthUser, LoginData, RegisterData } from '@models/auth';
+import { ProviderService } from '../providers/provider.service';
+import { AuthUser, LoginData, RegisterData } from '@models/auth.model';
 import { Router } from '@angular/router';
+import { IAuthService } from '@services/core/interfaces/auth-service.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements IAuthService {
   private currentUserSubject = new BehaviorSubject<AuthUser | null>(null);
   public currentUser$: Observable<AuthUser | null> = this.currentUserSubject.asObservable();
   private isLoadingSubject = new BehaviorSubject<boolean>(false);
@@ -22,7 +23,7 @@ export class AuthService {
   private readonly USE_PERSISTENT_STORAGE_KEY = 'pwm_use_persistent';
 
   constructor(
-    private providerService: ProviderServiceService,
+    private providerService: ProviderService,
     private router: Router
   ) {
     // Check for existing user on service initialization
@@ -37,10 +38,10 @@ export class AuthService {
       // First check localStorage (persistent login)
       const persistentData = localStorage.getItem(this.USER_DATA_KEY);
       const usePersistent = localStorage.getItem(this.USE_PERSISTENT_STORAGE_KEY) === 'true';
-      
+
       // Then check sessionStorage (temporary login)
       const sessionData = sessionStorage.getItem(this.SESSION_STORAGE_KEY);
-      
+
       if (persistentData && usePersistent) {
         // User chose to be remembered
         try {
@@ -78,7 +79,7 @@ export class AuthService {
         if (user) {
           // Get the storage preference
           const usePersistent = localStorage.getItem(this.USE_PERSISTENT_STORAGE_KEY) === 'true';
-          
+
           // Save the user based on their preference
           if (usePersistent) {
             this.saveUserDataPersistent(user);

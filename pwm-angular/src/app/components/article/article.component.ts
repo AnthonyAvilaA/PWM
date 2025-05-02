@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { News } from '@models/news';
+import { NewsModel } from '@models/news.model';
 
 @Component({
   selector: 'app-article',
@@ -10,7 +10,7 @@ import { News } from '@models/news';
   styleUrl: './article.component.css'
 })
 export class ArticleComponent implements OnInit {
-  @Input() news: News | null = null;
+  @Input() news: NewsModel | null = null;
 
   ngOnInit(): void {
     if (this.news?.updatedAt && (this.news.updatedAt as any).seconds) {

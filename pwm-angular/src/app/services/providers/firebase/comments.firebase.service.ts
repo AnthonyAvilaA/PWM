@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CommentProvider } from '../interfaces/comment.provider';
+import { CommentFirebaseServiceInterface } from '@services/providers/firebase/interfaces/comment-firebase-service.interface';
 import { addDoc, collection, CollectionReference, doc, DocumentSnapshot, Firestore, FirestoreDataConverter, getDoc, setDoc, SnapshotOptions } from 'firebase/firestore';
-import { Comment } from '@models/comment';
+import { CommentModel } from '@models/comment.model';
 
 interface FirestoreComment {
   userID: string,
@@ -9,8 +9,8 @@ interface FirestoreComment {
   createdAt: string;
 }
 
-export const usersConverter: FirestoreDataConverter<Comment, FirestoreComment> = {
-  toFirestore: (comment: Comment) => {
+export const usersConverter: FirestoreDataConverter<CommentModel, FirestoreComment> = {
+  toFirestore: (comment: CommentModel) => {
     return {
       userID: comment.userID,
       content: comment.content,
@@ -23,32 +23,32 @@ export const usersConverter: FirestoreDataConverter<Comment, FirestoreComment> =
       userID: data.userID,
       content: data.content,
       createdAt: data.createdAt,
-    } as Comment;
+    } as CommentModel;
   },
 };
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommentsFirebaseProviderServiceService implements CommentProvider {
+export class CommentsFirebaseService implements CommentFirebaseServiceInterface {
 
   private readonly db: Firestore;
-  private comments: CollectionReference<Comment>
-  
+  private comments: CollectionReference<CommentModel>
+
   constructor(db: Firestore) {
     this.db = db;
-    this.comments = collection(this.db, '/comments') as CollectionReference<Comment>;
+    this.comments = collection(this.db, '/comments') as CollectionReference<CommentModel>;
   }
 
-  async getCommentById(id: string): Promise<Comment> {
-    return (await getDoc(doc(this.comments, `${id}`))).data() as Comment;
+  async getCommentById(id: string): Promise<CommentModel> {
+    return (await getDoc(doc(this.comments, `${id}`))).data() as CommentModel;
   }
 
-  async addComment(comment: Comment): Promise<string> {
+  async addComment(comment: CommentModel): Promise<string> {
     return (await addDoc(this.comments, comment)).id;
   }
 
-  async addCommentByID(comment: Comment, id: string): Promise<any> {
+  async addCommentByID(comment: CommentModel, id: string): Promise<any> {
     const document = doc(this.comments, `${id}`);
     await setDoc(document, comment);
   }

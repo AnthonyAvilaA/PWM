@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '@services/core/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -28,12 +28,12 @@ export class RegisterComponent {
     if (this.authService.isAuthenticated()) {
       this.router.navigate(['/']);
     }
-    
+
     // Subscribe to loading and error states
     this.authService.isLoading$.subscribe(loading => {
       this.isLoading = loading;
     });
-    
+
     this.authService.errorMessage$.subscribe(error => {
       this.errorMessage = error;
     });

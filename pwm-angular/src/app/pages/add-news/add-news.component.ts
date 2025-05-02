@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
-import { News } from '@models/news';
-import { NewsService } from '@services/news.service';
+import { NewsModel } from '@models/news.model';
+import { NewsService } from '@services/core/news.service';
 @Component({
   selector: 'app-add-news',
   standalone: true,
@@ -35,11 +35,11 @@ export class AddNewsComponent {
 
   onSelectCategory(event: Event): void {
     const selectedValue = (event.target as HTMLSelectElement).value;
-  
+
     if (selectedValue && !this.categories.includes(selectedValue)) {
       this.categories.push(selectedValue);
     }
-  
+
     (event.target as HTMLSelectElement).selectedIndex = 0;
   }
 
@@ -54,7 +54,7 @@ export class AddNewsComponent {
   error_image(){
     this.image_link = 'assets/formato_imagen.png';
   }
-  
+
   constructor(
     private newsService: NewsService,
     private router: Router
@@ -107,7 +107,7 @@ export class AddNewsComponent {
       return;
     }
 
-    const news: News = {
+    const news: NewsModel = {
       ID: "",
       title: this.title,
       authorID: "",

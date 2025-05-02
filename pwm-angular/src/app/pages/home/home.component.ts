@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleComponent} from "@components/article/article.component";
 import { SideArticleComponent} from '@components/side-article/side-article.component';
-import { NewsService } from '@services/news.service';
-import { News } from '@models/news';
+import { NewsService } from '@services/core/news.service';
+import { NewsModel } from '@models/news.model';
 import { LiveHeadlineComponent } from '@components/live-headline/live-headline.component';
 
 
@@ -16,9 +16,9 @@ import { LiveHeadlineComponent } from '@components/live-headline/live-headline.c
 })
 export class HomeComponent implements OnInit {
   // News collections
-  topStories: News[] = [];
-  suggestedContent: News[] = [];
-  liveNews: News | null = null;
+  topStories: NewsModel[] = [];
+  suggestedContent: NewsModel[] = [];
+  liveNews: NewsModel | null = null;
 
   // UI state
   loading = true;
@@ -117,7 +117,7 @@ export class HomeComponent implements OnInit {
   /**
    * Distributes news items between top stories and suggested content
    */
-  private distributeNews(newsItems: News[]): void {
+  private distributeNews(newsItems: NewsModel[]): void {
     // Use 1/2 for top stories and 1/2 for suggested content
     const topCount = Math.ceil(newsItems.length * 0.5);
 

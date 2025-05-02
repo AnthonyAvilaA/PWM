@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { addDoc, collection, CollectionReference, doc, DocumentData, DocumentReference, DocumentSnapshot, Firestore, FirestoreDataConverter, getDoc, getDocs, setDoc, SnapshotOptions } from 'firebase/firestore';
-import { User } from '@models/user';
-import { UserProvider } from '../interfaces/user.provider';
+import { UserModel } from '@models/user.model';
+import { UserFirebaseServiceInterface } from '@services/providers/firebase/interfaces/user-firebase-service.interface';
 
 
 interface FirestoreUser {
@@ -10,8 +10,8 @@ interface FirestoreUser {
   image_url: string;
 }
 
-export const usersConverter: FirestoreDataConverter<User, FirestoreUser> = {
-  toFirestore: (user: User) => {
+export const usersConverter: FirestoreDataConverter<UserModel, FirestoreUser> = {
+  toFirestore: (user: UserModel) => {
     return {
       name: user.name,
       email: user.email,
@@ -31,21 +31,21 @@ export const usersConverter: FirestoreDataConverter<User, FirestoreUser> = {
 @Injectable({
   providedIn: 'root'
 })
-export class UsersFirebaseProviderServiceService implements UserProvider {
+export class UserFirebaseService implements UserFirebaseServiceInterface {
 
     private readonly db: Firestore;
-    private readonly users: CollectionReference<User>;
-  
+    private readonly users: CollectionReference<UserModel>;
+
     constructor(db: Firestore) {
       this.db = db;
       this.users = collection(this.db, '/users').withConverter(usersConverter);
     }
 
-  async getUserById(id: string): Promise<User> {
-    return (await getDoc(doc(this.users, `${id}`))).data() as User;
+  async getUserById(id: string): Promise<UserModel> {
+    return (await getDoc(doc(this.users, `${id}`))).data() as UserModel;
   }
 
-  async addUser(User: User): Promise<string> {
+  async addUser(User: UserModel): Promise<string> {
     return (await addDoc(this.users, User)).id;
   }
 }
