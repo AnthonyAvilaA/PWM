@@ -71,11 +71,9 @@
 ## 🖥️ Screenshots & Mockups
 
 <div align="center">
-  <p><i>INSERT MOCKUPS LINK HERE</i></p>
-</div>
 
-<div align="center">
-  <p><i>Screenshots coming soon</i></p>
+🔗 [**View Figma Mockups**](https://www.figma.com/design/tNjgVFBImc33oU2ZxneRMo/PWM-Project-Mockups?m=auto&t=aN0vTzwc7j7NtLaB-6)
+
 </div>
 
 ## 📝 License
