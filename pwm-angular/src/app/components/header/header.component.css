@@ -54,10 +54,16 @@
   color: white;
   font-weight: bold;
   white-space: nowrap;
+  padding: 5px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 .header-center a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Language Menu Styles */
@@ -202,12 +208,15 @@
 .nav-links li a {
   color: white;
   text-decoration: none;
-  font-size: clamp(15px, 1.1vw, 17px);
   display: block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 .nav-links li a:hover {
-  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
 }
 
 /* Burger logout link */

@@ -1,8 +1,8 @@
-<article class="news-article" *ngIf="news">
+<article class="news-article" *ngIf="news" [routerLink]="['/news', news.ID]" tabindex="0">
   <div class="text-content">
     <h1 class="title">{{ news.title }}</h1>
     <p class="extract">{{ news.description }}</p>
-    <a [routerLink]="['/news', news.ID]" class="read-more">Leer más</a>
+    <span class="read-more">Leer más</span>
   </div>
   <figure class="image-container">
     <img [src]="news.image" alt="Imagen de {{ news.title }}">

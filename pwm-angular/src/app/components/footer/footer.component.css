@@ -38,6 +38,47 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.footer-form button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Subscription success message styles */
+.subscription-success {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.subscription-success p {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subscription-success button {
+    padding: 8px 15px;
+    background: white;
+    color: #c0504d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.subscription-success button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .footer-links {
@@ -65,10 +106,12 @@
     color: white;
     text-decoration: none;
     font-size: 14px;
+    transition: all 0.2s ease;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
+    opacity: 0.8;
 }
 
 /*Desktop (does nothing is default behaviour)*/
@@ -145,4 +188,3 @@
         width: 100%;
     }
 }
-

@@ -2,21 +2,25 @@
     <div class="footer-subscription">
         <img src="/assets/logo.png" alt="Logo" class="footer-logo">
         <p>Suscríbete a nuestro diario para recibir las últimas actualizaciones.</p>
-        <form action="#" method="post" class="footer-form">
-            <input type="email" name="email" placeholder="you@example.com" required>
+        <form (ngSubmit)="onSubscribe()" class="footer-form" *ngIf="!subscribed">
+            <input type="email" name="email" placeholder="you@example.com" required [(ngModel)]="email">
             <button type="submit">Suscribirse</button>
         </form>
-        <p>Mantente actualizado al suscribirte.</p>
+        <div class="subscription-success" *ngIf="subscribed">
+            <p>¡Gracias por suscribirte! Recibirás nuestras actualizaciones en tu correo.</p>
+            <button (click)="resetForm()">Suscribir otro email</button>
+        </div>
+        <p *ngIf="!subscribed">Mantente actualizado al suscribirte.</p>
     </div>
 
     <div class="footer-links">
         <ul>
             <li><strong>Explorar</strong></li>
-            <li><a routerLink="category">Política</a></li>
-            <li><a routerLink="category">Deportes</a></li>
-            <li><a routerLink="category">Ciencia</a></li>
-            <li><a routerLink="category">Entretenimiento</a></li>
-            <li><a routerLink="category">Mundo</a></li>
+            <li><a [routerLink]="['/category', 'politica']">Política</a></li>
+            <li><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
+            <li><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
+            <li><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
+            <li><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
         </ul>
 
         <ul>
