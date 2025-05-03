@@ -180,18 +180,20 @@
     "ERROR_PASSWORD_SHORT": "Password must be at least 6 characters long."
   },
   "FOOTER": {
-    "SUBSCRIBE_HEADING": "Subscribe to our newspaper to receive the latest updates.",
-    "EMAIL_PLACEHOLDER": "you@example.com",
+    "SUBSCRIBE_HEADING": "Subscribe to Our Newsletter",
+    "EMAIL_PLACEHOLDER": "Enter your email address",
     "SUBSCRIBE_BUTTON": "Subscribe",
-    "THANKYOU_MESSAGE": "Thank you for subscribing! You will receive our updates in your email.",
+    "THANKYOU_MESSAGE": "Thank you for subscribing!",
     "SUBSCRIBE_ANOTHER": "Subscribe another email",
-    "STAY_UPDATED": "Stay updated by subscribing.",
+    "STAY_UPDATED": "Stay updated with our latest news and articles!",
     "EXPLORE": "Explore",
     "ABOUT_US": "About Us",
-    "CONTACT_US": "Contact Us",
+    "CONTACT_US": "Connect with Us",
     "PRIVACY_POLICY": "Privacy Policy",
-    "TERMS": "Terms and Conditions",
-    "PRIVACY_PREFERENCES": "Your privacy preferences"
+    "TERMS": "Terms of Service",
+    "PRIVACY_PREFERENCES": "Privacy Preferences",
+    "EMAIL_REQUIRED": "Email is required",
+    "EMAIL_INVALID": "Please enter a valid email address"
   },
   "LOADING_SCREENS": {
     "GENERAL": "Loading...",

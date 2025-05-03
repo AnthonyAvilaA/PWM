@@ -14,21 +14,38 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class FooterComponent {
   email: string = '';
   subscribed: boolean = false;
+  emailError: string = '';
 
   constructor(private translate: TranslateService) {}
 
+  validateEmail(): void {
+    if (!this.email) {
+      this.emailError = 'FOOTER.EMAIL_REQUIRED';
+      return;
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(this.email)) {
+      this.emailError = 'FOOTER.EMAIL_INVALID';
+    } else {
+      this.emailError = '';
+    }
+  }
+
   onSubscribe(): void {
-    if (this.email && this.email.includes('@')) {
-      // In a real application, this would send the email to a backend service
-      console.log('Subscribing with email:', this.email);
-      
-      // Reset form and show success message
+    this.validateEmail();
+    
+    if (!this.emailError) {
+      // Here you would typically send the email to your backend service
+      console.log('Subscribing email:', this.email);
       this.subscribed = true;
+      this.email = '';
     }
   }
 
   resetForm(): void {
     this.email = '';
     this.subscribed = false;
+    this.emailError = '';
   }
 }

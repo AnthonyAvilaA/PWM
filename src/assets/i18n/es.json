@@ -175,18 +175,20 @@
     "ERROR_PASSWORD_SHORT": "La contraseña debe tener al menos 6 caracteres."
   },
   "FOOTER": {
-    "SUBSCRIBE_HEADING": "Suscríbete a nuestro diario para recibir las últimas actualizaciones.",
-    "EMAIL_PLACEHOLDER": "tu@ejemplo.com",
+    "SUBSCRIBE_HEADING": "Suscríbete a Nuestro Boletín",
+    "EMAIL_PLACEHOLDER": "Introduce tu dirección de correo",
     "SUBSCRIBE_BUTTON": "Suscribirse",
-    "THANKYOU_MESSAGE": "¡Gracias por suscribirte! Recibirás nuestras actualizaciones en tu correo.",
-    "SUBSCRIBE_ANOTHER": "Suscribir otro email",
-    "STAY_UPDATED": "Mantente actualizado al suscribirte.",
+    "THANKYOU_MESSAGE": "¡Gracias por suscribirte!",
+    "SUBSCRIBE_ANOTHER": "Suscribir otro correo",
+    "STAY_UPDATED": "¡Mantente actualizado con nuestras últimas noticias y artículos!",
     "EXPLORE": "Explorar",
     "ABOUT_US": "Sobre Nosotros",
-    "CONTACT_US": "Contáctanos",
-    "PRIVACY_POLICY": "Política de privacidad",
-    "TERMS": "Términos y Condiciones",
-    "PRIVACY_PREFERENCES": "Tus preferencias de privacidad"
+    "PRIVACY_POLICY": "Política de Privacidad",
+    "TERMS": "Términos de Servicio",
+    "PRIVACY_PREFERENCES": "Preferencias de Privacidad",
+    "CONTACT_US": "Conéctate con Nosotros",
+    "EMAIL_REQUIRED": "El correo electrónico es obligatorio",
+    "EMAIL_INVALID": "Por favor, introduce una dirección de correo válida"
   },
   "LOADING_SCREENS": {
     "GENERAL": "Cargando...",
