@@ -56,7 +56,7 @@ function logout() {
     localStorage.removeItem('session_id');
     
     // Redirect to login page
-    window.location.href = '/templates/login/index.html'; // Redirect to login page after logout
+    window.location.href = '../templates/login/index.html'; // Redirect to login page after logout
 }
 
 // Load components like header and footer
