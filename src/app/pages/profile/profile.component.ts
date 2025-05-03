@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
+import { ThemeService } from '@services/core/theme.service';
 
 @Component({
   selector: 'app-profile',
@@ -74,12 +75,16 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private titleService: Title,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private themeService: ThemeService
   ) { }
 
   ngOnInit(): void {
     this.setPageTitle();
     this.loading = false;
+    
+    // Get current theme from theme service
+    this.uiPreferences.theme = this.themeService.getTheme();
   }
 
   setPageTitle(): void {
@@ -102,6 +107,9 @@ export class ProfileComponent implements OnInit {
   }
 
   saveUIPreferences(): void {
+    // Apply the theme change
+    this.themeService.setTheme(this.uiPreferences.theme);
+    
     // Mock save UI preferences function
     console.log('UI preferences saved', this.uiPreferences);
     // Here you would typically make an API call to save the UI preferences
