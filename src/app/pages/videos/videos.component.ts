@@ -1,15 +1,16 @@
 import { Component, OnInit} from '@angular/core';
-import {NgIf} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { VideoData } from '@models/video.model';
 import { VideoService } from '@services/core/video.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-videos',
-  imports: [NgIf],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './videos.component.html',
-  styleUrl: './videos.component.css',
+  styleUrls: ['./videos.component.css'],
   standalone: true
 })
 export class VideosComponent implements OnInit {
@@ -18,10 +19,19 @@ export class VideosComponent implements OnInit {
   trustedVideoUrl!: SafeResourceUrl;
   loading: boolean = true;
   error: string | null = null;
+  
+  // Categories with pagination control
   categories: { [category: string]: VideoData[] } = {
     tecnología: [],
     politica: [],
     otros: []
+  };
+  
+  // Active page index for each category
+  categoryPage: { [category: string]: number } = {
+    tecnología: 0,
+    politica: 0,
+    otros: 0
   };
 
   constructor(private sanitizer: DomSanitizer,
@@ -42,11 +52,13 @@ export class VideosComponent implements OnInit {
         // Set the main video (first in the array)
         if (this.videos.length > 0) {
           this.mainVideo = this.videos[0];
-          this.videos.pop();
           this.trustedVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.mainVideo.video_url);
+          
+          // Remove the main video from the list
+          this.videos = this.videos.slice(1);
         }
 
-        //Group remaining videos by category
+        // Group remaining videos by category
         this.videos.forEach(video => {
           if (this.categories[video.category]) {
             this.categories[video.category].push(video);
@@ -64,5 +76,42 @@ export class VideosComponent implements OnInit {
         this.loading = false;
       }
     });
+  }
+
+  // Navigate to next page in category
+  nextPage(category: string) {
+    const maxPage = Math.ceil(this.categories[category].length / 2) - 1;
+    if (this.categoryPage[category] < maxPage) {
+      this.categoryPage[category]++;
+    }
+  }
+
+  // Navigate to previous page in category
+  prevPage(category: string) {
+    if (this.categoryPage[category] > 0) {
+      this.categoryPage[category]--;
+    }
+  }
+
+  // Get current videos for category based on pagination
+  getCurrentVideos(category: string): VideoData[] {
+    const startIndex = this.categoryPage[category] * 2;
+    return this.categories[category].slice(startIndex, startIndex + 2);
+  }
+
+  // Check if has next page
+  hasNextPage(category: string): boolean {
+    const maxPage = Math.ceil(this.categories[category].length / 2) - 1;
+    return this.categoryPage[category] < maxPage;
+  }
+
+  // Check if has previous page
+  hasPrevPage(category: string): boolean {
+    return this.categoryPage[category] > 0;
+  }
+
+  // Create trusted URL
+  getTrustedUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }

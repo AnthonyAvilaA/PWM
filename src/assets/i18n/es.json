@@ -140,12 +140,11 @@
   "VIDEOS": {
     "TITLE": "Videos",
     "LOADING": "Cargando videos...",
-    "ERROR_LOADING": "Error al cargar los videos. Por favor intente más tarde.",
-    "CATEGORIES": {
-      "TECHNOLOGY": "Tecnología",
-      "POLITICS": "Política",
-      "OTHERS": "Otros"
-    }
+    "ERROR": "Error al cargar los videos. Por favor intente más tarde.",
+    "TECHNOLOGY": "Tecnología",
+    "POLITICS": "Política",
+    "OTHERS": "Otros",
+    "RETRY": "Reintentar"
   },
   "LOGIN": {
     "TITLE": "Inicio de sesión",

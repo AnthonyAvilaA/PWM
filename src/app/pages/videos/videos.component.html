@@ -1,20 +1,21 @@
 <div class="main-container-out">
-  <h1>VIDEOS</h1>
+  <h1>{{ 'VIDEOS.TITLE' | translate }}</h1>
   
   <!-- Loading indicator -->
   <div *ngIf="loading" class="loading-container">
     <div class="loading-spinner"></div>
-    <p>Cargando videos...</p>
+    <p>{{ 'VIDEOS.LOADING' | translate }}</p>
   </div>
 
   <!-- Error message -->
   <div *ngIf="error" class="error-container">
-    <p>{{ error }}</p>
-    <button (click)="loadVideos()">Reintentar</button>
+    <p>{{ 'VIDEOS.ERROR' | translate }}</p>
+    <button (click)="loadVideos()">{{ 'VIDEOS.RETRY' | translate }}</button>
   </div>
   
   <!-- Main content - only shown when not loading and no error -->
   <div class="main-container-in" *ngIf="!loading && !error">
+    <!-- Main video section -->
     <article class="main-video" *ngIf="mainVideo">
       <div class="main-video-info">
         <h2 class="video-title">{{ mainVideo.Title }}</h2>
@@ -30,39 +31,86 @@
 
     <span class="separator"><span></span></span>
 
-    <!-- Tecnología section -->
-    <div class="sub-category tecnología">
-      <input class="row-button" id="tecnología-left-button" type="button" value="←">
+    <!-- Technology section -->
+    <div class="sub-category tecnología" *ngIf="categories['tecnología'] && categories['tecnología'].length > 0">
+      <input class="row-button" id="tecnología-left-button" type="button" value="←" 
+             [disabled]="!hasPrevPage('tecnología')" 
+             (click)="prevPage('tecnología')" 
+             [class.disabled]="!hasPrevPage('tecnología')">
       <article>
-        <h2>tecnología</h2>
-        <section class="basic-video"></section>
-        <section class="basic-video"></section>
+        <h2>{{ 'VIDEOS.TECHNOLOGY' | translate }}</h2>
+        <div class="category-videos">
+          <div class="video-container" *ngFor="let video of getCurrentVideos('tecnología')">
+            <h3>{{ video.Title }}</h3>
+            <iframe class="video-content" width="240" height="140"
+                    [src]="getTrustedUrl(video.video_url)" 
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms" 
+                    frameborder="0" allowfullscreen>
+            </iframe>
+            <p class="video-author">{{ video.author.username }}</p>
+          </div>
+        </div>
       </article>
-      <input class="row-button" id="tecnología-right-button" type="button" value="→">
+      <input class="row-button" id="tecnología-right-button" type="button" value="→" 
+             [disabled]="!hasNextPage('tecnología')" 
+             (click)="nextPage('tecnología')"
+             [class.disabled]="!hasNextPage('tecnología')">
     </div>
 
-    <span class="separator"><span></span></span>
+    <span class="separator" *ngIf="categories['tecnología'] && categories['tecnología'].length > 0"><span></span></span>
 
-    <div class="sub-category política">
-      <input class="row-button" id="política-left-button" type="button" value="←">
+    <!-- Politics section -->
+    <div class="sub-category política" *ngIf="categories['politica'] && categories['politica'].length > 0">
+      <input class="row-button" id="política-left-button" type="button" value="←" 
+             [disabled]="!hasPrevPage('politica')" 
+             (click)="prevPage('politica')"
+             [class.disabled]="!hasPrevPage('politica')">
       <article>
-        <h2>política</h2>
-        <section class="basic-video"></section>
-        <section class="basic-video"></section>
+        <h2>{{ 'VIDEOS.POLITICS' | translate }}</h2>
+        <div class="category-videos">
+          <div class="video-container" *ngFor="let video of getCurrentVideos('politica')">
+            <h3>{{ video.Title }}</h3>
+            <iframe class="video-content" width="240" height="140"
+                    [src]="getTrustedUrl(video.video_url)" 
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms" 
+                    frameborder="0" allowfullscreen>
+            </iframe>
+            <p class="video-author">{{ video.author.username }}</p>
+          </div>
+        </div>
       </article>
-      <input class="row-button" id="política-right-button" type="button" value="→">
+      <input class="row-button" id="política-right-button" type="button" value="→" 
+             [disabled]="!hasNextPage('politica')" 
+             (click)="nextPage('politica')"
+             [class.disabled]="!hasNextPage('politica')">
     </div>
 
-    <span class="separator"><span></span></span>
+    <span class="separator" *ngIf="categories['politica'] && categories['politica'].length > 0"><span></span></span>
 
-    <div class="sub-category otros">
-      <input class="row-button" id="otros-left-button" type="button" value="←">
+    <!-- Others section -->
+    <div class="sub-category otros" *ngIf="categories['otros'] && categories['otros'].length > 0">
+      <input class="row-button" id="otros-left-button" type="button" value="←" 
+             [disabled]="!hasPrevPage('otros')" 
+             (click)="prevPage('otros')"
+             [class.disabled]="!hasPrevPage('otros')">
       <article>
-        <h2>otros</h2>
-        <section class="basic-video"></section>
-        <section class="basic-video"></section>
+        <h2>{{ 'VIDEOS.OTHERS' | translate }}</h2>
+        <div class="category-videos">
+          <div class="video-container" *ngFor="let video of getCurrentVideos('otros')">
+            <h3>{{ video.Title }}</h3>
+            <iframe class="video-content" width="240" height="140"
+                    [src]="getTrustedUrl(video.video_url)" 
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms" 
+                    frameborder="0" allowfullscreen>
+            </iframe>
+            <p class="video-author">{{ video.author.username }}</p>
+          </div>
+        </div>
       </article>
-      <input class="row-button" id="otros-right-button" type="button" value="→">
+      <input class="row-button" id="otros-right-button" type="button" value="→" 
+             [disabled]="!hasNextPage('otros')" 
+             (click)="nextPage('otros')"
+             [class.disabled]="!hasNextPage('otros')">
     </div>
   </div>
 </div>

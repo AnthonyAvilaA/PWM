@@ -140,12 +140,16 @@
   "VIDEOS": {
     "TITLE": "Videos",
     "LOADING": "Loading videos...",
-    "ERROR_LOADING": "Error loading videos. Please try again later.",
+    "ERROR": "Error loading videos. Please try again later.",
     "CATEGORIES": {
       "TECHNOLOGY": "Technology",
       "POLITICS": "Politics",
       "OTHERS": "Others"
-    }
+    },
+    "TECHNOLOGY": "Technology",
+    "POLITICS": "Politics",
+    "OTHERS": "Others",
+    "RETRY": "Retry"
   },
   "LOGIN": {
     "TITLE": "Log In",
