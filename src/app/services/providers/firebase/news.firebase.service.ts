@@ -14,6 +14,7 @@ import {
   query,
   SnapshotOptions,
   startAfter,
+  Timestamp,
   updateDoc,
   where
 } from 'firebase/firestore';
@@ -91,7 +92,7 @@ export const liveNewsConverter: FirestoreDataConverter<LiveNewsModel, FirestoreL
       content: liveNews.content.map(item => ({
         title: item.title,
         description: item.description,
-        timestamp: item.timestamp
+        timestamp: item.timestamp 
       })),
       image: liveNews.image,
       categories: liveNews.categories,
@@ -109,12 +110,18 @@ export const liveNewsConverter: FirestoreDataConverter<LiveNewsModel, FirestoreL
       content: data.content.map(item => ({
         title: item.title,
         description: item.description,
-        timestamp: item.timestamp instanceof Date ? item.timestamp : new Date(item.timestamp)
+        timestamp: item.timestamp instanceof Timestamp ? item.timestamp.toDate() : 
+                 typeof item.timestamp === 'string' ? new Date(item.timestamp) :
+                 item.timestamp
       })),
       image: data.image,
       categories: data.categories,
-      createdAt: data.createdAt instanceof Date ? data.createdAt : new Date(data.createdAt),
-      updatedAt: data.updatedAt instanceof Date ? data.updatedAt : new Date(data.updatedAt),
+      createdAt: data.createdAt instanceof Timestamp ? data.createdAt.toDate() : 
+                typeof data.createdAt === 'string' ? new Date(data.createdAt) :
+                data.createdAt,
+      updatedAt: data.updatedAt instanceof Timestamp ? data.updatedAt.toDate() : 
+                typeof data.updatedAt === 'string' ? new Date(data.updatedAt) :
+                data.updatedAt,
     } as LiveNewsModel;
   },
 };

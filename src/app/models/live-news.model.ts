@@ -13,5 +13,5 @@ export interface LiveNewsModel {
 export interface LiveNewsContentItem {
   title: string;
   description: string;
-  timestamp: Date;
+  timestamp: Date | string | any; // Support for Date, string, or Firestore Timestamp
 }

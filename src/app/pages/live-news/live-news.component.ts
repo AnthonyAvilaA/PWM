@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { interval, Subscription } from 'rxjs';
 import { NewsService } from '@services/core/news.service';
 import { LiveNewsModel, LiveNewsContentItem } from '@models/live-news.model';
+import { Timestamp } from 'firebase/firestore';
 
 // Interface for displaying feed items
 interface LiveNewsItem {
@@ -43,6 +44,8 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
 
   // Feed data
   liveFeedItems: LiveNewsItem[] = [];
+  filteredItems: LiveNewsItem[] = []; // Filtered items to display
+  allItems: LiveNewsItem[] = []; // Store all items for filtering
   currentFilter: string = 'all';
 
   // Sidebar data
@@ -119,31 +122,52 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
           this.breakingNews = liveNews.title;
 
           // Reset feed items
-          this.liveFeedItems = [];
+          this.allItems = [];
 
           // Create a feed item for each content item
           if (liveNews.content && liveNews.content.length > 0) {
             liveNews.content.forEach((contentItem: LiveNewsContentItem, index) => {
+              // Simplified timestamp handling approach
+              let timestamp: Date = new Date();
+              
+              try {
+                // Try to convert timestamp to Date in the safest way possible
+                if (contentItem.timestamp instanceof Date) {
+                  timestamp = contentItem.timestamp;
+                } else if (typeof contentItem.timestamp === 'string') {
+                  timestamp = new Date(contentItem.timestamp);
+                } else if (contentItem.timestamp) {
+                  // For Firestore timestamps or other objects
+                  const ts = contentItem.timestamp as any;
+                  if (ts && ts.seconds) {
+                    timestamp = new Date(ts.seconds * 1000);
+                  }
+                }
+              } catch (error) {
+                console.error('Error parsing timestamp:', error);
+              }
+              
               // Create a feed item for this content item
               const feedItem: LiveNewsItem = {
                 id: `${liveNews.ID}-${index}`,
                 title: contentItem.title,
                 description: contentItem.description,
-                timestamp: contentItem.timestamp,
+                timestamp: timestamp,
                 category: liveNews.categories[0] || 'general', // Use first category or default
-                isBreaking: index === 0, // First update is breaking news
+                isBreaking: false, // We'll set this after sorting
                 source: 'News Network' // Placeholder source
               };
 
-              this.liveFeedItems.push(feedItem);
+              this.allItems.push(feedItem);
             });
 
-            // Sort by most recent first based on the timestamps in the content items
-            this.liveFeedItems.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
+            // Apply the current filter
+            this.filterFeed(this.currentFilter);
           }
         } else {
           this.isLive = false;
-          this.liveFeedItems = [];
+          this.allItems = [];
+          this.filteredItems = [];
         }
       },
       error: (err) => {
@@ -161,7 +185,58 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
 
   filterFeed(category: string): void {
     this.currentFilter = category;
-    // In a real app, this would filter the news feed based on category
+    
+    // Create a copy of all items to filter
+    let items = [...this.allItems];
+    
+    // Apply filtering based on the selected category
+    switch (category) {
+      case 'today': {
+        // Get today's date (without time)
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        // Filter items with today's date
+        items = items.filter(item => {
+          const itemDate = new Date(item.timestamp);
+          itemDate.setHours(0, 0, 0, 0);
+          return itemDate.getTime() === today.getTime();
+        });
+        break;
+      }
+      
+      case 'latest':
+        // Sort by newest first
+        items.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
+        break;
+        
+      case 'oldest':
+        // Sort by oldest first
+        items.sort((a, b) => a.timestamp.getTime() - b.timestamp.getTime());
+        break;
+        
+      default: // 'all'
+        // Default sorting (newest first)
+        items.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
+        break;
+    }
+    
+    // After filtering and sorting, mark the most recent item as breaking news
+    if (items.length > 0) {
+      // Reset all items to non-breaking
+      items.forEach(item => item.isBreaking = false);
+      
+      // Get the most recent item (first item after sorting by newest)
+      const mostRecent = [...items].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())[0];
+      
+      // Mark the most recent item as breaking
+      if (mostRecent) {
+        mostRecent.isBreaking = true;
+      }
+    }
+    
+    // Update the filtered items
+    this.filteredItems = items;
   }
 
   filterByTopic(topic: string): void {

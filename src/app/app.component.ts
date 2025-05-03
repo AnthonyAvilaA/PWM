@@ -12,6 +12,8 @@ import { TitleService } from '@services/core/title.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  title = 'ArgonyNews';
+
   constructor(private titleService: TitleService) {}
 
   ngOnInit(): void {
