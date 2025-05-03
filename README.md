@@ -10,14 +10,17 @@
 </div>
 
 <p align="center">A news platform built with Angular, offering a basic interface for creating, browsing and watching news across various categories.</p>
+<p aligh="center">🚧🚧🚧</p>
+<p align="center">This project is actively under development, with weekly updates and new features on the way. Feedback, ideas, and suggestions are more than welcome!</p>
 
 ## ✨ Features
 
 - 🔐 **Authenticated Accounts** – Register, login and manage your account securely
 - 📝 **News Submission** – Add your own news or videos if you are authenticated
 - 🎯 **Category Filtering** - Browse news by categories like sports, technology, politics, and more
-- 🔄 **Dynamic Content** - Get related and suggested content
+- 🔴 **Live Events** - Watch live events coverage with live updates.
 - 🎥 **Video Player** - Integrated secure video player with YouTube embedding support
+- 🔄 **Dynamic Content** - Get related and suggested content
 - 🌐 **Modern UI** - Clean and intuitive user interface for optimal user experience
 - 📱 **Responsive Design** - Optimized for mobile, tablet, and desktop viewing
 
