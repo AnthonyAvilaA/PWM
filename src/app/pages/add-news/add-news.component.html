@@ -18,8 +18,8 @@
                 <div class="image-upload">
                     <img [src]="image_link" (error)="error_image()" alt="foto noticia" height="250" width="400">
                     <div class="photo_selector">
-                        <input type="text" id="url" name="url" #url placeholder="URL: " [(ngModel)]="url" required>
-                        <button (click)="load_image(url.value)">Cargar Imagen</button>
+                        <input type="text" id="url" name="url" placeholder="URL: " [(ngModel)]="url" required>
+                        <button type="button" (click)="load_image()">Cargar Imagen</button>
                     </div>
                 </div>
             

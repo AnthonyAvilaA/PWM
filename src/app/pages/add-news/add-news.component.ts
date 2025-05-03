@@ -49,8 +49,8 @@ export class AddNewsComponent {
     this.categories = [];
   }
 
-  load_image(url: string){
-    this.image_link = url;
+  load_image(){
+    this.image_link = this.url;
   }
 
   error_image(){
