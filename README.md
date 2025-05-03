@@ -10,7 +10,7 @@
 </div>
 
 <p align="center">A news platform built with Angular, offering a basic interface for creating, browsing and watching news across various categories.</p>
-<p aligh="center">🚧🚧🚧</p>
+<p align="center">🚧🚧🚧</p>
 <p align="center">This project is actively under development, with weekly updates and new features on the way. Feedback, ideas, and suggestions are more than welcome!</p>
 
 ## ✨ Features
