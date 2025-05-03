@@ -15,42 +15,74 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { VideoFirebaseServiceInterface } from './interfaces/video-firebase-service.interface';
 
+/**
+ * Interface representing video data structure in Firestore
+ * This closely matches VideoData but with field names that match the database
+ */
 interface FirestoreVideo {
+  documentId: string;
   title: string;
   author: {
+    documentId: string;
     username: string;
+    email?: string;
   };
   description: string;
   video_url: string;
   category: string;
+  createdAt: Date;
+  updatedAt: Date;
+  publishedAt?: Date | null;
 }
 
+/**
+ * Data converter for VideoData to/from Firestore
+ */
 export const videoConverter: FirestoreDataConverter<VideoData, FirestoreVideo> = {
   toFirestore: (video: VideoData) => {
     return {
+      documentId: video.documentId || '',
       title: video.Title,
       author: {
-        username: video.author.username
+        documentId: video.author.documentId || '',
+        username: video.author.username,
+        email: video.author.email || ''
       },
       description: video.description,
       video_url: video.video_url,
-      category: video.category
+      category: video.category,
+      createdAt: video.createdAt || new Date(),
+      updatedAt: video.updatedAt || new Date(),
+      publishedAt: video.publishedAt || null
     } as FirestoreVideo;
   },
   fromFirestore: (snapshot: DocumentSnapshot, options: SnapshotOptions) => {
-    const data = snapshot.data(options)! as FirestoreVideo;
+    const data = snapshot.data(options) as FirestoreVideo;
+    
+    // Convert Firestore document to VideoData format
+    // Using type assertion to bridge the gap between the model and Firestore
     return {
+      id: snapshot.id,
+      documentId: data.documentId || snapshot.id,
       Title: data.title,
       author: {
-        username: data.author.username
+        documentId: data.author.documentId || '',
+        username: data.author.username,
+        email: data.author.email || ''
       },
       description: data.description,
       video_url: data.video_url,
-      category: data.category
+      category: data.category,
+      createdAt: data.createdAt,
+      updatedAt: data.updatedAt,
+      publishedAt: data.publishedAt || null
     } as VideoData;
   },
 };
 
+/**
+ * Service for interacting with video data in Firebase Firestore
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -65,11 +97,11 @@ export class VideoFirebaseService implements VideoFirebaseServiceInterface {
   }
 
   /**
-   * Get all videos
+   * Get all videos sorted by creation date (newest first)
    * @returns Promise with array of VideoData objects
    */
   async getAllVideos(): Promise<VideoData[]> {
-    const q = query(this.videos, orderBy('title'));
+    const q = query(this.videos, orderBy('createdAt', 'desc'));
     const snapshot = await getDocs(q);
     return snapshot.docs.map((doc) => doc.data());
   }
