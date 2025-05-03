@@ -15,7 +15,7 @@
   <div *ngIf="!loading && !error">
     <h1 class="category-title">{{ displayCategoryName || 'Todas las Categorías' }}</h1>
 
-    <!-- Featured NewsModel Section -->
+    <!-- Featured News Section -->
     <section class="top">
       <div class="top-news">
         <!-- Main Featured Article -->
@@ -23,32 +23,36 @@
           <app-article [news]="featuredNews"></app-article>
         </div>
 
-        <!-- Secondary NewsModel -->
+        <!-- Secondary News -->
         <div class="top-other-news">
           <app-side-article *ngFor="let news of secondaryNews" [news]="news"></app-side-article>
         </div>
       </div>
 
-      <!-- Related NewsModel Sidebar -->
+      <!-- Related News Sidebar -->
       <div class="top-sider" *ngIf="relatedNews.length > 0">
         <h2>Leer Más</h2>
         <app-side-article *ngFor="let news of relatedNews.slice(0, 2)" [news]="news"></app-side-article>
       </div>
     </section>
 
-    <!-- More Related NewsModel - First Section -->
+    <!-- "Noticias Relacionadas" Section -->
     <section class="subcategory bg-white" *ngIf="relatedNews.length > 2">
       <h2>Noticias Relacionadas</h2>
       <div class="related-news-container">
-        <app-side-article *ngFor="let news of relatedNews.slice(2, 5)" [news]="news" class="related-news-item"></app-side-article>
+        <div class="related-news-item" *ngFor="let news of relatedNews.slice(2, 5)">
+          <app-side-article [news]="news"></app-side-article>
+        </div>
       </div>
     </section>
 
-    <!-- More Related NewsModel - Second Section -->
+    <!-- "Más Noticias" Section -->
     <section class="subcategory bg-grey" *ngIf="relatedNews.length > 5">
       <h2>Más Noticias</h2>
       <div class="related-news-container">
-        <app-side-article *ngFor="let news of relatedNews.slice(5, 8)" [news]="news" class="related-news-item"></app-side-article>
+        <div class="related-news-item" *ngFor="let news of relatedNews.slice(5, 8)">
+          <app-side-article [news]="news"></app-side-article>
+        </div>
       </div>
     </section>
 
