@@ -49,13 +49,50 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
   currentFilter: string = 'all';
 
   // Sidebar data
-  trendingTopics: string[] = [];
-  upcomingEvents: UpcomingEvent[] = [];
+  trendingTopics: string[] = [
+    'Elecciones', 
+    'Economía', 
+    'Deportes', 
+    'Cambio Climático', 
+    'Tecnología'
+  ];
+
+  upcomingEvents: UpcomingEvent[] = [
+    {
+      id: '1',
+      title: 'Conferencia de Prensa',
+      description: 'Anuncio oficial del presidente',
+      time: new Date(new Date().getTime() + 1000 * 60 * 60) // 1 hour from now
+    },
+    {
+      id: '2',
+      title: 'Evento Deportivo',
+      description: 'Transmisión en vivo del partido final',
+      time: new Date(new Date().getTime() + 1000 * 60 * 60 * 3) // 3 hours from now
+    },
+    {
+      id: '3',
+      title: 'Reporte Económico',
+      description: 'Análisis trimestral de la economía',
+      time: new Date(new Date().getTime() + 1000 * 60 * 60 * 12) // 12 hours from now
+    }
+  ];
 
   // Subscription to manage real-time updates
   private updateSubscription?: Subscription;
 
   constructor(private newsService: NewsService) { }
+
+  // Map of categories for translation
+  categoryMap: { [key: string]: string } = {
+    'general': 'General',
+    'sports': 'Deportes',
+    'politics': 'Política',
+    'finance': 'Economía',
+    'technology': 'Tecnología',
+    'health': 'Salud',
+    'breaking': 'Última Hora'
+  };
 
   ngOnInit(): void {
     this.loadInitialData();
@@ -77,30 +114,6 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
     this.fetchLiveNews();
 
     // Set sidebar data (still using mock data)
-    this.trendingTopics = [
-      'Climate Summit', 'Economy', 'Tech News', 'Sports Finals', 'Elections'
-    ];
-
-    this.upcomingEvents = [
-      {
-        id: '1',
-        title: 'Presidential Press Conference',
-        description: 'Live coverage of the President\'s monthly press briefing',
-        time: new Date(new Date().getTime() + 3600000) // 1 hour from now
-      },
-      {
-        id: '2',
-        title: 'Champions League Final',
-        description: 'Live commentary and updates from the big match',
-        time: new Date(new Date().getTime() + 7200000) // 2 hours from now
-      },
-      {
-        id: '3',
-        title: 'Tech Company Earnings Call',
-        description: 'Financial results and forecasts for the quarter',
-        time: new Date(new Date().getTime() + 10800000) // 3 hours from now
-      }
-    ];
   }
 
   fetchLiveNews(): void {
@@ -144,7 +157,7 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
                   }
                 }
               } catch (error) {
-                console.error('Error parsing timestamp:', error);
+                console.error('Error al analizar la fecha:', error);
               }
               
               // Create a feed item for this content item
@@ -153,9 +166,9 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
                 title: contentItem.title,
                 description: contentItem.description,
                 timestamp: timestamp,
-                category: liveNews.categories[0] || 'general', // Use first category or default
+                category: this.categoryMap[liveNews.categories[0]] || 'General', // Use first category or default
                 isBreaking: false, // We'll set this after sorting
-                source: 'News Network' // Placeholder source
+                source: 'Red de Noticias' // Placeholder source
               };
 
               this.allItems.push(feedItem);
@@ -171,7 +184,7 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
         }
       },
       error: (err) => {
-        console.error('Error loading live news:', err);
+        console.error('Error al cargar noticias en vivo:', err);
         this.isLoading = false;
         this.hasError = true;
         this.isLive = false;
@@ -241,6 +254,6 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
 
   filterByTopic(topic: string): void {
     // In a real app, this would filter news by the selected topic
-    console.log(`Filtering by topic: ${topic}`);
+    console.log(`Filtrando por tema: ${topic}`);
   }
 }

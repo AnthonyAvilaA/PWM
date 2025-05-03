@@ -335,7 +335,7 @@
 }
 
 /* Sidebar */
-.sidebar {
+.news-sidebar {
   grid-column: 2 / 3;
 }
 
@@ -410,7 +410,7 @@
     grid-template-columns: 1fr;
   }
   
-  .sidebar {
+  .news-sidebar {
     grid-column: 1 / -1;
   }
 }
