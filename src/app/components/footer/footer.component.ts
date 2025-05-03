@@ -1,29 +1,34 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink, FormsModule, CommonModule],
+  standalone: true,
+  imports: [FormsModule, RouterModule, CommonModule, TranslateModule],
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css'],
-  standalone: true
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
   email: string = '';
   subscribed: boolean = false;
 
+  constructor(private translate: TranslateService) {}
+
   onSubscribe(): void {
-    // Simulate subscription process
-    if (this.email) {
-      console.log('Subscribed with email:', this.email);
+    if (this.email && this.email.includes('@')) {
+      // In a real application, this would send the email to a backend service
+      console.log('Subscribing with email:', this.email);
+      
+      // Reset form and show success message
       this.subscribed = true;
-      this.email = '';
     }
   }
 
   resetForm(): void {
+    this.email = '';
     this.subscribed = false;
   }
 }

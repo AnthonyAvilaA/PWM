@@ -3,11 +3,12 @@ import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '@services/core/auth.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, FormsModule, CommonModule],
+  imports: [RouterModule, FormsModule, CommonModule, TranslateModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -20,7 +21,8 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {
     // Redirect if already logged in
     if (this.authService.isAuthenticated()) {
@@ -39,7 +41,9 @@ export class LoginComponent {
 
   login(): void {
     if (!this.email || !this.password) {
-      this.errorMessage = 'Por favor, complete todos los campos.';
+      this.translate.get('LOGIN.ERROR_EMPTY_FIELDS').subscribe((res: string) => {
+        this.errorMessage = res;
+      });
       return;
     }
 

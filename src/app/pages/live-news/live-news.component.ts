@@ -4,6 +4,7 @@ import { interval, Subscription } from 'rxjs';
 import { NewsService } from '@services/core/news.service';
 import { LiveNewsModel, LiveNewsContentItem } from '@models/live-news.model';
 import { Timestamp } from 'firebase/firestore';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 // Interface for displaying feed items
 interface LiveNewsItem {
@@ -26,7 +27,7 @@ interface UpcomingEvent {
 @Component({
   selector: 'app-live-news',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './live-news.component.html',
   styleUrls: ['./live-news.component.css']
 })
@@ -81,7 +82,10 @@ export class LiveNewsComponent implements OnInit, OnDestroy {
   // Subscription to manage real-time updates
   private updateSubscription?: Subscription;
 
-  constructor(private newsService: NewsService) { }
+  constructor(
+    private newsService: NewsService,
+    private translate: TranslateService
+  ) { }
 
   // Map of categories for translation
   categoryMap: { [key: string]: string } = {

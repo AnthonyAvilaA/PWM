@@ -9,11 +9,12 @@ import { NewsService } from '@services/core/news.service';
 import { NewsModel } from '@models/news.model';
 import { Title } from '@angular/platform-browser';
 import { Category } from '@models/types/categories.type';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [CommonModule, RouterLink, ArticleComponent, SideArticleComponent],
+  imports: [CommonModule, RouterLink, ArticleComponent, SideArticleComponent, TranslateModule],
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })
@@ -34,7 +35,8 @@ export class CategoriesComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private newsService: NewsService,
-    private titleService: Title
+    private titleService: Title,
+    private translate: TranslateService
   ) {}
 
   /**
@@ -92,7 +94,9 @@ export class CategoriesComponent implements OnInit, OnDestroy {
       },
       error: (err) => {
         console.error('Error loading category news:', err);
-        this.error = 'No se pudieron cargar las noticias para esta categoría.';
+        this.translate.get('ERROR_SCREENS.GENERAL').subscribe((res: string) => {
+          this.error = res;
+        });
         this.loading = false;
       }
     });

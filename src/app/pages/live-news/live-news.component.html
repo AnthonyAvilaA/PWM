@@ -1,17 +1,17 @@
 <div class="main-container">
-  <h1 class="page-title">Noticias en Vivo</h1>
+  <h1 class="page-title">{{ 'LIVE_NEWS.TITLE' | translate }}</h1>
 
   <!-- Loading state -->
   <div class="loading-container" *ngIf="isLoading">
     <div class="loading-spinner"></div>
-    <p>Cargando noticias en vivo...</p>
+    <p>{{ 'LIVE_NEWS.LOADING' | translate }}</p>
   </div>
 
   <!-- Error state -->
   <div class="error-container" *ngIf="hasError">
-    <h2>No se pudo conectar a la fuente de noticias</h2>
-    <p>Tenemos problemas para conectar a nuestro servicio de noticias en vivo. Por favor, inténtelo de nuevo más tarde.</p>
-    <button (click)="retryConnection()">Reintentar</button>
+    <h2>{{ 'LIVE_NEWS.ERROR_TITLE' | translate }}</h2>
+    <p>{{ 'LIVE_NEWS.ERROR_MESSAGE' | translate }}</p>
+    <button (click)="retryConnection()">{{ 'LIVE_NEWS.RETRY' | translate }}</button>
   </div>
 
   <!-- Live news content -->
@@ -19,23 +19,23 @@
     <div class="live-news-header">
       <div class="status-indicator" [class.active]="isLive">
         <span class="dot"></span>
-        <span class="status-text">{{ isLive ? 'EN VIVO' : 'FUERA DE LÍNEA' }}</span>
+        <span class="status-text">{{ isLive ? ('LIVE_NEWS.STATUS_LIVE' | translate) : ('LIVE_NEWS.STATUS_OFFLINE' | translate) }}</span>
       </div>
       <div class="last-updated">
-        Última actualización: {{ lastUpdated | date: 'dd/MM/yyyy HH:mm' }}
+        {{ 'LIVE_NEWS.LAST_UPDATED' | translate }}: {{ lastUpdated | date: 'dd/MM/yyyy HH:mm' }}
       </div>
     </div>
 
     <div class="news-ticker">
-      <p *ngIf="breakingNews" class="ticker-item breaking">ÚLTIMA HORA: {{ breakingNews }}</p>
+      <p *ngIf="breakingNews" class="ticker-item breaking">{{ 'LIVE_NEWS.BREAKING_NEWS' | translate }}: {{ breakingNews }}</p>
     </div>
 
     <div class="live-feed">
       <div class="feed-filters">
-        <button class="filter-btn" [class.active]="currentFilter === 'all'" (click)="filterFeed('all')">Todas las Actualizaciones</button>
-        <button class="filter-btn" [class.active]="currentFilter === 'today'" (click)="filterFeed('today')">Hoy</button>
-        <button class="filter-btn" [class.active]="currentFilter === 'latest'" (click)="filterFeed('latest')">Más Recientes</button>
-        <button class="filter-btn" [class.active]="currentFilter === 'oldest'" (click)="filterFeed('oldest')">Más Antiguas</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'all'" (click)="filterFeed('all')">{{ 'LIVE_NEWS.FILTER_ALL' | translate }}</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'today'" (click)="filterFeed('today')">{{ 'LIVE_NEWS.FILTER_TODAY' | translate }}</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'latest'" (click)="filterFeed('latest')">{{ 'LIVE_NEWS.FILTER_LATEST' | translate }}</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'oldest'" (click)="filterFeed('oldest')">{{ 'LIVE_NEWS.FILTER_OLDEST' | translate }}</button>
       </div>
 
       <div class="feed-items">
@@ -49,20 +49,20 @@
             <p class="feed-text">{{ item.description }}</p>
             <div class="feed-footer">
               <span class="feed-category" [class]="item.category">{{ item.category }}</span>
-              <span class="feed-source" *ngIf="item.source">Fuente: {{ item.source }}</span>
+              <span class="feed-source" *ngIf="item.source">{{ 'LIVE_NEWS.SOURCE' | translate }}: {{ item.source }}</span>
             </div>
           </div>
         </div>
 
         <div class="no-updates" *ngIf="filteredItems.length === 0">
-          <p>No hay actualizaciones disponibles en este momento. ¡Vuelva pronto!</p>
+          <p>{{ 'LIVE_NEWS.NO_UPDATES' | translate }}</p>
         </div>
       </div>
     </div>
 
     <div class="news-sidebar">
       <div class="trending-topics">
-        <h2>Temas Destacados</h2>
+        <h2>{{ 'LIVE_NEWS.TRENDING_TOPICS' | translate }}</h2>
         <ul class="topic-list">
           <li *ngFor="let topic of trendingTopics" (click)="filterByTopic(topic)">
             <span class="topic-tag">{{ topic }}</span>
@@ -71,7 +71,7 @@
       </div>
 
       <div class="upcoming-events">
-        <h2>Próximos Eventos en Vivo</h2>
+        <h2>{{ 'LIVE_NEWS.UPCOMING_EVENTS' | translate }}</h2>
         <div class="event-item" *ngFor="let event of upcomingEvents">
           <div class="event-time">{{ event.time | date: 'HH:mm' }}</div>
           <div class="event-info">

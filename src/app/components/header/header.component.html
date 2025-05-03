@@ -9,11 +9,11 @@
     <!-- Language menu -->
     <div class="language-menu">
       <input type="checkbox" id="language-toggle">
-      <label for="language-toggle" class="language-button">IDIOMA</label>
+      <label for="language-toggle" class="language-button">{{ 'HEADER.LANGUAGE' | translate }}</label>
       <div class="language-options">
         <ul>
-          <li><a href="#">Español</a></li>
-          <li><a href="#">English</a></li>
+          <li><a href="javascript:void(0)" (click)="switchLang('es')">{{ 'COMMON.SPANISH' | translate }}</a></li>
+          <li><a href="javascript:void(0)" (click)="switchLang('en')">{{ 'COMMON.ENGLISH' | translate }}</a></li>
         </ul>
       </div>
     </div>
@@ -22,12 +22,12 @@
   <!-- Center Section - Categories Navigation (Desktop Only) -->
   <nav class="header-center categories">
     <ul>
-      <li><a routerLink="videos">Videos</a></li>
-      <li><a [routerLink]="['/category', 'Deportes']">Deportes</a></li>
-      <li><a [routerLink]="['/category', 'Ciencia']">Ciencia</a></li>
-      <li><a [routerLink]="['/category', 'Política']">Política</a></li>
-      <li><a [routerLink]="['/category', 'Entretenimiento']">Entretenimiento</a></li>
-      <li><a [routerLink]="['/category', 'Mundo']">Mundo</a></li>
+      <li><a routerLink="videos">{{ 'HEADER.VIDEOS' | translate }}</a></li>
+      <li><a [routerLink]="['/category', 'Deportes']">{{ 'HEADER.SPORTS' | translate }}</a></li>
+      <li><a [routerLink]="['/category', 'Ciencia']">{{ 'HEADER.SCIENCE' | translate }}</a></li>
+      <li><a [routerLink]="['/category', 'Política']">{{ 'HEADER.POLITICS' | translate }}</a></li>
+      <li><a [routerLink]="['/category', 'Entretenimiento']">{{ 'HEADER.ENTERTAINMENT' | translate }}</a></li>
+      <li><a [routerLink]="['/category', 'Mundo']">{{ 'HEADER.WORLD' | translate }}</a></li>
     </ul>
   </nav>
 
@@ -40,13 +40,13 @@
 
     <!-- Login/Register section - only shown when not authenticated (desktop & tablet) -->
     <div class="login-register" *ngIf="!isAuthenticated">
-      <a routerLink="login">Iniciar Sesión</a>
-      <a routerLink="register">Registrarse</a>
+      <a routerLink="login">{{ 'HEADER.LOGIN' | translate }}</a>
+      <a routerLink="register">{{ 'HEADER.REGISTER' | translate }}</a>
     </div>
 
     <!-- Logout button - only shown when authenticated (desktop & tablet) -->
     <a href="javascript:void(0)" (click)="logout()" class="logout-btn desktop-tablet-only" *ngIf="isAuthenticated">
-      Cerrar Sesión
+      {{ 'HEADER.LOGOUT' | translate }}
     </a>
 
     <!-- Burger Menu -->
@@ -56,24 +56,24 @@
       <nav class="burger-nav">
         <ul class="nav-links">
           <!-- Always visible in burger menu -->
-          <li><a routerLink="home">Inicio</a></li>
+          <li><a routerLink="home">{{ 'HEADER.HOME' | translate }}</a></li>
 
           <!-- My Account and Logout grouped together -->
-          <li *ngIf="isAuthenticated"><a routerLink="profile">Mi Cuenta</a></li>
-          <li *ngIf="isAuthenticated" class="burger-logout mobile-only-small"><a (click)="logout()">Cerrar Sesión</a></li>
-          <li *ngIf="!isAuthenticated"><a routerLink="login">Mi Cuenta</a></li>
+          <li *ngIf="isAuthenticated"><a routerLink="profile">{{ 'HEADER.MY_ACCOUNT' | translate }}</a></li>
+          <li *ngIf="isAuthenticated" class="burger-logout mobile-only-small"><a (click)="logout()">{{ 'HEADER.LOGOUT' | translate }}</a></li>
+          <li *ngIf="!isAuthenticated"><a routerLink="login">{{ 'HEADER.MY_ACCOUNT' | translate }}</a></li>
 
           <!-- Only visible in tablet/mobile -->
-          <li class="mobile-only"><a routerLink="videos">Videos</a></li>
-          <li class="mobile-only"><a [routerLink]="['/category', 'deportes']">Deportes</a></li>
-          <li class="mobile-only"><a [routerLink]="['/category', 'ciencia']">Ciencia</a></li>
-          <li class="mobile-only"><a [routerLink]="['/category', 'politica']">Política</a></li>
-          <li class="mobile-only"><a [routerLink]="['/category', 'entretenimiento']">Entretenimiento</a></li>
-          <li class="mobile-only"><a [routerLink]="['/category', 'mundo']">Mundo</a></li>
+          <li class="mobile-only"><a routerLink="videos">{{ 'HEADER.VIDEOS' | translate }}</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'deportes']">{{ 'HEADER.SPORTS' | translate }}</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'ciencia']">{{ 'HEADER.SCIENCE' | translate }}</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'politica']">{{ 'HEADER.POLITICS' | translate }}</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'entretenimiento']">{{ 'HEADER.ENTERTAINMENT' | translate }}</a></li>
+          <li class="mobile-only"><a [routerLink]="['/category', 'mundo']">{{ 'HEADER.WORLD' | translate }}</a></li>
 
           <!-- Only visible in mobile -->
-          <li class="mobile-only-small" *ngIf="!isAuthenticated"><a routerLink="login">Iniciar Sesión</a></li>
-          <li class="mobile-only-small" *ngIf="!isAuthenticated"><a routerLink="register">Registrarse</a></li>
+          <li class="mobile-only-small" *ngIf="!isAuthenticated"><a routerLink="login">{{ 'HEADER.LOGIN' | translate }}</a></li>
+          <li class="mobile-only-small" *ngIf="!isAuthenticated"><a routerLink="register">{{ 'HEADER.REGISTER' | translate }}</a></li>
         </ul>
       </nav>
     </div>

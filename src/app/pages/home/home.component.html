@@ -2,13 +2,13 @@
   <!-- Loading indicator -->
   <div *ngIf="loading" class="loading-container">
     <div class="loading-spinner"></div>
-    <p>Cargando noticias...</p>
+    <p>{{ 'HOME.LOADING' | translate }}</p>
   </div>
 
   <!-- Error message -->
   <div *ngIf="error" class="error-container">
     <p>{{ error }}</p>
-    <button (click)="loadNews()">Reintentar</button>
+    <button (click)="loadNews()">{{ 'HOME.RETRY' | translate }}</button>
   </div>
 
   <!-- Main content - only shown when not loading and no error -->
@@ -33,7 +33,7 @@
 
     <!-- Show More Button -->
     <button id="show-more" (click)="loadMoreNews()" [class.hidden]="noMoreNews">
-      Mostrar más
+      {{ 'HOME.SHOW_MORE' | translate }}
     </button>
   </div>
 </div>

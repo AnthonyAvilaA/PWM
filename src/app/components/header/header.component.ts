@@ -3,23 +3,28 @@ import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '@services/core/auth.service';
 import { AuthUser } from '@models/auth.model';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   isAuthenticated = false;
   currentUser: AuthUser | null = null;
+  currentLang: string;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private elementRef: ElementRef
-  ) {}
+    private elementRef: ElementRef,
+    private translate: TranslateService
+  ) {
+    this.currentLang = this.translate.currentLang || this.translate.defaultLang;
+  }
 
   ngOnInit(): void {
     // Subscribe to authentication state changes
@@ -27,6 +32,16 @@ export class HeaderComponent implements OnInit {
       this.currentUser = user;
       this.isAuthenticated = !!user;
     });
+  }
+
+  // Switch language
+  switchLang(lang: string): void {
+    this.translate.use(lang);
+    this.currentLang = lang;
+    const languageToggle = document.getElementById('language-toggle') as HTMLInputElement;
+    if (languageToggle) {
+      languageToggle.checked = false;
+    }
   }
 
   logout(): void {

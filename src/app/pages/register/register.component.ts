@@ -3,11 +3,12 @@ import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '@services/core/auth.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterModule, FormsModule, CommonModule],
+  imports: [RouterModule, FormsModule, CommonModule, TranslateModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
@@ -22,7 +23,8 @@ export class RegisterComponent {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {
     // Redirect if already logged in
     if (this.authService.isAuthenticated()) {
@@ -42,17 +44,23 @@ export class RegisterComponent {
   register(): void {
     // Form validation
     if (!this.email || !this.password || !this.confirmPassword || !this.username) {
-      this.errorMessage = 'Por favor, complete todos los campos.';
+      this.translate.get('REGISTER.ERROR_EMPTY_FIELDS').subscribe((res: string) => {
+        this.errorMessage = res;
+      });
       return;
     }
 
     if (this.password !== this.confirmPassword) {
-      this.errorMessage = 'Las contraseñas no coinciden.';
+      this.translate.get('REGISTER.ERROR_PASSWORDS_MISMATCH').subscribe((res: string) => {
+        this.errorMessage = res;
+      });
       return;
     }
 
     if (this.password.length < 6) {
-      this.errorMessage = 'La contraseña debe tener al menos 6 caracteres.';
+      this.translate.get('REGISTER.ERROR_PASSWORD_SHORT').subscribe((res: string) => {
+        this.errorMessage = res;
+      });
       return;
     }
 

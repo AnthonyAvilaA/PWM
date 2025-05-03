@@ -2,18 +2,20 @@
   <!-- Loading indicator -->
   <div *ngIf="loading" class="loading-container">
     <div class="loading-spinner"></div>
-    <p>Cargando noticias de <strong>{{ displayCategoryName || 'todas las categorías' }}</strong></p>
+    <p>{{ 'LOADING_SCREENS.NEWS' | translate }}</p>
   </div>
 
   <!-- Error message -->
   <div *ngIf="error" class="error-container">
     <p>{{ error }}</p>
-    <button (click)="ngOnInit()">Reintentar</button>
+    <button (click)="ngOnInit()">{{ 'COMMON.RETRY' | translate }}</button>
   </div>
 
   <!-- Main content - only shown when not loading and no error -->
   <div *ngIf="!loading && !error">
-    <h1 class="category-title">{{ displayCategoryName || 'Todas las Categorías' }}</h1>
+    <h1 class="category-title">
+      {{ displayCategoryName ? displayCategoryName : ('CATEGORIES.ALL' | translate) }}
+    </h1>
 
     <!-- Featured News Section -->
     <section class="top">
@@ -31,14 +33,14 @@
 
       <!-- Related News Sidebar -->
       <div class="top-sider" *ngIf="relatedNews.length > 0">
-        <h2>Leer Más</h2>
+        <h2>{{ 'CATEGORIES.READ_MORE' | translate }}</h2>
         <app-side-article *ngFor="let news of relatedNews.slice(0, 2)" [news]="news"></app-side-article>
       </div>
     </section>
 
     <!-- "Noticias Relacionadas" Section -->
     <section class="subcategory bg-white" *ngIf="relatedNews.length > 2">
-      <h2>Noticias Relacionadas</h2>
+      <h2>{{ 'CATEGORIES.RELATED_NEWS' | translate }}</h2>
       <div class="related-news-container">
         <div class="related-news-item" *ngFor="let news of relatedNews.slice(2, 5)">
           <app-side-article [news]="news"></app-side-article>
@@ -48,7 +50,7 @@
 
     <!-- "Más Noticias" Section -->
     <section class="subcategory bg-grey" *ngIf="relatedNews.length > 5">
-      <h2>Más Noticias</h2>
+      <h2>{{ 'CATEGORIES.MORE_NEWS' | translate }}</h2>
       <div class="related-news-container">
         <div class="related-news-item" *ngFor="let news of relatedNews.slice(5, 8)">
           <app-side-article [news]="news"></app-side-article>
@@ -58,8 +60,8 @@
 
     <!-- Empty state for no news -->
     <div *ngIf="news.length === 0" class="empty-state">
-      <p>No se encontraron noticias para esta categoría.</p>
-      <a routerLink="/home">Volver a la página principal</a>
+      <p>{{ 'CATEGORIES.NO_NEWS_FOUND' | translate }}</p>
+      <a routerLink="/home">{{ 'CATEGORIES.RETURN_HOME' | translate }}</a>
     </div>
   </div>
 </div>

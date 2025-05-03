@@ -1,5 +1,5 @@
     <main>
-  <h1>Inicio de sesión</h1>
+  <h1>{{ 'LOGIN.TITLE' | translate }}</h1>
   <div class="main-container">
     <form (ngSubmit)="login()" class="page-form">
       <div *ngIf="errorMessage" class="error-message">
@@ -7,26 +7,26 @@
       </div>
       
       <div class="form-item">
-        <p>Email</p>
+        <p>{{ 'LOGIN.EMAIL' | translate }}</p>
         <input type="email" name="email" [(ngModel)]="email" required>
       </div>
 
       <div class="form-item">
-        <p>Contraseña</p>
+        <p>{{ 'LOGIN.PASSWORD' | translate }}</p>
         <input type="password" name="password" [(ngModel)]="password" required>
       </div>
 
       <div class="form-stay-loged">
         <input type="checkbox" name="keep-logged" id="keep-logged" [(ngModel)]="rememberMe">
-        <label for="keep-logged">Mantener la sesión iniciada.</label>
+        <label for="keep-logged">{{ 'LOGIN.KEEP_LOGGED_IN' | translate }}</label>
       </div>
       <button type="submit" [disabled]="isLoading">
-        <span *ngIf="!isLoading">Iniciar sesión</span>
-        <span *ngIf="isLoading">Cargando...</span>
+        <span *ngIf="!isLoading">{{ 'LOGIN.SUBMIT' | translate }}</span>
+        <span *ngIf="isLoading">{{ 'LOGIN.LOADING' | translate }}</span>
       </button>
     </form>
     <p>
-      ¿No tienes cuenta? <a routerLink="/register">Registrarse</a>
+      {{ 'LOGIN.NO_ACCOUNT' | translate }} <a routerLink="/register">{{ 'LOGIN.REGISTER' | translate }}</a>
     </p>
   </div>
 </main>

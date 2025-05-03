@@ -7,12 +7,12 @@ import { NewsModel } from '@models/news.model';
 import { LiveHeadlineComponent } from '@components/live-headline/live-headline.component';
 import { LiveNewsModel } from '@models/live-news.model';
 import { forkJoin } from 'rxjs';
-
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ArticleComponent, SideArticleComponent, CommonModule, LiveHeadlineComponent],
+  imports: [ArticleComponent, SideArticleComponent, CommonModule, LiveHeadlineComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   // Track all loaded news to avoid duplicates
   private loadedNewsIds: Set<string> = new Set();
 
-  constructor(private newsService: NewsService) {}
+  constructor(private newsService: NewsService, private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.loadNews();
@@ -73,7 +73,9 @@ export class HomeComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error loading news:', err);
-        this.error = 'Failed to load news. Please try again later.';
+        this.translate.get('HOME.ERROR').subscribe((res: string) => {
+          this.error = res;
+        });
         this.loading = false;
       }
     });
