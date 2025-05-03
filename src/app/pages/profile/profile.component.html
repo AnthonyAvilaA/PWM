@@ -10,7 +10,7 @@
     
     <!-- Profile header section -->
     <section class="top">
-      <img src="/assets/images/user.png" height="50" alt="{{ 'PROFILE.USER_AVATAR_ALT' | translate }}">
+      <img src="/assets/user.png" height="50" alt="{{ 'PROFILE.USER_AVATAR_ALT' | translate }}">
       <div class="info">
         <p>{{userData.name}}</p>
         <p>{{ 'PROFILE.MEMBER_SINCE' | translate }} {{userData.joinDate}}</p>
@@ -116,7 +116,7 @@
       <!-- Edit Profile Section -->
       <section class="edit-profile" *ngIf="activeSection === 'editProfile'">
         <h2>{{ 'PROFILE.EDIT_PROFILE' | translate }}</h2>
-        <img src="/assets/images/user.png" height="40" alt="{{ 'PROFILE.USER_AVATAR_ALT' | translate }}">
+        <img src="/assets/user.png" height="40" alt="{{ 'PROFILE.USER_AVATAR_ALT' | translate }}">
         <form (ngSubmit)="saveProfile()">
           <p>{{ 'PROFILE.DISPLAY_NAME' | translate }}</p>
           <input type="text" name="Name" id="user-name" [(ngModel)]="userData.name" required>
@@ -137,7 +137,7 @@
           <p>{{ 'PROFILE.THEME' | translate }}</p>
           <div class="themes">
             <div>
-              <img src="/assets/images/theme-light.jpg" alt="{{ 'PROFILE.THEME_LIGHT_ALT' | translate }}">
+              <img src="/assets/theme-light.svg" alt="{{ 'PROFILE.THEME_LIGHT_ALT' | translate }}">
               <p>
                 <label for="white">{{ 'PROFILE.THEME_LIGHT' | translate }}</label>
                 <input type="radio" name="theme" id="white" [(ngModel)]="uiPreferences.theme" value="white">
@@ -145,7 +145,7 @@
             </div>
             
             <div>
-              <img src="/assets/images/theme-system.jpg" alt="{{ 'PROFILE.THEME_SYSTEM_ALT' | translate }}">
+              <img src="/assets/theme-system@2x.png" alt="{{ 'PROFILE.THEME_SYSTEM_ALT' | translate }}">
               <p>
                 <label for="default">{{ 'PROFILE.THEME_SYSTEM' | translate }}</label>
                 <input type="radio" name="theme" id="default" [(ngModel)]="uiPreferences.theme" value="default">
@@ -153,7 +153,7 @@
             </div>
             
             <div>
-              <img src="/assets/images/theme-dark.jpg" alt="{{ 'PROFILE.THEME_DARK_ALT' | translate }}">
+              <img src="/assets/theme-dark.svg" alt="{{ 'PROFILE.THEME_DARK_ALT' | translate }}">
               <p>
                 <label for="dark">{{ 'PROFILE.THEME_DARK' | translate }}</label>
                 <input type="radio" name="theme" id="dark" [(ngModel)]="uiPreferences.theme" value="dark">

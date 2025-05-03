@@ -35,7 +35,7 @@
   <div class="header-right">
     <!-- Username - Always displayed -->
     <span class="username always-visible" *ngIf="isAuthenticated">
-      {{ currentUser?.username || currentUser?.name }}
+      <a routerLink="/profile" class="username-link">{{ currentUser?.username || currentUser?.name }}</a>
     </span>
 
     <!-- Login/Register section - only shown when not authenticated (desktop & tablet) -->

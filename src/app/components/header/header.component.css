@@ -120,6 +120,23 @@
   gap: clamp(12px, 1.8vw, 22px);
 }
 
+/* Username styles */
+.username-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.username-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: underline;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
 /* Username - Always visible */
 .username.always-visible {
   color: white;
