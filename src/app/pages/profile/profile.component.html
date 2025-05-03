@@ -17,8 +17,8 @@
       </div>
 
       <div class="profile-options">
-        <button class="regular-button">
-          <a routerLink="/add_news">{{ 'PROFILE.ADD_NEWS' | translate }}</a>
+        <button class="regular-button" routerLink="/add_news">
+          {{ 'PROFILE.ADD_NEWS' | translate }}
         </button>
         
         <button class="regular-button" (click)="changeTab('options'); showSection('editProfile')">

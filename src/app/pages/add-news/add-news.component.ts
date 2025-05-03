@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { NewsModel } from '@models/news.model';
 import { NewsService } from '@services/core/news.service';
+import { AuthService } from '@services/core/auth.service';
+
 @Component({
   selector: 'app-add-news',
   standalone: true,
   imports: [RouterModule, FormsModule, CommonModule],
   templateUrl: './add-news.component.html',
-  styleUrl: './add-news.component.css'
+  styleUrls: ['./add-news.component.css']
 })
 export class AddNewsComponent {
   title: string = "";
@@ -57,7 +59,8 @@ export class AddNewsComponent {
 
   constructor(
     private newsService: NewsService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ){}
   async add_news(form: any): Promise<void> {
     if (!form.valid) {
@@ -111,7 +114,7 @@ export class AddNewsComponent {
     const news: NewsModel = {
       ID: "",
       title: this.title,
-      authorID: localStorage.getItem('user_id') || "error",
+      authorID: this.authService.getCurrentUser()?.id || "error",
       description: this.description,
       content: this.content,
       image: this.image_link,

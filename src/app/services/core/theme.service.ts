@@ -6,7 +6,7 @@ import { IThemeService } from './interfaces/theme-service.interface';
 })
 export class ThemeService implements IThemeService {
   constructor() {
-    // Initialize theme from localStorage or use system default
+    // Initialize theme from localStorage or use light theme as default
     this.applyTheme(this.getCurrentTheme());
   }
 
@@ -15,12 +15,14 @@ export class ThemeService implements IThemeService {
    * @returns The current theme ('white', 'dark', or 'default')
    */
   private getCurrentTheme(): string {
-    return localStorage.getItem('theme') || 'default';
+    const savedTheme = localStorage.getItem('theme');
+    // If no theme is saved or it's set to 'default', return 'white' (light theme)
+    return savedTheme === 'dark' ? 'dark' : 'white';
   }
 
   /**
    * Gets the current theme
-   * @returns The current theme ('white', 'dark', or 'default')
+   * @returns The current theme ('white' or 'dark')
    */
   public getTheme(): string {
     return this.getCurrentTheme();
@@ -31,30 +33,22 @@ export class ThemeService implements IThemeService {
    * @param theme The theme to set ('white', 'dark', or 'default')
    */
   public setTheme(theme: string): void {
-    localStorage.setItem('theme', theme);
-    this.applyTheme(theme);
+    // If theme is 'default' or any value other than 'dark', use 'white'
+    const themeToSet = theme === 'dark' ? 'dark' : 'white';
+    localStorage.setItem('theme', themeToSet);
+    this.applyTheme(themeToSet);
   }
 
   /**
    * Applies the specified theme to the document body
-   * @param theme The theme to apply ('white', 'dark', or 'default')
+   * @param theme The theme to apply ('white' or 'dark')
    */
   private applyTheme(theme: string): void {
     document.body.classList.remove('theme-white', 'theme-dark');
     
-    switch (theme) {
-      case 'white':
-        // No class needed for light theme (default)
-        break;
-      case 'dark':
-        document.body.classList.add('theme-dark');
-        break;
-      case 'default':
-        // Check system preference for dark mode
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.body.classList.add('theme-dark');
-        }
-        break;
+    if (theme === 'dark') {
+      document.body.classList.add('theme-dark');
     }
+    // No class needed for light theme (it's the default)
   }
 }
