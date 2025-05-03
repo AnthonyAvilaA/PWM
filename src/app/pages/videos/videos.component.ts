@@ -60,14 +60,24 @@ export class VideosComponent implements OnInit {
 
         // Group remaining videos by category
         this.videos.forEach(video => {
-          if (this.categories[video.category]) {
-            this.categories[video.category].push(video);
+          // Normalize the category name (handle accents)
+          let normalizedCategory = video.category.toLowerCase();
+          if (normalizedCategory === 'política') {
+            normalizedCategory = 'politica';
+          } else if (normalizedCategory === 'tecnología') {
+            normalizedCategory = 'tecnología';
+          }
+          
+          if (this.categories[normalizedCategory]) {
+            this.categories[normalizedCategory].push(video);
           } else {
             // If the category doesn't exist in predefined, add to otros
             this.categories['otros'].push(video);
           }
         });
         
+        // Log categories for debugging
+        console.log('Categories:', Object.keys(this.categories));
         this.loading = false;
       },
       error: (err) => {

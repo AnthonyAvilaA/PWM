@@ -60,8 +60,8 @@
     <span class="separator" *ngIf="categories['tecnología'] && categories['tecnología'].length > 0"><span></span></span>
 
     <!-- Politics section -->
-    <div class="sub-category política" *ngIf="categories['politica'] && categories['politica'].length > 0">
-      <input class="row-button" id="política-left-button" type="button" value="←" 
+    <div class="sub-category politica" *ngIf="categories['politica'] && categories['politica'].length > 0">
+      <input class="row-button" id="politica-left-button" type="button" value="←" 
              [disabled]="!hasPrevPage('politica')" 
              (click)="prevPage('politica')"
              [class.disabled]="!hasPrevPage('politica')">
@@ -79,7 +79,7 @@
           </div>
         </div>
       </article>
-      <input class="row-button" id="política-right-button" type="button" value="→" 
+      <input class="row-button" id="politica-right-button" type="button" value="→" 
              [disabled]="!hasNextPage('politica')" 
              (click)="nextPage('politica')"
              [class.disabled]="!hasNextPage('politica')">
