@@ -107,18 +107,20 @@ export class AddNewsComponent {
       return;
     }
 
+
     const news: NewsModel = {
       ID: "",
       title: this.title,
-      authorID: "",
+      authorID: localStorage.getItem('user_id') || "error",
       description: this.description,
       content: this.content,
-      image: this.url,
+      image: this.image_link,
       categories: this.categories,
       usersCommentsID: [],
       createdAt: new Date(),
       updatedAt: new Date()
     };
+
 
     this.isLoading = true;
     try {
