@@ -5,7 +5,7 @@ import { NewsFirebaseServiceInterface } from '@services/providers/firebase/inter
 import { UserFirebaseServiceInterface } from '@services/providers/firebase/interfaces/user-firebase-service.interface';
 import { CommentFirebaseServiceInterface } from '@services/providers/firebase/interfaces/comment-firebase-service.interface';
 import { ActivatedRoute } from '@angular/router';
-import { FullNewsModel } from '@models/fullNews.model';
+import { FullNewsModel } from '@models/full-news.model';
 import { Timestamp } from 'firebase/firestore';
 import { CommentModel } from '@models/comment.model';
 import { UserModel } from '@models/user.model';
@@ -44,18 +44,18 @@ export class NewsComponent implements OnInit {
   async initPrincipalNews() {
     this.loading = true;
     this.error = null;
-    
+
     try {
       this.route.paramMap.subscribe(params => {
         this.newsId = params.get('newsID') as string;
       });
-      
+
       if (!this.newsId) {
         throw new Error('ID de noticia no encontrado');
       }
-      
+
       this.principalNews = await this.providerService.getFullNewsById(this.newsId);
-      
+
       if (!this.principalNews || !this.principalNews.news) {
         throw new Error('No se pudo cargar la noticia');
       }
@@ -70,17 +70,17 @@ export class NewsComponent implements OnInit {
 
       const news = await this.newsService.getRelatedNews(this.principalNews.news.ID, this.principalNews.news.categories, 6);
       this.relatedNews = news.filter(n => n.ID !== this.principalNews!.news!.ID);
-      
+
       this.otherNews = await this.newsService.getLatestNews(3);
       this.otherNews = this.otherNews.filter(n => n.ID !== this.principalNews!.news!.ID);
-      
+
       // Load comment users
       if (this.principalNews.comments) {
         for (const comment of this.principalNews.comments) {
           this.loadUserFromComment(comment);
         }
       }
-      
+
       this.loading = false;
     } catch (err) {
       console.error('Error loading news:', err);

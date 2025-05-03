@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
 import { NewsModel } from '@models/news.model';
+import { LiveNewsModel } from '@models/live-news.model';
 import { Category } from '@models/types/categories.type';
 
 /**
@@ -42,6 +43,12 @@ export interface INewsService {
    * @returns Observable with array of NewsModel objects
    */
   getLatestNews(count?: number, resetPagination?: boolean): Observable<NewsModel[]>;
+
+  /**
+   * Get live news articles
+   * @returns Observable with array of LiveNewsModel objects
+   */
+  getLiveNews(): Observable<LiveNewsModel[]>;
 
   /**
    * Create a new news article

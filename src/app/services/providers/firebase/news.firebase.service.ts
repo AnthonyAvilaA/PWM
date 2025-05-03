@@ -22,6 +22,7 @@ import { Category } from '@models/types/categories.type';
 import { NewsFirebaseServiceInterface } from '@services/providers/firebase/interfaces/news-firebase-service.interface';
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
+import {LiveNewsModel} from '@models/live-news.model';
 
 interface FirestoreNews {
   title: string;
@@ -31,6 +32,21 @@ interface FirestoreNews {
   image: string;
   categories: string[];
   usersCommentsID: string[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+interface FirestoreLiveNews {
+  title: string;
+  authorID: string;
+  description: string;
+  content: {
+    title: string;
+    description: string;
+    timestamp: Date;
+  }[];
+  image: string;
+  categories: string[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -66,11 +82,49 @@ export const newsConverter: FirestoreDataConverter<NewsModel, FirestoreNews> = {
   },
 };
 
+export const liveNewsConverter: FirestoreDataConverter<LiveNewsModel, FirestoreLiveNews> = {
+  toFirestore: (liveNews: LiveNewsModel) => {
+    return {
+      title: liveNews.title,
+      authorID: liveNews.authorID,
+      description: liveNews.description,
+      content: liveNews.content.map(item => ({
+        title: item.title,
+        description: item.description,
+        timestamp: item.timestamp
+      })),
+      image: liveNews.image,
+      categories: liveNews.categories,
+      createdAt: liveNews.createdAt,
+      updatedAt: liveNews.updatedAt,
+    } as FirestoreLiveNews;
+  },
+  fromFirestore: (snapshot: DocumentSnapshot, options: SnapshotOptions) => {
+    const data = snapshot.data(options)! as FirestoreLiveNews;
+    return {
+      ID: snapshot.id,
+      title: data.title,
+      authorID: data.authorID,
+      description: data.description,
+      content: data.content.map(item => ({
+        title: item.title,
+        description: item.description,
+        timestamp: item.timestamp instanceof Date ? item.timestamp : new Date(item.timestamp)
+      })),
+      image: data.image,
+      categories: data.categories,
+      createdAt: data.createdAt instanceof Date ? data.createdAt : new Date(data.createdAt),
+      updatedAt: data.updatedAt instanceof Date ? data.updatedAt : new Date(data.updatedAt),
+    } as LiveNewsModel;
+  },
+};
+
 @Injectable({
   providedIn: 'root'
 })
 export class NewsFirebaseService implements NewsFirebaseServiceInterface {
   private readonly newsCollection = 'news';
+  private readonly liveNewsCollection = 'live-news';
   private readonly db: Firestore;
   private readonly posts: CollectionReference<NewsModel>;
 
@@ -171,6 +225,26 @@ export class NewsFirebaseService implements NewsFirebaseServiceInterface {
     return snapshot.docs.map((doc) => doc.data());
   }
 
+  async getLiveNews(): Promise<LiveNewsModel[]> {
+    // Get live news from the dedicated live-news collection
+    const liveNewsCollection = collection(this.db, this.liveNewsCollection).withConverter(liveNewsConverter);
+    
+    // Get the most recent live news items, ordered by creation date
+    const q = query(
+      liveNewsCollection,
+      orderBy('createdAt', 'desc'),
+      limit(5) // Limiting to 5 items, adjust as needed
+    );
+    
+    const snapshot = await getDocs(q);
+    
+    if (snapshot.empty) {
+      return [];
+    }
+    
+    return snapshot.docs.map((doc) => doc.data());
+  }
+
   /**
    * Get related news articles
    * @param currentNewsId ID of current news to exclude
@@ -268,6 +342,14 @@ export class NewsFirebaseService implements NewsFirebaseServiceInterface {
    */
   getLatestNewsObservable(count: number = 6, resetPagination: boolean = false): Observable<NewsModel[]> {
     return from(this.getLatestNews(count, resetPagination));
+  }
+
+  /**
+   * Observable wrapper for getLiveNews
+   * @returns Observable with array of LiveNewsModel objects
+   */
+  getLiveNewsObservable(): Observable<LiveNewsModel[]> {
+    return from(this.getLiveNews());
   }
 
   /**

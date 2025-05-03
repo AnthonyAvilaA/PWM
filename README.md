@@ -34,7 +34,6 @@
 1. Clone the repository
    ```bash
    git clone https://github.com/AnthonyAvilaA/PWM.git
-   cd PWM/pwm-angular
    ```
 
 2. Install dependencies

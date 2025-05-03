@@ -5,6 +5,7 @@ import { Category } from '@models/types/categories.type';
 import { NewsFirebaseService } from '../providers/firebase/news.firebase.service';
 import { db } from '../../../environments/firebase.config';
 import { INewsService } from '@services/core/interfaces/news-service.interface';
+import {LiveNewsModel} from '@models/live-news.model';
 
 @Injectable({
   providedIn: 'root'
@@ -73,6 +74,14 @@ export class NewsService implements INewsService {
   }
 
   /**
+   * Get live news articles
+   * @returns Observable with array of LiveNewsModel objects
+   */
+  getLiveNews(): Observable<LiveNewsModel[]> {
+    return this.provider.getLiveNewsObservable();
+  }
+
+  /**
    * Create a new news article
    * @param news NewsModel object to create
    * @returns Promise with the ID of the created news
@@ -80,6 +89,8 @@ export class NewsService implements INewsService {
   async createNews(news: NewsModel): Promise<string> {
     return await this.provider.addNews(news);
   }
+
+
 
   /**
    * Update an existing news article

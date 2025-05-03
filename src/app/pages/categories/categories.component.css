@@ -7,11 +7,9 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 5%; /* Consistent margin with news and home pages */
+    margin: 5%;
     padding: 0;
     max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Loading animation styles */
@@ -254,10 +252,6 @@ main {
 }
 
 @media (max-width: 768px) {
-    .main-container {
-        margin: 3%;
-    }
-    
     .top-other-news .side_article {
         width: 100%;
     }

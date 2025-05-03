@@ -1,1 +1,82 @@
-<p>live-news works!</p>
+<div class="main-container">
+  <h1 class="page-title">Live News Updates</h1>
+
+  <!-- Loading state -->
+  <div class="loading-container" *ngIf="isLoading">
+    <div class="loading-spinner"></div>
+    <p>Loading live news updates...</p>
+  </div>
+
+  <!-- Error state -->
+  <div class="error-container" *ngIf="hasError">
+    <h2>Unable to load live news feed</h2>
+    <p>We're having trouble connecting to our live news service. Please try again later.</p>
+    <button (click)="retryConnection()">Try Again</button>
+  </div>
+
+  <!-- Live news content -->
+  <div class="live-news-content" *ngIf="!isLoading && !hasError">
+    <div class="live-news-header">
+      <div class="status-indicator" [class.active]="isLive">
+        <span class="dot"></span>
+        <span class="status-text">{{ isLive ? 'LIVE' : 'OFFLINE' }}</span>
+      </div>
+      <div class="last-updated">
+        Last updated: {{ lastUpdated | date: 'medium' }}
+      </div>
+    </div>
+
+    <div class="news-ticker">
+      <p *ngIf="breakingNews" class="ticker-item breaking">BREAKING: {{ breakingNews }}</p>
+    </div>
+
+    <div class="live-feed">
+      <div class="feed-filters">
+        <button class="filter-btn" [class.active]="currentFilter === 'all'" (click)="filterFeed('all')">All Updates</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'breaking'" (click)="filterFeed('breaking')">Breaking News</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'sports'" (click)="filterFeed('sports')">Sports</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'finance'" (click)="filterFeed('finance')">Finance</button>
+      </div>
+
+      <div class="feed-items">
+        <div class="feed-item" *ngFor="let item of liveFeedItems">
+          <div class="feed-time">{{ item.timestamp | date: 'shortTime' }}</div>
+          <div class="feed-content">
+            <h3 class="feed-title" [class.breaking]="item.isBreaking">{{ item.title }}</h3>
+            <p class="feed-text">{{ item.description }}</p>
+            <div class="feed-footer">
+              <span class="feed-category" [class]="item.category">{{ item.category }}</span>
+              <span class="feed-source" *ngIf="item.source">Source: {{ item.source }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="no-updates" *ngIf="liveFeedItems.length === 0">
+          <p>No live updates available at the moment. Check back soon!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="trending-topics">
+        <h2>Trending Topics</h2>
+        <ul class="topic-list">
+          <li *ngFor="let topic of trendingTopics" (click)="filterByTopic(topic)">
+            <span class="topic-tag">{{ topic }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="upcoming-events">
+        <h2>Upcoming Live Coverage</h2>
+        <div class="event-item" *ngFor="let event of upcomingEvents">
+          <div class="event-time">{{ event.time | date: 'shortTime' }}</div>
+          <div class="event-info">
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

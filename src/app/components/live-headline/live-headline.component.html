@@ -3,6 +3,6 @@
     <span class="circle"></span>
     <span class="ringring"></span>
   </span>
-  <span *ngIf="liveNews.title">{{ liveNews.title }}</span>
+  <span *ngIf="liveNews && liveNews.title">{{ liveNews.title }}</span>
   <span *ngIf="!liveNews">Noticias en vivo - Sigue los acontecimientos más recientes</span>
 </a>

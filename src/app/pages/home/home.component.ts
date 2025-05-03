@@ -5,6 +5,8 @@ import { SideArticleComponent} from '@components/side-article/side-article.compo
 import { NewsService } from '@services/core/news.service';
 import { NewsModel } from '@models/news.model';
 import { LiveHeadlineComponent } from '@components/live-headline/live-headline.component';
+import { LiveNewsModel } from '@models/live-news.model';
+import { forkJoin } from 'rxjs';
 
 
 @Component({
@@ -18,7 +20,7 @@ export class HomeComponent implements OnInit {
   // News collections
   topStories: NewsModel[] = [];
   suggestedContent: NewsModel[] = [];
-  liveNews: NewsModel | null = null;
+  liveNews: LiveNewsModel | null = null;
 
   // UI state
   loading = true;
@@ -45,29 +47,28 @@ export class HomeComponent implements OnInit {
     this.loadedNewsIds.clear();
     this.noMoreNews = false;
 
-    // Get latest news with reset pagination (true means reset)
-    this.newsService.getLatestNews(this.pageSize, true).subscribe({
-      next: (news) => {
-        if (news.length === 0) {
+    // Load both live news and regular news in parallel
+    forkJoin({
+      liveNews: this.newsService.getLiveNews(),
+      regularNews: this.newsService.getLatestNews(this.pageSize, true)
+    }).subscribe({
+      next: (result) => {
+        // Handle live news
+        if (result.liveNews.length > 0) {
+          this.liveNews = result.liveNews[0]; // Get the first live news item
+        } else {
+          this.liveNews = null;
+        }
+
+        // Handle regular news
+        if (result.regularNews.length === 0) {
           this.noMoreNews = true;
           this.loading = false;
           return;
         }
 
-        // Split news between top stories and suggested content
-        const allNews = [...news];
-
-        // Set aside one article for "live news" if available
-        if (allNews.length > 0) {
-          this.liveNews = allNews.shift() || null;
-          if (this.liveNews) {
-            this.loadedNewsIds.add(this.liveNews.ID);
-          }
-        }
-
-        // Populate top stories and suggested content
-        this.distributeNews(allNews);
-
+        // Distribute regular news between top stories and suggested content
+        this.distributeNews(result.regularNews);
         this.loading = false;
       },
       error: (err) => {

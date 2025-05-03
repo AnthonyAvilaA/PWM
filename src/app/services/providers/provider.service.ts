@@ -6,7 +6,7 @@ import { UserFirebaseServiceInterface } from '@services/providers/firebase/inter
 import { UserFirebaseService } from './firebase/user.firebase.service';
 import { CommentFirebaseServiceInterface } from '@services/providers/firebase/interfaces/comment-firebase-service.interface';
 import { CommentsFirebaseService } from './firebase/comments.firebase.service';
-import { FullNewsModel } from '@models/fullNews.model';
+import { FullNewsModel } from '@models/full-news.model';
 import { CommentModel } from '@models/comment.model';
 import { UserModel } from '@models/user.model';
 import { NewsModel } from '@models/news.model';
