@@ -10,8 +10,8 @@
 </div>
 
 <p align="center">A news platform built with Angular, offering a basic interface for creating, browsing and watching news across various categories.</p>
-<p align="center">🚧🚧🚧</p>
-<p align="center">This project is actively under development, with weekly updates and new features on the way. Feedback, ideas, and suggestions are more than welcome!</p>
+<p align="center">🚧 This project is actively under development, with weekly updates and new features on the way. 🚧</p>
+<p align="center">Feedback, ideas, and suggestions are more than welcome!</p>
 
 ## ✨ Features
 
@@ -70,11 +70,13 @@
 | `ng generate component` | Generates a new component |
 | `ng test` | Executes unit tests |
 
-## 🖥️ Screenshots & Mockups
+## 🖥️ Mockups, Trello & Screenshots
 
 <div align="center">
 
 🔗 [**View Figma Mockups**](https://www.figma.com/design/tNjgVFBImc33oU2ZxneRMo/PWM-Project-Mockups?m=auto&t=aN0vTzwc7j7NtLaB-6)
+🔗 [**View Trello Board**](https://trello.com/invite/b/67a273b0a32d1b3c0761e4d1/ATTI638fae680648387c76326ea85f0f6b42159DD168/newspaper)
+🔗 [**View Screenshots and Responsivnes**](https://imgur.com/a/Zi2gZvN)
 
 </div>
 
