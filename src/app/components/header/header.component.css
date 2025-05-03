@@ -234,10 +234,10 @@
  * RESPONSIVE STYLES
  */
 
-/* Desktop Layout (≥1024px) - Default */
+/* Desktop Layout (≥1200px) - Default */
 
-/* Tablet Layout (≥768px and <1024px) */
-@media (max-width: 1023px) {
+/* Tablet Layout (≥768px and <1200px) */
+@media (max-width: 1199px) {
   .header {
     padding: clamp(6px, 1.2vh, 12px) clamp(12px, 1.7vw, 18px);
     position: relative;

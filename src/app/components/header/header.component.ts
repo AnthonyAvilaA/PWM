@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '@services/core/auth.service';
@@ -17,7 +17,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private elementRef: ElementRef
   ) {}
 
   ngOnInit(): void {
@@ -34,5 +35,25 @@ export class HeaderComponent implements OnInit {
         this.router.navigate(['/']);
       }
     });
+  }
+
+  // Close menus when clicking outside
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: Event) {
+    // Handle burger menu close
+    const burgerMenu = this.elementRef.nativeElement.querySelector('.burger-menu');
+    const burgerToggle = document.getElementById('menu-toggle') as HTMLInputElement;
+    
+    if (burgerToggle && burgerToggle.checked && !burgerMenu.contains(event.target)) {
+      burgerToggle.checked = false;
+    }
+    
+    // Handle language menu close
+    const languageMenu = this.elementRef.nativeElement.querySelector('.language-menu');
+    const languageToggle = document.getElementById('language-toggle') as HTMLInputElement;
+    
+    if (languageToggle && languageToggle.checked && !languageMenu.contains(event.target)) {
+      languageToggle.checked = false;
+    }
   }
 }
