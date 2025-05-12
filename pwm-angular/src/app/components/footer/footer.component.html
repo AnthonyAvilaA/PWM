@@ -1,0 +1,41 @@
+<div class="footer">
+    <div class="footer-subscription">
+        <img src="/pwm-angular/src/assets/logo.png" alt="Logo" class="footer-logo">
+        <p>{{ 'FOOTER.SUBSCRIBE_HEADING' | translate }}</p>
+        <form (ngSubmit)="onSubscribe()" class="footer-form" *ngIf="!subscribed">
+            <input type="email" name="email" placeholder="{{ 'FOOTER.EMAIL_PLACEHOLDER' | translate }}" required [(ngModel)]="email">
+            <button type="submit">{{ 'FOOTER.SUBSCRIBE_BUTTON' | translate }}</button>
+        </form>
+        <div class="subscription-success" *ngIf="subscribed">
+            <p>{{ 'FOOTER.THANKYOU_MESSAGE' | translate }}</p>
+            <button (click)="resetForm()">{{ 'FOOTER.SUBSCRIBE_ANOTHER' | translate }}</button>
+        </div>
+        <p *ngIf="!subscribed">{{ 'FOOTER.STAY_UPDATED' | translate }}</p>
+    </div>
+
+    <div class="footer-links">
+        <ul>
+          <li><strong>{{ 'FOOTER.EXPLORE' | translate }}</strong></li>
+          <li><a [routerLink]="['/category', 'Deportes']">{{ 'HEADER.SPORTS' | translate }}</a></li>
+          <li><a [routerLink]="['/category', 'Ciencia']">{{ 'HEADER.SCIENCE' | translate }}</a></li>
+          <li><a [routerLink]="['/category', 'Política']">{{ 'HEADER.POLITICS' | translate }}</a></li>
+          <li><a [routerLink]="['/category', 'Entretenimiento']">{{ 'HEADER.ENTERTAINMENT' | translate }}</a></li>
+          <li><a [routerLink]="['/category', 'Mundo']">{{ 'HEADER.WORLD' | translate }}</a></li>
+        </ul>
+
+        <ul>
+            <li><strong>{{ 'FOOTER.ABOUT_US' | translate }}</strong></li>
+            <li><a routerLink="privacy">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a></li>
+            <li><a routerLink="terms">{{ 'FOOTER.TERMS' | translate }}</a></li>
+            <li><a routerLink="profile">{{ 'FOOTER.PRIVACY_PREFERENCES' | translate }}</a></li>
+        </ul>
+
+        <ul>
+            <li><strong>{{ 'FOOTER.CONTACT_US' | translate }}</strong></li>
+            <li><a href="https://www.facebook.com/ArgonyNews">Facebook</a></li>
+            <li><a href="https://www.X.com/ArgonyNews">X (Twitter)</a></li>
+            <li><a href="https://www.Instagram.com/ArgonyNews">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@ArgonyNews">YouTube</a></li>
+        </ul>
+    </div>
+</div>

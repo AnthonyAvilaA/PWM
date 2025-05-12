@@ -1,0 +1,199 @@
+<div class="main-container">
+  <!-- Loading indicator -->
+  <div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>{{ 'LOADING_SCREENS.PROFILE' | translate }}</p>
+  </div>
+
+  <div *ngIf="!loading">
+    <h1>{{ 'PROFILE.TITLE' | translate }}</h1>
+    
+    <!-- Profile header section -->
+    <section class="top">
+      <img src="/pwm-angular/src/assets/user.png" height="50" alt="{{ 'PROFILE.USER_AVATAR_ALT' | translate }}">
+      <div class="info">
+        <p>{{userData.name}}</p>
+        <p>{{ 'PROFILE.MEMBER_SINCE' | translate }} {{userData.joinDate}}</p>
+      </div>
+
+      <div class="profile-options">
+        <button class="regular-button" routerLink="/add_news">
+          {{ 'PROFILE.ADD_NEWS' | translate }}
+        </button>
+        
+        <button class="regular-button" (click)="changeTab('options'); showSection('editProfile')">
+          <p>{{ 'PROFILE.EDIT_PROFILE' | translate }}</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- Navigation tabs -->
+    <nav>
+      <button id="main" [class.active]="activeTab === 'main'" (click)="changeTab('main')">
+        <p>{{ 'PROFILE.TAB_PROFILE' | translate }}</p>
+      </button>
+      <button id="activity" [class.active]="activeTab === 'activity'" (click)="changeTab('activity')">
+        <p>{{ 'PROFILE.TAB_ACTIVITY' | translate }}</p>
+      </button>
+      <button id="saved" [class.active]="activeTab === 'saved'" (click)="changeTab('saved')">
+        <p>{{ 'PROFILE.TAB_SAVED' | translate }}</p>
+      </button>
+      <button id="options" [class.active]="activeTab === 'options'" (click)="changeTab('options')">
+        <p>{{ 'PROFILE.TAB_OPTIONS' | translate }}</p>
+      </button>
+    </nav>
+
+    <!-- Activity section -->
+    <article class="activity" [class.show]="activeTab === 'activity'">
+      <h2>{{ 'PROFILE.LATEST_PUBLICATIONS' | translate: {name: userData.name} }}</h2>
+      <div class="activity-content">
+        <section class="top-news" *ngIf="userPublications.length > 0">
+          <h2>{{userPublications[0].title}}</h2>
+          <img [src]="userPublications[0].image" alt="{{userPublications[0].title}}">
+          <p>{{userPublications[0].author}}/{{userPublications[0].location}}</p>
+          <p class="description">{{userPublications[0].description}}</p>
+        </section>
+        <section class="other-news">
+          <div *ngFor="let news of userPublications.slice(1)">
+            <h2>{{news.title}}</h2>
+            <img [src]="news.image" alt="{{news.title}}">
+            <p>{{news.author}}/{{news.location}}</p>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- Saved articles section -->
+    <article class="saved" [class.show]="activeTab === 'saved'">
+      <h2>{{ 'PROFILE.SAVED_ARTICLES' | translate }}</h2>
+      <div class="saved-content" *ngIf="userPublications.length > 0">
+        <div *ngFor="let news of userPublications">
+          <h3>{{news.title}}</h3>
+          <img [src]="news.image" alt="{{news.title}}">
+          <p>{{news.author}}/{{news.location}}</p>
+          <button class="remove-saved">{{ 'PROFILE.REMOVE' | translate }}</button>
+        </div>
+      </div>
+      <div *ngIf="userPublications.length === 0" class="no-saved">
+        <p>{{ 'PROFILE.NO_SAVED_ARTICLES' | translate }}</p>
+      </div>
+    </article>
+
+    <!-- Options section -->
+    <article class="options" [class.show]="activeTab === 'options'">
+      <section class="sider">
+        <div class="personal-information">
+          <h2>{{ 'PROFILE.PERSONAL_INFORMATION' | translate }}</h2>
+          <button id="edit-profile" (click)="showSection('editProfile')">
+            <p>{{ 'PROFILE.EDIT_PROFILE' | translate }}</p>
+          </button>
+          <button id="delete-profile">
+            <p>{{ 'PROFILE.DELETE_PROFILE' | translate }}</p>
+          </button>
+        </div>
+
+        <div class="email-configuration">
+          <h2>{{ 'PROFILE.EMAIL_CONFIGURATION' | translate }}</h2>
+          <button id="email-edit" (click)="showSection('emailEdit')">
+            <p>{{ 'PROFILE.EDIT_EMAIL' | translate }}</p>
+          </button>
+          <button id="email-notifications" (click)="showSection('emailNotifications')">
+            <p>{{ 'PROFILE.EMAIL_NOTIFICATIONS' | translate }}</p>
+          </button>
+        </div>
+        
+        <div class="site-preferences">
+          <h2>{{ 'PROFILE.SITE_PREFERENCES' | translate }}</h2>
+          <button id="interface-navigation" (click)="showSection('interfaceNavigation')">
+            <p>{{ 'PROFILE.INTERFACE_NAVIGATION' | translate }}</p>
+          </button>
+          <button id="privacity-preferences" (click)="showSection('privacyPreferences')">
+            <p>{{ 'PROFILE.PRIVACY_PREFERENCES' | translate }}</p>
+          </button>
+        </div>
+      </section>
+
+      <!-- Edit Profile Section -->
+      <section class="edit-profile" *ngIf="activeSection === 'editProfile'">
+        <h2>{{ 'PROFILE.EDIT_PROFILE' | translate }}</h2>
+        <img src="/pwm-angular/src/assets/user.png" height="40" alt="{{ 'PROFILE.USER_AVATAR_ALT' | translate }}">
+        <form (ngSubmit)="saveProfile()">
+          <p>{{ 'PROFILE.DISPLAY_NAME' | translate }}</p>
+          <input type="text" name="Name" id="user-name" [(ngModel)]="userData.name" required>
+          <p>{{ 'PROFILE.LOCATION' | translate }}</p>
+          <input type="text" name="Location" id="user-location" [(ngModel)]="userData.location" required>
+          <p>{{ 'PROFILE.TITLE' | translate }}</p>
+          <input type="text" name="Title" id="user-Title" [(ngModel)]="userData.title" required>
+          <button type="submit" id="profile-save">
+            <p>{{ 'COMMON.SAVE' | translate }}</p>
+          </button>
+        </form>
+      </section>
+
+      <!-- Interface & Navigation Section -->
+      <section class="interface-navigation" *ngIf="activeSection === 'interfaceNavigation'">
+        <h2>{{ 'PROFILE.INTERFACE_NAVIGATION' | translate }}</h2>
+        <form (ngSubmit)="saveUIPreferences()">
+          <p>{{ 'PROFILE.THEME' | translate }}</p>
+          <div class="themes">
+            <div>
+              <img src="/pwm-angular/src/assets/theme-light.svg" alt="{{ 'PROFILE.THEME_LIGHT_ALT' | translate }}">
+              <p>
+                <label for="white">{{ 'PROFILE.THEME_LIGHT' | translate }}</label>
+                <input type="radio" name="theme" id="white" [(ngModel)]="uiPreferences.theme" value="white">
+              </p>
+            </div>
+            
+            <div>
+              <img src="/pwm-angular/src/assets/theme-system@2x.png" alt="{{ 'PROFILE.THEME_SYSTEM_ALT' | translate }}">
+              <p>
+                <label for="default">{{ 'PROFILE.THEME_SYSTEM' | translate }}</label>
+                <input type="radio" name="theme" id="default" [(ngModel)]="uiPreferences.theme" value="default">
+              </p>
+            </div>
+            
+            <div>
+              <img src="/pwm-angular/src/assets/theme-dark.svg" alt="{{ 'PROFILE.THEME_DARK_ALT' | translate }}">
+              <p>
+                <label for="dark">{{ 'PROFILE.THEME_DARK' | translate }}</label>
+                <input type="radio" name="theme" id="dark" [(ngModel)]="uiPreferences.theme" value="dark">
+              </p>
+            </div>
+          </div>
+          
+          <div class="option-item">
+            <h3>{{ 'PROFILE.HIGH_CONTRAST' | translate }}</h3>
+            <label for="high-contrast">{{ 'PROFILE.HIGH_CONTRAST_DESCRIPTION' | translate }}</label>
+            <input type="checkbox" name="high-contrast" id="high-contrast" [(ngModel)]="uiPreferences.highContrast">
+          </div>
+          
+          <div class="option-item">
+            <h3>{{ 'PROFILE.ENABLE_KEYBOARD_SHORTCUTS' | translate }}</h3>
+            <label for="shortcuts">{{ 'PROFILE.KEYBOARD_SHORTCUTS_DESCRIPTION' | translate }}</label>
+            <input type="checkbox" name="shortcuts" id="shortcuts" [(ngModel)]="uiPreferences.enableKeyboardShortcuts">
+          </div>
+          
+          <button type="submit" class="save-button">
+            {{ 'COMMON.SAVE' | translate }}
+          </button>
+        </form>
+      </section>
+
+      <!-- Other sections would go here -->
+      <section class="email-edit" *ngIf="activeSection === 'emailEdit'">
+        <h2>{{ 'PROFILE.EDIT_EMAIL' | translate }}</h2>
+        <!-- Email edit form would go here -->
+      </section>
+
+      <section class="email-notifications" *ngIf="activeSection === 'emailNotifications'">
+        <h2>{{ 'PROFILE.EMAIL_NOTIFICATIONS' | translate }}</h2>
+        <!-- Email notifications form would go here -->
+      </section>
+
+      <section class="privacy-preferences" *ngIf="activeSection === 'privacyPreferences'">
+        <h2>{{ 'PROFILE.PRIVACY_PREFERENCES' | translate }}</h2>
+        <!-- Privacy preferences form would go here -->
+      </section>
+    </article>
+  </div>
+</div>
