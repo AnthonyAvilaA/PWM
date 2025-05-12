@@ -1,12 +1,3 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 #container strong {
   font-size: 20px;
@@ -24,4 +15,56 @@
 
 #container a {
   text-decoration: none;
+}
+/* filepath: c:\Users\antho\OneDrive\Escritorio\carpetas\Códigos\PWM\toDoApp\src\app\home\home.page.scss */
+
+/* General container styling */
+#container {
+  margin-top: 5 00px;
+  padding: 16px;
+}
+
+/* News item styling */
+.news-item {
+  border: 1px solid #f4a261; /* Borde naranja suave */
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffe8d6; /* Fondo naranja claro */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumbnail styling */
+.news-thumbnail img {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+/* Title styling */
+.news-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e76f51; /* Título en naranja oscuro */
+  margin-bottom: 8px;
+}
+
+/* Description styling */
+.news-description {
+  font-size: 14px;
+  color: #264653; /* Texto en azul oscuro */
+  margin-bottom: 8px;
+}
+
+/* Date styling */
+.news-date {
+  font-size: 12px;
+  color: #6d6875; /* Texto en gris púrpura */
+  font-style: italic;
 }
