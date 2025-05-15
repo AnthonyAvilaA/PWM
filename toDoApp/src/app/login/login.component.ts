@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/firebase/auth.service';
-import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from "../components/header/header.component";
 import { User } from 'firebase/auth';
@@ -18,7 +17,10 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private location: Location,
+  ) {}
 
   onLogin() {
     this.authService.login(this.email, this.password)
@@ -26,7 +28,7 @@ export class LoginComponent {
         // Navigate to the home page or another page after successful login
         localStorage.setItem('token', user.uid); // Store the token in localStorage
         localStorage.setItem('userName', user.email || 'User'); // Store the user name in localStorage
-        this.router.navigate(['/home']);
+        this.location.back();
       })
       .catch(error => {
         // Handle login errors

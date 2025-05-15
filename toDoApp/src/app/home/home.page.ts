@@ -15,6 +15,7 @@ import { addIcons } from 'ionicons';
 
 import { bookmark } from 'ionicons/icons';
 import { bookmarkOutline } from 'ionicons/icons';
+import { AuthService } from '../services/firebase/auth.service';
 
 addIcons({
   'bookmark': bookmark,
@@ -36,12 +37,20 @@ export class HomePage {
 
   constructor(
     private newsService: NewsService,
-    private dbService: DbService
+    private dbService: DbService,
+    private authService: AuthService,
   ) { }
 
   async ngOnInit() {
     this.news = this.newsService.getNews();
-    this.savedNews = await this.dbService.getAllNews();
+
+    this.authService.currentUser$.subscribe(async user => {
+      if (user) {
+        this.savedNews = await this.dbService.getAllNews();        
+      } else {
+        this.savedNews = [];
+      }
+    })
   }
 
   async ionViewWillEnter() {
