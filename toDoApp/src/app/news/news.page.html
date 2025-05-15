@@ -1,11 +1,58 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>news</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">news</ion-title>
+      <ion-title size="large">{{ (this.news | async)?.title }}</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div *ngIf="this.news | async as news" class="news-container">
+    <!-- News Details -->
+    <div class="news-image-container">
+      <img [src]="news.image" alt="News Image" class="news-image" />
+    </div>
+    <div class="news-details">
+      <h1 class="news-title">{{ news.title }}</h1>
+      <div class="author-info">
+        <img *ngIf="(author | async )" class="author-img" [src]="(author | async )?.image_url" alt="">
+        <p class="news-author"><strong>Author:</strong> {{ (author | async)?.name }}</p>
+      </div>
+      <p class="news-description">{{ news.description }}</p>
+      <p class="news-content">{{ getContent(news.content) }}</p>
+      <p class="news-categories">
+        <strong>Categories:</strong> {{ news.categories.join(', ') }}
+      </p>
+      <p class="news-date">
+        <strong>Created At:</strong> {{ news.createdAt.toDate() | date:'medium' }}
+      </p>
+      <p class="news-date">
+        <strong>Updated At:</strong> {{ news.updatedAt.toDate() | date:'medium' }}
+      </p>
+      <ion-button *ngIf="!saveState" (click)="saveNews()" class="save-button">
+        Save
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="saveState" (click)="unsaveNews()" class="save-button">
+        Saved
+        <ion-icon name="bookmark"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comments-section">
+      <h2>Comments</h2>
+      <div *ngIf="comments">
+        <div *ngIf="comments.length > 0; else noComments">
+          <div *ngFor="let comment of comments">
+            <p class="comment-author"><strong>{{ comment.user.name || '' }}:</strong></p>
+            <p class="comment-content">{{ comment.content }}</p>
+          </div>
+        </div>
+        <ng-template #noComments>
+          <p>No comments yet.</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</ion-content>

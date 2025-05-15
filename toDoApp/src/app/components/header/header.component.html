@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title [routerLink]="['/']">
+      Argony
+    </ion-title>
+    <ion-buttons slot="end">
+      <!-- Show Register and Login buttons if not logged in -->
+      <ng-container *ngIf="!isLoggedIn; else loggedInTemplate">
+        <ion-button [routerLink]="'/register'">
+          <ion-icon name="person-add-outline"></ion-icon>
+          Register
+        </ion-button>
+        <ion-button [routerLink]="'/login'">
+          <ion-icon name="log-in-outline"></ion-icon>
+          Login
+        </ion-button>
+      </ng-container>
+
+      <!-- Show user name and logout button if logged in -->
+      <ng-template #loggedInTemplate>
+        <ion-label>
+          Welcome, {{ userName }}
+        </ion-label>
+        <ion-button (click)="logout()">
+          <ion-icon name="log-out-outline"></ion-icon>
+          Logout
+        </ion-button>
+      </ng-template>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

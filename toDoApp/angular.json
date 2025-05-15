@@ -29,11 +29,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets"
-              }
+              "./src/assets"
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
             "scripts": [],
@@ -103,11 +99,7 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets"
-              }
+              "./src/assets"
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
             "scripts": []

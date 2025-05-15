@@ -1,36 +1,19 @@
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-/* filepath: c:\Users\antho\OneDrive\Escritorio\carpetas\Códigos\PWM\toDoApp\src\app\home\home.page.scss */
-
 /* General container styling */
 #container {
-  margin-top: 5 00px;
   padding: 16px;
 }
 
-/* News item styling */
 .news-item {
-  border: 1px solid #f4a261; /* Borde naranja suave */
+  position: relative; /* Enable positioning for child elements */
+  display: flex;
+  align-items: center;
+  height: 200px;
+  padding: 16px;
+  background-color: black;
   border-radius: 8px;
   margin-bottom: 16px;
+  color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #ffe8d6; /* Fondo naranja claro */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -40,31 +23,75 @@
 }
 
 /* Thumbnail styling */
+.news-thumbnail {
+  flex-shrink: 0; /* Prevent shrinking */
+  width: 200px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  margin-right: 16px; /* Space between image and text */
+}
+
 .news-thumbnail img {
-  border-radius: 8px;
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
+  width: 100%; /* Fill the container */
+  height: 100%; /* Fill the container */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Content styling */
+.news-content {
+  flex: 1; /* Allow content to take up remaining space */
+  display: flex;
+  flex-direction: column; /* Stack title, description, and date */
+  justify-content: center; /* Center content vertically */
 }
 
 /* Title styling */
 .news-title {
   font-size: 18px;
   font-weight: bold;
-  color: #e76f51; /* Título en naranja oscuro */
+  color: #e76f51; /* Dark orange for the title */
   margin-bottom: 8px;
 }
 
 /* Description styling */
 .news-description {
   font-size: 14px;
-  color: #264653; /* Texto en azul oscuro */
+  color: #264653; /* Dark blue for the description */
   margin-bottom: 8px;
 }
 
 /* Date styling */
 .news-date {
   font-size: 12px;
-  color: #6d6875; /* Texto en gris púrpura */
+  color: #6d6875; /* Purple-gray for the date */
   font-style: italic;
+}
+
+.saved-news-label {
+  position: absolute; /* Position relative to the news-item */
+  bottom: 8px; /* Align to the bottom */
+  right: 8px; /* Align to the right */
+  background-color: #264653; /* Dark blue background */
+  color: white; /* White text */
+  padding: 4px 8px; /* Add padding for better appearance */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 12px; /* Smaller font size */
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Space between text and icon */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.saved-news-label ion-icon {
+  font-size: 14px; /* Adjust icon size */
+}
+
+.news-item.saved {
+  border: 2px solid #e76f51; /* Highlight border for saved items */
+}
+
+.news-item.saved .saved-news-label {
+  background-color: #e76f51; /* Change label background for saved items */
+  transform: scale(1.1); /* Slightly enlarge the label */
 }
