@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="this.newsData" class="news-container">
+    <!-- News Details -->
+    <div class="news-image-container">
+      <img [src]="this.newsData.news.image" alt="News Image" class="news-image" />
+    </div>
+    <div class="news-details">
+      <h1 class="news-title">{{ this.newsData.news.title }}</h1>
+      <div class="author-info">
+        <img *ngIf="(this.newsData.user )" class="author-img" [src]="this.newsData.user.image_url" alt="">
+        <p class="news-author"><strong>Author:</strong> {{ this.newsData.user.name }}</p>
+      </div>
+      <p class="news-description">{{ this.newsData.news.description }}</p>
+      <p class="news-content">{{ getContent(this.newsData.news.content) }}</p>
+      <p class="news-categories">
+        <strong>Categories:</strong> {{ this.newsData.news.categories.join(', ') }}
+      </p>
+      <p class="news-date">
+        <strong>Created At:</strong> {{ getDate(this.newsData.news.createdAt) | date:'medium' }}
+      </p>
+      <p class="news-date">
+        <strong>Updated At:</strong> {{ getDate(this.newsData.news.updatedAt) | date:'medium' }}
+      </p>
+    </div>
+  </div>
+</ion-content>

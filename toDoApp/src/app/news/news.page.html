@@ -40,17 +40,18 @@
     </div>
 
     <!-- Comments Section -->
+    <!-- comments section in news.page.html -->
     <div class="comments-section">
       <h2>Comments</h2>
       <div *ngIf="comments">
         <div *ngIf="comments.length > 0; else noComments">
-          <div *ngFor="let comment of comments">
+          <div *ngFor="let comment of comments" class="comment-block">
             <p class="comment-author"><strong>{{ comment.user.name || '' }}:</strong></p>
             <p class="comment-content">{{ comment.content }}</p>
           </div>
         </div>
         <ng-template #noComments>
-          <p>No comments yet.</p>
+          <p class="no-comments">No comments yet.</p>
         </ng-template>
       </div>
     </div>

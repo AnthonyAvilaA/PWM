@@ -1,0 +1,112 @@
+:host {
+  --ion-background-color: #fff; /* Fondo blanco con un toque de naranja */
+}
+
+
+/* General container styling */
+#container {
+  padding: 16px;
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+ion-list {
+  background-color: #ffffff;
+}
+
+.news-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumbnail styling */
+.news-thumbnail {
+  flex-shrink: 0; /* Prevent shrinking */
+  width: 200px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  margin-right: 16px; /* Space between image and text */
+}
+
+.news-thumbnail img {
+  width: 100%; /* Fill the container */
+  height: 100%; /* Fill the container */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Content styling */
+.news-content {
+  flex: 1; /* Allow content to take up remaining space */
+  display: flex;
+  flex-direction: column; /* Stack title, description, and date */
+  justify-content: center; /* Center content vertically */
+}
+.news-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e76f51; /* Naranja oscuro para el título */
+  margin-bottom: 8px;
+}
+
+.news-description {
+  font-size: 14px;
+  color: #264653; /* Azul oscuro para la descripción */
+  margin-bottom: 8px;
+}
+
+.news-date {
+  font-size: 12px;
+  color: #6d6875; /* Gris púrpura para la fecha */
+  font-style: italic;
+}
+
+.saved-news-label {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: #e76f51; /* Naranja oscuro */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.saved-news-label ion-icon {
+  font-size: 14px;
+}
+
+.news-item.saved {
+  border: 2px solid #e76f51; /* Resaltar borde para elementos guardados */
+}
+
+.news-item.normal {
+  border: 2px solid #000; /* Resaltar borde para elementos guardados */
+}
+
+.news-item.saved:hover {
+  border: 6px solid #e76f51; /* Resaltar borde para elementos guardados */
+}
+
+.news-item.normal:hover {
+  border: 6px solid #000; /* Resaltar borde para elementos guardados */
+}
+
+.news-item.saved .saved-news-label {
+  background-color: #e76f51; /* Cambiar fondo de la etiqueta para elementos guardados */
+  transform: scale(1.1);
+}

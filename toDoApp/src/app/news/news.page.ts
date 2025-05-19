@@ -110,12 +110,12 @@ export class NewsPage implements OnInit {
     return await firstValueFrom(this.userService.getUserbyId(userId));
   }
 
-  saveNews() {
+  async saveNews() {
     if (this.authService.getCurrentUser() == null) {
       this.router.navigate(['/login']);
       return;
     }
-    this.dbService.addNews(this.newsID)
+    this.dbService.addNews(this.newsID, await firstValueFrom(this.news), await firstValueFrom(this.author))
     this.saveState = true;
   }
   unsaveNews() {

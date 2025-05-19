@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense" class="ion-no-border">
+    <ion-toolbar>
+      <ion-title size="large">News</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-list>
+      <ion-item *ngFor="let item of news" [routerLink]="'/sqlite-news/' + item.ID" class="news-item"
+        [ngClass]="{ 'saved': isSaved(item.ID), 'normal': !isSaved(item.ID)}">
+        <div class="news-thumbnail">
+          <img src="{{ item.image }}" alt="News Image">
+        </div>
+        <div class="news-content">
+          <h2 class="news-title">{{ item.title }}</h2>
+          <p class="news-description">{{ item.description }}</p>
+          <p class="news-date">{{ getDate(item.createdAt) }}</p>
+        </div>
+        <ion-label *ngIf="isSaved(item.ID)" class="saved-news-label">
+          Saved <ion-icon name="bookmark"></ion-icon>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
